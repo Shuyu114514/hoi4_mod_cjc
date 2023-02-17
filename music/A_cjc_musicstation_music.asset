@@ -1,0 +1,156 @@
+
+music = {
+	name = "call_of_comintern"
+	file = "call_of_comintern.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "caoyuanacaoyuan"
+	file = "pooryushuka.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "prj_centre_pooryushuka"
+	file = "prj_centre_pooryushuka.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "partisans_song"
+	file = "hoi4mainthemeallies.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "pooryushuka_gakusei"
+	file = "pooryushuka_gakusei.ogg"
+	volume = 0.75
+}
+
+music = {
+	name = "banner_of_marx_lenin"
+	file = "banner_of_marx_lenin.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "soviet_submarine"
+	file = "soviet_submarine.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "battleisgoing"
+	file = "battleisgoing.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "internationale_japanese"
+	file = "internationale_japanese.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "pooryushuka_japanese"
+	file = "pooryushuka_japanese.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "katyusha_japanese"
+	file = "katyusha_japanese.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "red_army_strongest_japanese"
+	file = "red_army_strongest_japanese.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Komsomol_Song_PRC"
+	file = "Komsomol_Song_PRC.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "tokyo_beijing_1965"
+	file = "tokyo_beijing_1965.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "warsaw_song_japanese"
+	file = "warsaw_song_japanese.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "the_most_pretty_future_road"
+	file = "the_most_pretty_future_road.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "lostdream"
+	file = "lostdream.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "susumesuru_shakaishugi"
+	file = "susumesuru_shakaishugi.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "unitedfront"
+	file = "unitedfront.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "unstablespring"
+	file = "unstablespring.ogg"
+	volume = 0.85
+}
+
+music = {
+	name = "jap_singthespring"
+	file = "jap_singthespring.ogg"
+	volume = 0.80
+}
+
+music = {
+	name = "There_far_beyond_the_river"
+	file = "There_far_beyond_the_river.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "A_new_day"
+	file = "A_new_day.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "moscowbeijing"
+	file = "moscowbeijing.ogg"
+	volume = 0.65
+}
+
+music = {
+	name = "Workers_of_all_countries"
+	file = "Workers_of_all_countries.ogg"
+	volume = 1.95
+}
+
+music = {
+	name = "reburn_pacific"
+	file = "reburn_pacific.ogg"
+	volume = 0.70
+}

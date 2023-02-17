@@ -1,0 +1,240 @@
+# Songs from the esteemed metal band Sabaton
+# Five song to enjoy while playing Hearts of Iron IV
+
+music_station = "A_cjc_musicstation"
+
+music = {
+	song = "call_of_comintern"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "caoyuanacaoyuan"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "prj_centre_pooryushuka"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "partisans_song"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "pooryushuka_gakusei"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "banner_of_marx_lenin"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "soviet_submarine"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "battleisgoing"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "internationale_japanese"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "pooryushuka_japanese"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "katyusha_japanese"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "red_army_strongest_japanese"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "Komsomol_Song_PRC"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "tokyo_beijing_1965"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "warsaw_song_japanese"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "the_most_pretty_future_road"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "lostdream"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "susumesuru_shakaishugi"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "unitedfront"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "unstablespring"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "jap_singthespring"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "There_far_beyond_the_river"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "A_new_day"
+	chance = {
+		modifier = {
+			factor = 1
+		}
+	}
+}
+
+music = {
+	song = "moscowbeijing"
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}
+}
+
+music = {
+	song = "Workers_of_all_countries"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
+
+music = {
+	song = "reburn_pacific"
+	
+	chance = {
+		modifier = {
+			factor = 1
+		}		
+	}	
+}
