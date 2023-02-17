@@ -1,0 +1,12 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_cjc_bop_poor"
+		texturefile = "gfx/interface/bop/cjc_bop_poor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_cjc_bop_rich"
+		texturefile = "gfx/interface/bop/cjc_bop_rich.dds"
+	}
+}

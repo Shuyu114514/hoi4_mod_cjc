@@ -1,0 +1,50 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_idea_extreme_unstable_future"
+		texturefile = "gfx/interface/ideas/extreme_unstable_future.png"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_idea_generic_army"
+		texturefile = "gfx/interface/ideas/jap_idea_generic_army.png"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_idea_re_education"
+		texturefile = "gfx/interface/ideas/jap_idea_re_education.png"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_idea_red_army"
+		texturefile = "gfx/interface/ideas/jap_idea_red_army.png"
+	}
+	spriteType = {
+		name = "GFX_idea_moscow_leadership"
+		texturefile = "gfx/interface/ideas/moscow_leadership.png"
+	}
+	spriteType = {
+		name = "GFX_idea_unstable_future"
+		texturefile = "gfx/interface/ideas/unstable_future.png"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_idea_collective_agriculture"
+		texturefile = "gfx/interface/ideas/jap_idea_collective_agriculture.png"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_idea_economy_collapse"
+		texturefile = "gfx/interface/ideas/jap_idea_economy_collapse.png"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_idea_people_airforce"
+		texturefile = "gfx/interface/ideas/jap_idea_people_airforce.png"
+	}
+	spriteType = {
+		name = "GFX_idea_jap_idea_television"
+		texturefile = "gfx/interface/ideas/jap_idea_television.png"
+	}
+	spriteType = {
+		name = "GFX_idea_cjc_generic_communism_1"
+		texturefile = "gfx/interface/ideas/cjc_generic_communism_1.png"
+	}
+	spriteType = {
+		name = "GFX_idea_cjc_idea_five_years_plan_1"
+		texturefile = "gfx/interface/ideas/cjc_idea_five_years_plan_1.png"
+	}
+}

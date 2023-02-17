@@ -1,0 +1,229 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_news_cjc_anti_war"
+		texturefile = "gfx/event_pictures/news_cjc_anti_war.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_reburn_pacific"
+		texturefile = "gfx/event_pictures/news_cjc_reburn_pacific.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_generic_1"
+		texturefile = "gfx/event_pictures/news_cjc_generic_1.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_generic_2"
+		texturefile = "gfx/event_pictures/news_cjc_generic_2.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_generic_3"
+		texturefile = "gfx/event_pictures/news_cjc_generic_3.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_generic_4"
+		texturefile = "gfx/event_pictures/news_cjc_generic_4.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_generic_5"
+		texturefile = "gfx/event_pictures/news_cjc_generic_5.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_generic_6"
+		texturefile = "gfx/event_pictures/news_cjc_generic_6.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_generic_7"
+		texturefile = "gfx/event_pictures/news_cjc_generic_7.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_generic_8"
+		texturefile = "gfx/event_pictures/news_cjc_generic_8.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_generic_9"
+		texturefile = "gfx/event_pictures/news_cjc_generic_9.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_redflag_paper"
+		texturefile = "gfx/event_pictures/news_cjc_redflag_paper.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_release_communists"
+		texturefile = "gfx/event_pictures/news_cjc_release_communists.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_marx_1"
+		texturefile = "gfx/event_pictures/news_cjc_marx_1.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_prc_liberate_shanghai"
+		texturefile = "gfx/event_pictures/news_cjc_prc_liberate_shanghai.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_prc_stalin_1"
+		texturefile = "gfx/event_pictures/news_cjc_prc_stalin_1.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_wolfenstein_1"
+		texturefile = "gfx/event_pictures/news_cjc_wolfenstein_1.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_minsk_ruin_1"
+		texturefile = "gfx/event_pictures/news_cjc_minsk_ruin_1.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_kiev_ruin_1"
+		texturefile = "gfx/event_pictures/news_cjc_kiev_ruin_1.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_auschwitz_1"
+		texturefile = "gfx/event_pictures/news_cjc_auschwitz_1.dds"
+	}
+	spriteType = {
+		name = "GFX_news_cjc_japanese_anime_1"
+		texturefile = "gfx/event_pictures/news_cjc_japanese_anime_1.dds"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_report_cjc_anti_war"
+		texturefile = "gfx/event_pictures/report_cjc_anti_war.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_generic_1"
+		texturefile = "gfx/event_pictures/report_cjc_generic_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_generic_2"
+		texturefile = "gfx/event_pictures/report_cjc_generic_2.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_generic_3"
+		texturefile = "gfx/event_pictures/report_cjc_generic_3.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_generic_4"
+		texturefile = "gfx/event_pictures/report_cjc_generic_4.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_generic_5"
+		texturefile = "gfx/event_pictures/report_cjc_generic_5.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_redflag_paper"
+		texturefile = "gfx/event_pictures/report_cjc_redflag_paper.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_break_chains_1"
+		texturefile = "gfx/event_pictures/report_cjc_break_chains_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_marx_1"
+		texturefile = "gfx/event_pictures/report_cjc_marx_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_red_women_1"
+		texturefile = "gfx/event_pictures/report_cjc_red_women_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_soviet_1"
+		texturefile = "gfx/event_pictures/report_cjc_soviet_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_soviet_2"
+		texturefile = "gfx/event_pictures/report_cjc_soviet_2.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_soviet_3"
+		texturefile = "gfx/event_pictures/report_cjc_soviet_3.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_lenin_1"
+		texturefile = "gfx/event_pictures/report_cjc_lenin_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_lenin_2"
+		texturefile = "gfx/event_pictures/report_cjc_lenin_2.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_lenin_3"
+		texturefile = "gfx/event_pictures/report_cjc_lenin_3.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_red_jap_1"
+		texturefile = "gfx/event_pictures/report_cjc_red_jap_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_red_jap_2"
+		texturefile = "gfx/event_pictures/report_cjc_red_jap_2.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_red_jap_3"
+		texturefile = "gfx/event_pictures/report_cjc_red_jap_3.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_maozedong_1"
+		texturefile = "gfx/event_pictures/report_cjc_maozedong_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_poster_0"
+		texturefile = "gfx/event_pictures/report_cjc_poster_0.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_poster_1"
+		texturefile = "gfx/event_pictures/report_cjc_poster_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_poster_2"
+		texturefile = "gfx/event_pictures/report_cjc_poster_2.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_poster_3"
+		texturefile = "gfx/event_pictures/report_cjc_poster_3.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_poster_4"
+		texturefile = "gfx/event_pictures/report_cjc_poster_4.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_navy_1"
+		texturefile = "gfx/event_pictures/report_cjc_navy_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_navy_2"
+		texturefile = "gfx/event_pictures/report_cjc_navy_2.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_navy_3"
+		texturefile = "gfx/event_pictures/report_cjc_navy_3.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_full_scale_navy_1"
+		texturefile = "gfx/event_pictures/report_cjc_full_scale_navy_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_cjc_1"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_cjc_1.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_cjc_2"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_cjc_2.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_cjc_3"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_cjc_3.dds"
+	}
+	spriteType = {
+		name = "GFX_report_Alice_Casillia_cjc_4"
+		texturefile = "gfx/event_pictures/report_Alice_Casillia_cjc_4.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_start_setting_cn"
+		texturefile = "gfx/event_pictures/report_cjc_start_setting_cn.dds"
+	}
+	spriteType = {
+		name = "GFX_report_cjc_start_setting_en"
+		texturefile = "gfx/event_pictures/report_cjc_start_setting_en.dds"
+	}
+}

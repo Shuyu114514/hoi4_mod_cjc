@@ -1,0 +1,138 @@
+spriteTypes = {	
+
+	spriteType = {
+			name = "GFX_hyaku_gun"
+			texturefile = "gfx/interface/goals/hyaku_gun.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_com_road"
+			texturefile = "gfx/interface/goals/jap_com_road.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_follow_moscow"
+			texturefile = "gfx/interface/goals/jap_follow_moscow.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_red_army"
+			texturefile = "gfx/interface/goals/jap_red_army.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_red_navy"
+			texturefile = "gfx/interface/goals/jap_red_navy.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_soil_revolution"
+			texturefile = "gfx/interface/goals/jap_soil_revolution.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_support_prc"
+			texturefile = "gfx/interface/goals/jap_support_prc.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_no_emperor"
+			texturefile = "gfx/interface/goals/jap_no_emperor.png"
+	}
+	
+	spriteType = {
+			name = "GFX_red_zero"
+			texturefile = "gfx/interface/goals/red_zero.png"
+	}
+	
+	spriteType = {
+			name = "GFX_tokuda"
+			texturefile = "gfx/interface/goals/tokuda.png"
+	}
+	
+	spriteType = {
+			name = "GFX_tokyo_uni"
+			texturefile = "gfx/interface/goals/tokyo_uni.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_united_mine_icon"
+			texturefile = "gfx/interface/goals/jap_united_mine_icon.png"
+	}
+	
+	spriteType = {
+			name = "GFX_cjc_great_warship"
+			texturefile = "gfx/interface/goals/cjc_great_warship.png"
+	}
+	
+	spriteType = {
+			name = "GFX_international_bridge_icon"
+			texturefile = "gfx/interface/goals/international_bridge_icon.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_amry_battle"
+			texturefile = "gfx/interface/goals/jap_amry_battle.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_focus_re_education"
+			texturefile = "gfx/interface/goals/jap_focus_re_education.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_free_south_east"
+			texturefile = "gfx/interface/goals/jap_free_south_east.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_railway"
+			texturefile = "gfx/interface/goals/jap_railway.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_supreme_torpedo"
+			texturefile = "gfx/interface/goals/jap_supreme_torpedo.png"
+	}
+	
+	spriteType = {
+			name = "GFX_jap_tech_exchange_help"
+			texturefile = "gfx/interface/goals/jap_tech_exchange_help.png"
+	}
+	
+	spriteType = {
+			name = "GFX_special_warfare_icon"
+			texturefile = "gfx/interface/goals/special_warfare_icon.png"
+	}
+	
+	spriteType = {
+			name = "GFX_kr_air_red"
+			texturefile = "gfx/interface/goals/kr_air_red.png"
+	}
+	
+	spriteType = {
+			name = "GFX_kr_construction"
+			texturefile = "gfx/interface/goals/kr_construction.png"
+	}
+	
+	spriteType = {
+			name = "GFX_kr_generic_market_socialism"
+			texturefile = "gfx/interface/goals/kr_generic_market_socialism.png"
+	}
+	
+	spriteType = {
+			name = "GFX_kr_generic_railway_construction"
+			texturefile = "gfx/interface/goals/kr_generic_railway_construction.png"
+	}
+	
+	spriteType = {
+			name = "GFX_kr_generic_socialist_army"
+			texturefile = "gfx/interface/goals/kr_generic_socialist_army.png"
+	}
+	
+	spriteType = {
+			name = "GFX_kr_generic_workers_democracy"
+			texturefile = "gfx/interface/goals/kr_generic_workers_democracy.png"
+	}
+
+}
