@@ -1,0 +1,4983 @@
+add_namespace = cjc_common
+
+country_event = {
+	id = cjc_common.1
+	title = cjc_common.1.t
+	desc = cjc_common.1.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.1.a
+		
+	}
+	
+}
+
+country_event = {
+	id = cjc_common.2
+	title = cjc_common.2.t
+	desc = cjc_common.2.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.2.a
+		
+	}
+	
+}
+
+country_event = { #阵营合并2
+	id = cjc_common.3
+	title = cjc_common.3.t
+	desc = cjc_common.3.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.3.a
+		every_country = {
+			limit = {
+				has_government = communism
+				not = {
+					tag = PRC
+					tag = JAP
+					is_puppet_of = JAP
+					is_puppet_of = PRC
+				}
+				or = {
+					is_in_faction_with = JAP
+					is_in_faction_with = PRC
+				}
+			}
+			SOV = { add_to_faction = PREV }
+		}
+		SOV = { add_to_faction = PRC }
+		SOV = { add_to_faction = JAP }
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.303 days = 1 } }
+			JAP = { country_event = { id = cjc_common.303 days = 1 } }
+			news_event = { id = cjc_news.4 days = 1 }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = cjc_common.3.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.304 days = 1 } }
+			JAP = { country_event = { id = cjc_common.304 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #同意阵营合并
+	id = cjc_common.301
+	title = cjc_common.301.t
+	desc = cjc_common.301.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.301.a
+		
+	}
+	
+}
+
+country_event = { #拒绝阵营合并
+	id = cjc_common.302
+	title = cjc_common.302.t
+	desc = cjc_common.302.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.302.a
+		
+	}
+	
+}
+
+country_event = { #苏联同意
+	id = cjc_common.303
+	title = cjc_common.303.t
+	desc = cjc_common.303.d
+	picture = GFX_report_event_stalin_propaganda
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.303.a
+		
+	}
+	
+}
+
+country_event = { #苏联拒绝
+	id = cjc_common.304
+	title = cjc_common.304.t
+	desc = cjc_common.304.d
+	picture = GFX_report_event_stalin_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.304.a
+		
+	}
+	
+}
+
+country_event = { #AI自动阵营合并
+	id = cjc_common.4
+	title = cjc_common.4.t
+	desc = cjc_common.4.d
+	picture = GFX_report_event_generic_read_write
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_government = communism
+		is_faction_leader = yes
+		is_ai = no
+		PRC = { 
+			is_ai = yes 
+			has_government = communism
+			num_of_factories > 160
+		}
+		JAP = { 
+			is_ai = yes 
+			has_government = communism
+			num_of_factories > 140
+		}
+		date > 1942.1.1
+	
+	}
+	
+	option = {
+		name = cjc_common.4.a
+		every_country = {
+			limit = {
+				has_government = communism
+				not = {
+					tag = PRC
+					tag = JAP
+					is_puppet_of = JAP
+					is_puppet_of = PRC
+				}
+				or = {
+					is_in_faction_with = JAP
+					is_in_faction_with = PRC
+				}
+			}
+			SOV = { add_to_faction = PREV }
+		}
+		SOV = { add_to_faction = PRC }
+		SOV = { add_to_faction = JAP }
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.303 days = 1 } }
+			JAP = { country_event = { id = cjc_common.303 days = 1 } }
+			news_event = { id = cjc_news.4 days = 1 }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = cjc_common.4.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.304 days = 1 } }
+			JAP = { country_event = { id = cjc_common.304 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #AI自动阵营合并2
+	id = cjc_common.401
+	title = cjc_common.401.t
+	desc = cjc_common.401.d
+	picture = GFX_report_event_generic_read_write
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_government = communism
+		is_faction_leader = yes
+		is_ai = yes
+		PRC = { 
+			is_ai = yes 
+			has_government = communism
+			num_of_factories > 160
+		}
+		JAP = { 
+			is_ai = yes 
+			has_government = communism
+			num_of_factories > 140
+		}
+		date > 1942.1.1
+		or = {
+			date > 1942.8.1
+			SOV = { surrender_progress > 0.35 }
+		}
+	}
+	
+	option = {
+		name = cjc_common.401.a
+		every_country = {
+			limit = {
+				has_government = communism
+				not = {
+					tag = PRC
+					tag = JAP
+					is_puppet_of = JAP
+					is_puppet_of = PRC
+				}
+				or = {
+					is_in_faction_with = JAP
+					is_in_faction_with = PRC
+				}
+			}
+			SOV = { add_to_faction = PREV }
+		}
+		SOV = { add_to_faction = PRC }
+		SOV = { add_to_faction = JAP }
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.303 days = 1 } }
+			JAP = { country_event = { id = cjc_common.303 days = 1 } }
+			news_event = { id = cjc_news.4 days = 1 }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+}
+
+country_event = { #德国闪电战
+	id = cjc_common.5
+	title = cjc_common.5.t
+	desc = cjc_common.5.d
+	picture = GFX_report_event_generic_read_write
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		date > 1939.1.1
+	
+	}
+	
+	option = {
+		name = cjc_common.5.a
+		add_ideas = GER_lightningwar_creator
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #德国AI对玩家苏联巴巴罗萨
+	id = cjc_common.6
+	title = cjc_common.6.t
+	desc = cjc_common.6.d
+	picture = GFX_report_event_generic_read_write
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_war_with = SOV
+		SOV = { is_ai = no }
+	}
+	
+	option = {
+		name = cjc_common.6.a
+		add_manpower = 1500000
+		army_experience = 100
+		air_experience = 100
+		navy_experience = 100
+		add_political_power = 150
+		add_equipment_to_stockpile = { type = anti_tank_equipment amount = 2000 }
+		add_equipment_to_stockpile = { type = anti_air_equipment amount = 2000 }
+		add_equipment_to_stockpile = { type = light_tank_chassis amount = 1000 }
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 4000 }
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 4000 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 50000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 3000 }
+		if = {
+			limit = {
+				has_tech = advanced_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 3000 }
+		}
+		else_if = {
+			limit = {
+				has_tech = improved_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 3000 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 3000 }
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #国际共产党大会
+	id = cjc_common.7
+	title = cjc_common.7.t
+	desc = cjc_common.7.d
+	picture = GFX_report_cjc_marx_1 #GFX_report_event_stalin_propaganda
+	
+	fire_only_once = no
+	
+	trigger = {
+		has_government = communism
+		date > 1940.1.1
+		JAP = {
+			has_government = communism
+		}
+		not = {
+			has_country_flag = world_workers_meeting
+		}
+	}
+	
+	option = {
+		name = cjc_common.7.a
+		add_political_power = -5
+		add_stability = 0.01
+		add_war_support = 0.01
+		country_event = { id = cjc_common.701 days = 5 }
+		set_country_flag = world_workers_meeting
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.7.b
+		add_war_support = -0.01
+		set_country_flag = world_workers_meeting
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #大会事件一，生产资料完全公有化
+	id = cjc_common.701
+	title = cjc_common.701.t
+	desc = cjc_common.701.d
+	picture = GFX_report_cjc_break_chains_1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.701.a
+		country_event = { id = cjc_common.702 days = 3 }
+		add_political_power = -15
+		add_stability = 0.03
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.701.b
+		country_event = { id = cjc_common.702 days = 3 }
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #大会事件二，各种族，民族以及各类型少数群体平权
+	id = cjc_common.702
+	title = cjc_common.702.t
+	desc = cjc_common.702.d
+	picture = GFX_report_cjc_red_women_1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.702.a
+		country_event = { id = cjc_common.703 days = 3 }
+		add_political_power = -25
+		add_ideas = CJC_human_rights_equality
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.702.b
+		country_event = { id = cjc_common.703 days = 3 }
+		add_stability = -0.03
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #大会事件三，反法西斯统一阵线
+	id = cjc_common.703
+	title = cjc_common.703.t
+	desc = cjc_common.703.d
+	picture = GFX_report_cjc_soviet_1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.703.a
+		country_event = { id = cjc_common.704 days = 4 }
+		add_political_power = 20
+		add_war_support = 0.05
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.703.b
+		country_event = { id = cjc_common.704 days = 4 }
+		add_political_power = -50
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #大会闭幕
+	id = cjc_common.704
+	title = cjc_common.704.t
+	desc = cjc_common.704.d
+	picture = GFX_report_cjc_redflag_paper
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.704.a
+		add_political_power = 50
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #美国干涉
+	id = cjc_common.8
+	title = cjc_common.8.t
+	desc = cjc_common.8.d
+	picture = GFX_report_event_generic_read_write
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.8.a
+		add_political_power = -80
+		add_manpower = -40000
+		add_timed_idea = {
+			idea = USA_support_chi_anti_com
+			days = 240
+		}
+		hidden_effect = {
+			news_event = { id = cjc_news.6 days = 3 random_days = 2 }
+		}
+		CHI = { country_event = { id = cjc_common.801 days = 1 } }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.8.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #美国干涉2
+	id = cjc_common.801
+	title = cjc_common.801.t
+	desc = cjc_common.801.d
+	picture = GFX_report_event_generic_read_write
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.801.a
+		add_political_power = 150
+		if = {
+			limit = {
+				not = {
+					has_global_flag = cjc_im_freshman_flag
+				}
+				or = {
+					JAP = { is_ai = no }
+					PRC = { is_ai = no }
+				}
+			}
+			army_experience = 120
+		}
+		add_ideas = CHI_usa_mili_support
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 1400 }
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 1500 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 15000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 1000 }
+		if = {
+			limit = { has_idea = CHI_army_corruption_1 }
+			swap_ideas = {
+				remove_idea = CHI_army_corruption_1
+				add_idea = CHI_army_corruption_2
+			}
+		}
+		else_if = {
+			limit = { has_idea = CHI_army_corruption_2 }
+			swap_ideas = {
+				remove_idea = CHI_army_corruption_2
+				add_idea = CHI_army_corruption_3
+			}
+		}
+		else_if = {
+			limit = { has_idea = CHI_army_corruption_3 }
+			remove_ideas = CHI_army_corruption_3
+		}
+		hidden_effect = {
+			division_template = {
+				name = "USA Volunteer"
+				is_locked = yes
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					artillery_brigade = { x = 2 y = 1 }
+					artillery_brigade = { x = 2 y = 2 }
+					artillery_brigade = { x = 2 y = 3 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+					recon = { x = 0 y = 2 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 596 }
+				create_unit = {
+					division = "name = \"USA Volunteer1\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer2\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer3\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer4\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer5\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer6\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer7\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer8\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer9\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer10\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer11\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer12\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer13\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer14\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer15\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+				create_unit = {
+					division = "name = \"USA Volunteer16\" division_template = \"USA Volunteer\" start_experience_factor = 0.1" 
+					owner = CHI
+				}
+			}
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #开局介绍
+	id = cjc_common.9
+	title = cjc_common.9.t
+	desc = cjc_common.9.d
+	picture = GFX_report_cjc_break_chains_1
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.9.a
+		set_country_flag = starting_introduction
+		hidden_effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = cjc_ger_panzer_buff_rule
+						option = cjc_ger_panzer_buff_on_rule
+					}
+				}
+				country_event = { id = cjc_common.26 }
+			}
+			if = {
+				limit = {
+					tag = JAP
+					is_ai = no
+				}
+				country_event = { id = cjc_common.901 }
+			}
+			if = {
+				limit = {
+					tag = RAJ
+					has_dlc = "Together for Victory"
+					not = {
+						has_idea = RAJ_agrarian_society
+					}
+				}
+				RAJ = {
+					remove_dynamic_modifier = { modifier = RAJ_agrarian_society_dynamic }
+					add_ideas = RAJ_agrarian_society
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = cjc_easter_egg_rule
+						option = cjc_easter_egg_rule_on
+					}
+				}
+				country_event = { id = cjc_common.46 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = cjc_new_axis_rule
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = USA_request_middle_america_rule
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = USA_cjc_join_eng_allies_rule
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = cjc_ger_etra_manpower_rule
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = cjc_ger_panzer_buff_rule
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = cjc_easter_egg_rule
+						option = DEFAULT
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = cjc_english_version_flag
+					}
+					country_event = { id = cjc_common.907 }
+				}
+				else = {
+					country_event = { id = cjc_common.906 }
+				}
+			}
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.9.b
+		custom_effect_tooltip = cjc_im_freshman_thus_weak_tt
+		set_country_flag = starting_introduction
+		set_global_flag = cjc_im_freshman_flag
+		hidden_effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = cjc_ger_panzer_buff_rule
+						option = cjc_ger_panzer_buff_on_rule
+					}
+				}
+				country_event = { id = cjc_common.26 }
+			}
+			if = {
+				limit = {
+					tag = JAP
+					is_ai = no
+				}
+				country_event = { id = cjc_common.901 }
+			}
+			if = {
+				limit = {
+					tag = RAJ
+					has_dlc = "Together for Victory"
+					not = {
+						has_idea = RAJ_agrarian_society
+					}
+				}
+				RAJ = {
+					remove_dynamic_modifier = { modifier = RAJ_agrarian_society_dynamic }
+					add_ideas = RAJ_agrarian_society
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = cjc_easter_egg_rule
+						option = cjc_easter_egg_rule_on
+					}
+				}
+				country_event = { id = cjc_common.46 }
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = cjc_new_axis_rule
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = USA_request_middle_america_rule
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = USA_cjc_join_eng_allies_rule
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = cjc_ger_etra_manpower_rule
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = cjc_ger_panzer_buff_rule
+						option = DEFAULT
+					}
+					has_game_rule = {
+						rule = cjc_easter_egg_rule
+						option = DEFAULT
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = cjc_english_version_flag
+					}
+					country_event = { id = cjc_common.907 }
+				}
+				else = {
+					country_event = { id = cjc_common.906 }
+				}
+			}
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	
+}
+
+country_event = { #开局介绍战术
+	id = cjc_common.901
+	title = cjc_common.901.t
+	desc = cjc_common.901.d
+	picture = GFX_report_event_soviet_tanks
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.901.a
+		add_political_power = 5
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = { #中共开局将领
+	id = cjc_common.902
+	title = cjc_common.902.t
+	desc = cjc_common.902.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.902.a
+		set_country_flag = cjc_prc_recruit_extra_generals_flag
+		create_corps_commander = {
+			name = "Zuo Quan"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_zuo_quan.dds"
+			traits = { infantry_officer trait_mountaineer career_officer PRC_communist }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+		}
+
+		create_corps_commander = {
+			name = "Liu Bocheng"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_liu_bocheng.dds"
+			traits = { trickster armor_officer PRC_communist }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+		}
+
+		create_corps_commander = {
+			name = "Nie Rongzhen"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_nie_rongzhen.dds"
+			traits = { infantry_officer trait_mountaineer trait_reckless }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 4
+		}
+
+		create_corps_commander = {
+			name = "Ye Jianying"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_ye_jianying.dds"
+			traits = { infantry_officer career_officer PRC_communist }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		
+		create_corps_commander = {
+			name = "Xu Haidong"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_xu_haidong.dds"
+			traits = { infantry_officer trait_mountaineer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+
+		create_corps_commander = {
+			name = "Zhang Yunyi"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_zhang_yunyi.dds"
+			traits = { infantry_officer trait_mountaineer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 4
+		}
+
+		create_corps_commander = {
+			name = "Luo Ruiqing"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_luo_ruiqing.dds"
+			traits = { offensive_doctrine armor_officer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+		}
+
+		create_corps_commander = {
+			name = "Xu Guangda"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_xu_guangda.dds"
+			traits = { infantry_officer trait_mountaineer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+		}
+
+		create_corps_commander = {
+			name = "Yang Chengwu"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_yang_chengwu.dds"
+			traits = { infantry_officer trait_mountaineer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+
+		create_corps_commander = {
+			name = "Ye Ting"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_ye_ting.dds"
+			traits = { infantry_officer harsh_leader career_officer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 3
+		}
+
+		create_navy_leader = {
+			name = "Xiao Jinguang"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_xiao_jinguang.dds"
+			traits = { navy_career_officer green_water_expert }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+
+		create_navy_leader = {
+			name = "Liu Huaqing"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_liu_huaqing.dds"
+			traits = { navy_career_officer green_water_expert }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+
+		create_navy_leader = {
+			name = "Zhang Aiping"
+			portrait_path = "gfx/leaders/PRC/GFX_portrait_prc_zhang_aiping.dds"
+			traits = { navy_career_officer green_water_expert }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 4
+			coordination_skill = 2
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.902.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	
+}
+
+country_event = { #bug说明
+	id = cjc_common.903
+	title = cjc_common.903.t
+	desc = cjc_common.903.d
+	
+	fire_only_once = no
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.903.a
+		add_political_power = 10
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.903.b
+		army_experience = 5
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #bug说明
+	id = cjc_common.904
+	title = cjc_common.904.t
+	desc = cjc_common.904.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.904.a
+		add_political_power = 5
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #6.23更新说明
+	id = cjc_common.905
+	title = cjc_common.905.t
+	desc = cjc_common.905.d
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.905.a
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #提示自定义游戏设置
+	id = cjc_common.906
+	title = cjc_common.906.t
+	desc = cjc_common.906.d
+	picture = GFX_report_cjc_start_setting_cn
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.906.a
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #提示自定义游戏设置 - 英语
+	id = cjc_common.907
+	title = cjc_common.907.t
+	desc = cjc_common.907.d
+	picture = GFX_report_cjc_start_setting_en
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.907.a
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #美国加入轴心抗苏
+	id = cjc_common.11
+	title = cjc_common.11.t
+	desc = cjc_common.11.d
+	picture = GFX_report_event_generic_read_write
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		not = {
+			has_government = communism
+		}
+		JAP = {
+			is_in_faction_with = SOV
+			has_war_with = GER
+		}
+		PRC = {
+			is_in_faction_with = SOV
+			has_war_with = GER
+		}
+		SOV = {
+			has_war_with = GER
+		}
+		
+		not = {
+			and = {
+				GER = { has_government = communism }
+				has_war_with = SOV
+			}
+		}
+		
+		SOV = { surrender_progress < 0.05 }
+		GER = { surrender_progress > 0.22 }
+		
+		is_ai = yes
+		date > 1942.11.1
+	
+	}
+	
+	option = {
+		name = cjc_common.11.a
+		USA = {
+			declare_war_on = {
+				type = annex_everything
+				target = SOV
+			}
+		}
+		
+		if = {
+			limit = {
+				not = { has_war_with = ENG }
+			}
+			diplomatic_relation = {
+				country = ENG
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+		if = {
+			limit = {
+				not = { has_war_with = GER }
+			}
+			diplomatic_relation = {
+				country = GER
+				relation = non_aggression_pact
+				active = yes
+			}
+			diplomatic_relation = {
+				country = GER
+				relation = military_access
+				active = yes
+			}
+			GER = {
+				diplomatic_relation = {
+					country = USA
+					relation = military_access
+					active = yes
+				}
+			}
+		}
+		
+		hidden_effect = {
+			news_event = { id = cjc_news.9 days = 1 }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+}
+
+country_event = { #美国加入苏联抗轴心
+	id = cjc_common.12
+	title = cjc_common.12.t
+	desc = cjc_common.12.d
+	picture = GFX_report_event_generic_read_write
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		not = {
+			has_government = fascism
+		}
+		JAP = {
+			is_in_faction_with = SOV
+			has_war_with = GER
+		}
+		PRC = {
+			is_in_faction_with = SOV
+			has_war_with = GER
+		}
+		SOV = {
+			has_war_with = GER
+		}
+		
+		not = {
+			and = {
+				has_war_with = GER
+				GER = { has_government = communism }
+				has_war_with = SOV
+			}
+		}
+		
+		SOV = { surrender_progress > 0.90 }
+		GER = { surrender_progress < 0.05 }
+		
+		is_ai = yes
+		date > 1943.1.1
+	
+	}
+	
+	option = {
+		name = cjc_common.12.a
+		USA = {
+			declare_war_on = {
+				type = annex_everything
+				target = GER
+			}
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+}
+
+country_event = { #玩家的重点科研决议组
+	id = cjc_common.13
+	title = cjc_common.13.t
+	desc = cjc_common.13.d
+	picture = GFX_report_event_generic_read_write
+
+	fire_only_once = no
+
+	trigger = {
+		has_government = communism
+		
+		not = {
+			or = {
+				tag = PRC
+				tag = JAP
+			}
+			has_war_with = JAP
+			has_country_flag = cjc_national_research_project
+		}
+		
+		is_ai = no
+		date > 1941.7.1
+	
+	}
+	
+	option = {
+		name = cjc_common.13.a
+		unlock_decision_category_tooltip = cjc_research_project
+		set_country_flag = cjc_national_research_project
+		ai_chance = {
+		factor = 10
+		}
+	}
+}
+
+country_event = { #英共飞机科技
+	id = cjc_common.14
+	title = cjc_common.14.t
+	desc = cjc_common.14.d
+	picture = GFX_report_event_generic_bombers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		has_government = communism
+		has_war_with = GER
+		GER = {
+			not = { has_government = communism }
+		}
+		date > 1939.1.1
+	}
+	
+	option = {
+		name = cjc_common.14.a
+		add_ideas = ENG_cjc_jet_production
+		add_tech_bonus = {
+			name = ENG_emergency_jet_production
+			bonus = 1
+			uses = 1
+			category = air_equipment
+		}
+		
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #中日苏经济一体化
+	id = cjc_common.15
+	title = cjc_common.15.t
+	desc = cjc_common.15.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.15.a
+		add_ideas = united_economy_system3
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.1501 days = 1 } }
+			JAP = { country_event = { id = cjc_common.1501 days = 1 } }
+		}
+		custom_effect_tooltip = every_comrades_will_get_this_idea_tt
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = cjc_common.15.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #中日苏经济一体化
+	id = cjc_common.1501
+	title = cjc_common.1501.t
+	desc = cjc_common.1501.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.1501.a
+		swap_ideas = {
+			remove_idea = united_economy_system2
+			add_idea = united_economy_system3
+		}
+		custom_effect_tooltip = every_comrades_will_get_this_idea_tt
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #中日苏经济一体化扩散全世界
+	id = cjc_common.1502
+	title = cjc_common.1502.t
+	desc = cjc_common.1502.d
+
+	fire_only_once = no
+
+	trigger = {
+		has_government = communism
+		and = {
+			is_in_faction_with = JAP
+			is_in_faction_with = PRC
+			is_in_faction_with = SOV
+		}
+		JAP = { has_idea = united_economy_system3 }
+		PRC = { has_idea = united_economy_system3 }
+		SOV = { has_idea = united_economy_system3 }
+		not = {
+			tag = JAP
+			tag = PRC
+			tag = SOV
+		}
+		not = {
+			has_idea = united_economy_system3
+		}
+		not = {
+			has_country_flag = flag_got_united_economy_system
+		}
+	}
+	
+	option = {
+		name = cjc_common.1502.a
+		add_ideas = united_economy_system3
+		set_country_flag = flag_got_united_economy_system
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = cjc_common.1502.b
+		set_country_flag = flag_got_united_economy_system
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #紧急建设
+	id = cjc_common.16
+	title = cjc_common.16.t
+	desc = cjc_common.16.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.16.a
+		unlock_decision_category_tooltip = SOV_emergency_manufacture
+		set_country_flag = cjc_emergency_manufacture_for_sov
+		if = {
+			limit = {
+				and = {
+					is_ai = yes
+				}
+			}
+			add_political_power = 150
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #紧急建设
+	id = cjc_common.1601
+	title = cjc_common.1601.t
+	desc = cjc_common.1601.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.1601.a
+		unlock_decision_category_tooltip = SOV_emergency_manufacture
+		set_country_flag = cjc_emergency_manufacture_for_sov
+		if = {
+			limit = {
+				and = {
+					is_ai = yes
+				}
+			}
+			add_political_power = 150
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #紧急建设
+	id = cjc_common.1602
+	title = cjc_common.1602.t
+	desc = cjc_common.1602.d
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.1602.a
+		unlock_decision_category_tooltip = SOV_emergency_manufacture
+		set_country_flag = cjc_emergency_manufacture_for_sov
+		if = {
+			limit = {
+				and = {
+					is_ai = yes
+				}
+			}
+			add_political_power = 150
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #为什么？？！
+	id = cjc_common.17
+	title = cjc_common.17.t
+	desc = cjc_common.17.d
+
+	fire_only_once = yes
+
+	trigger = {
+		has_government = communism
+		has_country_flag = cjc_this_is_abandoned_currently_flag #临时废弃
+		is_ai = no
+		has_civil_war = no
+		or = {
+			tag = JAP
+			tag = PRC
+			tag = SOV
+		}
+		or = {
+			and = {
+				has_offensive_war_with = PRC #has_war_with
+				PRC = { 
+					has_government = communism 
+					is_ai = yes
+				}
+			}
+			and = {
+				has_offensive_war_with = JAP
+				JAP = { 
+					has_government = communism 
+					is_ai = yes
+				}
+			}
+			and = {
+				has_offensive_war_with = SOV
+				SOV = { 
+					has_government = communism 
+					is_ai = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = cjc_common.17.a
+		add_political_power = -150
+		add_stability = -0.2
+		add_war_support = -0.3
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #pp补偿
+	id = cjc_common.18
+	title = cjc_common.18.t
+	desc = cjc_common.18.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		has_government = communism
+		date > 1943.4.1
+		is_ai = yes
+	}
+	
+	option = {
+		name = cjc_common.18.a
+		add_political_power = 180
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #pp补偿
+	id = cjc_common.1801
+	title = cjc_common.1801.t
+	desc = cjc_common.1801.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = PRC
+		has_government = communism
+		date > 1943.4.1
+		is_ai = yes
+	}
+	
+	option = {
+		name = cjc_common.1801.a
+		add_political_power = 180
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #pp补偿
+	id = cjc_common.1802
+	title = cjc_common.1802.t
+	desc = cjc_common.1802.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_government = communism
+		date > 1943.4.1
+		is_ai = yes
+	}
+	
+	option = {
+		name = cjc_common.1802.a
+		add_political_power = 180
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #ai中日结盟
+	id = cjc_common.19
+	title = cjc_common.19.t
+	desc = cjc_common.19.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		has_government = communism
+		is_ai = yes
+		has_civil_war = no
+		is_in_faction = no
+		PRC = {
+			is_ai = yes
+			is_faction_leader = yes
+			has_completed_focus = PRC_exploit_the_weak_neighbours
+		}
+	}
+	
+	option = {
+		name = cjc_common.19.a
+		PRC = { add_to_faction = JAP }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #开局陆军经验
+	id = cjc_common.21
+	title = cjc_common.21.t
+	desc = cjc_common.21.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+	}
+	
+	option = {
+		name = cjc_common.21.a
+		army_experience = 10
+		
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #开局陆军经验
+	id = cjc_common.2101
+	title = cjc_common.2101.t
+	desc = cjc_common.2101.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		is_ai = yes
+	}
+	
+	option = {
+		name = cjc_common.2101.a
+		army_experience = 10
+		
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #瑞典加入轴心
+	id = cjc_common.22
+	title = cjc_common.22.t
+	desc = cjc_common.22.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SWE
+		ENG = {
+			is_in_faction_with = GER
+		}
+		GER = {
+			has_government = fascism
+		}
+		not = {
+			has_government = communism
+			has_war_with = GER
+		}
+		is_ai = yes
+		date > 1941.2.1
+	}
+	
+	option = {
+		name = cjc_common.22.a
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.25
+		}
+		add_timed_idea = {
+			idea = SWE_idea_prefer_germany
+			days = 1000
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #瑞典加入轴心
+	id = cjc_common.2201
+	title = cjc_common.2201.t
+	desc = cjc_common.2201.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SWE
+		GER = {
+			has_government = fascism
+			is_ai = yes
+			is_faction_leader = yes
+		}
+		has_government = fascism
+		not = {
+			has_war_with = GER
+			is_in_faction_with = GER
+		}
+		is_ai = yes
+		date > 1942.1.1
+	}
+	
+	option = {
+		name = cjc_common.2201.a
+		GER = { add_to_faction = SWE }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #芬兰加入轴心
+	id = cjc_common.23
+	title = cjc_common.23.t
+	desc = cjc_common.23.d
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FIN
+		GER = {
+			has_government = fascism
+			has_war_with = SOV
+		}
+		SOV = {
+			has_full_control_of_state = 146
+		}
+		not = {
+			has_government = communism
+			has_war_with = GER
+			is_in_faction_with = SOV
+		}
+		is_ai = yes
+		date > 1941.1.1
+	}
+	
+	option = {
+		name = cjc_common.23.a
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.20
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = SOV
+			expire = 0
+		}
+		country_event = { id = cjc_common.2301 days = 60 }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #芬兰加入轴心
+	id = cjc_common.2301
+	title = cjc_common.2301.t
+	desc = cjc_common.2301.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.2301.a
+		
+		if = {
+			limit = {
+				not = {
+					has_war_with = SOV 
+					has_government = communism
+					has_war_with = GER
+					is_in_faction_with = SOV
+				}
+			}
+			FIN = {
+				declare_war_on = {
+					type = annex_everything
+					target = SOV
+				}
+			}
+			
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #反法西斯宣言
+	id = cjc_common.24
+	title = cjc_common.24.t
+	desc = cjc_common.24.d
+	picture = GFX_report_cjc_soviet_1 #GFX_report_event_soviet_tanks
+
+	fire_only_once = no
+
+	trigger = {
+		has_war_with = GER
+		has_government = communism
+		GER = {
+			has_government = fascism
+		}
+		not = {
+			has_country_flag = antifa_claim_event_flag
+		}
+		is_ai = no
+	}
+	
+	option = {
+		name = cjc_common.24.a
+		set_country_flag = antifa_claim_event_flag
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #德国AI无限人力
+	id = cjc_common.25
+	title = cjc_common.25.t
+	desc = cjc_common.25.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.25.a
+		GER = {
+			set_country_flag = ger_ai_ultimate_manpower_event_flag
+		}
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.25.e
+		GER = {
+			add_manpower = 1000000
+			set_country_flag = cjc_ger_more_continuous_manpower_flag
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = cjc_common.25.b
+		GER = {
+			add_manpower = 2000000
+		}
+		custom_effect_tooltip = cjc_mp_will_count_muptiple_times_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = cjc_common.25.c
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #德国AI装甲师
+	id = cjc_common.26
+	title = cjc_common.26.t
+	desc = cjc_common.26.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.26.a
+		GER = {
+			set_country_flag = ger_ai_super_panzer_division_3 #适配试验
+		}
+		custom_effect_tooltip = ger_ai_super_panzer_division_3_tt
+		SOV = {
+			set_country_flag = sov_ai_super_panzer_division_1
+		}
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.26.b
+		GER = {
+			set_country_flag = ger_ai_super_panzer_division_2
+		}
+		custom_effect_tooltip = ger_ai_super_panzer_division_2_tt
+		SOV = {
+			set_country_flag = sov_ai_super_panzer_division_1
+		}
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.26.c
+		GER = {
+			set_country_flag = ger_ai_super_panzer_division_1
+		}
+		custom_effect_tooltip = ger_ai_super_panzer_division_1_tt
+		SOV = {
+			set_country_flag = sov_ai_super_panzer_division_1
+		}
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.26.e
+		custom_effect_tooltip = ger_ai_super_panzer_division_0_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #德国AI装甲师
+	id = cjc_common.2601
+	title = cjc_common.2601.t
+	desc = cjc_common.2601.d
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.2601.a
+		GER = {
+			set_country_flag = ger_ai_super_panzer_division_1_start
+		}
+		if = {
+			limit = {
+				not = { has_tech = basic_medium_tank_chassis }
+			}
+			set_technology = { basic_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = improved_medium_tank_chassis }
+			}
+			set_technology = { improved_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery1 }
+			}
+			set_technology = { artillery1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery2 }
+			}
+			set_technology = { artillery2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery3 }
+			}
+			set_technology = { artillery3 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank1 }
+			}
+			set_technology = { antitank1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank2 }
+			}
+			set_technology = { antitank2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = electronic_mechanical_engineering }
+			}
+			set_technology = { electronic_mechanical_engineering = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = radio }
+			}
+			set_technology = { radio = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = radio_detection }
+			}
+			set_technology = { radio_detection = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = decimetric_radar }
+			}
+			set_technology = { decimetric_radar = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_logistics_company }
+			}
+			set_technology = { tech_logistics_company = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_maintenance_company }
+			}
+			set_technology = { tech_maintenance_company = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_idea = GER_strengthen_for_player_2 }
+			}
+			add_ideas = GER_strengthen_for_player_2
+		}
+		create_equipment_variant = {
+			name = "Panzer IV"
+			type = medium_tank_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_hmg
+				special_type_slot_2 = tank_radio_2
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = wet_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 9
+				tank_nsb_armor_upgrade = 14
+			}
+		}
+		if = {
+			limit = {
+				has_tech = advanced_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 500 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 500 }
+		}
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 3000 }
+		add_manpower = 1200000
+		hidden_effect = {
+			division_template = {
+				name = "Deutsches_Panzer_Division_00"
+				is_locked = yes
+				regiments = {
+					medium_armor = { x = 0 y = 0 }
+					medium_armor = { x = 0 y = 1 }
+					medium_armor = { x = 0 y = 2 }
+					medium_armor = { x = 0 y = 3 }
+					medium_armor = { x = 0 y = 4 }
+					medium_armor = { x = 1 y = 0 }
+					medium_armor = { x = 1 y = 1 }
+					medium_armor = { x = 1 y = 2 }
+					medium_armor = { x = 1 y = 3 }
+					medium_armor = { x = 1 y = 4 }
+					motorized = { x = 2 y = 0 }
+					motorized = { x = 2 y = 1 }
+					motorized = { x = 2 y = 2 }
+					motorized = { x = 2 y = 3 }
+					motorized = { x = 2 y = 4 }
+					motorized = { x = 3 y = 0 }
+					motorized = { x = 3 y = 1 }
+					motorized = { x = 3 y = 2 }
+					mot_anti_tank_brigade = { x = 3 y = 3 }
+					mot_anti_air_brigade = { x = 3 y = 4 }
+					medium_armor = { x = 4 y = 0 }
+					medium_armor = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					mot_recon = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery = { x = 0 y = 4 }
+				}
+			}
+				
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #德国AI装甲师
+	id = cjc_common.2602
+	title = cjc_common.2602.t
+	desc = cjc_common.2602.d
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.2602.a
+		GER = {
+			set_country_flag = ger_ai_super_panzer_division_2_start
+		}
+		if = {
+			limit = {
+				not = { has_tech = basic_medium_tank_chassis }
+			}
+			set_technology = { basic_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = improved_medium_tank_chassis }
+			}
+			set_technology = { improved_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery1 }
+			}
+			set_technology = { artillery1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery2 }
+			}
+			set_technology = { artillery2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery3 }
+			}
+			set_technology = { artillery3 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank1 }
+			}
+			set_technology = { antitank1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank2 }
+			}
+			set_technology = { antitank2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = electronic_mechanical_engineering }
+			}
+			set_technology = { electronic_mechanical_engineering = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = radio }
+			}
+			set_technology = { radio = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = radio_detection }
+			}
+			set_technology = { radio_detection = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = decimetric_radar }
+			}
+			set_technology = { decimetric_radar = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_logistics_company }
+			}
+			set_technology = { tech_logistics_company = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_maintenance_company }
+			}
+			set_technology = { tech_maintenance_company = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_idea = GER_strengthen_for_player }
+			}
+			add_ideas = GER_strengthen_for_player
+		}
+		create_equipment_variant = {
+			name = "Panzer IV"
+			type = medium_tank_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_hmg
+				special_type_slot_2 = tank_radio_2
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = wet_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 9
+				tank_nsb_armor_upgrade = 14
+			}
+		}
+		if = {
+			limit = {
+				has_tech = advanced_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 1000 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 1000 }
+		}
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 4000 }
+		add_manpower = 1800000
+		hidden_effect = {
+			division_template = {
+				name = "Deutsches_Panzer_Division_00"
+				is_locked = yes
+				regiments = {
+					medium_armor = { x = 0 y = 0 }
+					medium_armor = { x = 0 y = 1 }
+					medium_armor = { x = 0 y = 2 }
+					medium_armor = { x = 0 y = 3 }
+					medium_armor = { x = 0 y = 4 }
+					medium_armor = { x = 1 y = 0 }
+					medium_armor = { x = 1 y = 1 }
+					medium_armor = { x = 1 y = 2 }
+					medium_armor = { x = 1 y = 3 }
+					medium_armor = { x = 1 y = 4 }
+					motorized = { x = 2 y = 0 }
+					motorized = { x = 2 y = 1 }
+					motorized = { x = 2 y = 2 }
+					motorized = { x = 2 y = 3 }
+					motorized = { x = 2 y = 4 }
+					motorized = { x = 3 y = 0 }
+					motorized = { x = 3 y = 1 }
+					motorized = { x = 3 y = 2 }
+					mot_anti_tank_brigade = { x = 3 y = 3 }
+					mot_anti_air_brigade = { x = 3 y = 4 }
+					medium_armor = { x = 4 y = 0 }
+					medium_armor = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					mot_recon = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery = { x = 0 y = 4 }
+				}
+			}
+				
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #德国AI装甲师
+	id = cjc_common.2603
+	title = cjc_common.2603.t
+	desc = cjc_common.2603.d
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.2603.a
+		GER = {
+			set_country_flag = ger_ai_super_panzer_division_3_start
+		}
+		if = {
+			limit = {
+				not = { has_tech = basic_heavy_tank_chassis }
+			}
+			set_technology = { basic_heavy_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = mechanised_infantry }
+			}
+			set_technology = { mechanised_infantry = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = amphibious_mechanized_infantry }
+			}
+			set_technology = { amphibious_mechanized_infantry = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = amphibious_mechanized_infantry_2 }
+			}
+			set_technology = { amphibious_mechanized_infantry_2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank2 }
+			}
+			set_technology = { antitank2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank3 }
+			}
+			set_technology = { antitank3 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank4 }
+			}
+			set_technology = { antitank4 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank5 }
+			}
+			set_technology = { antitank5 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_logistics_company }
+			}
+			set_technology = { tech_logistics_company = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_maintenance_company }
+			}
+			set_technology = { tech_maintenance_company = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = improved_heavy_tank_chassis }
+			}
+			set_technology = { improved_heavy_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = amphibious_drive }
+			}
+			set_technology = { amphibious_drive = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = advanced_heavy_tank_chassis }
+			}
+			set_technology = { advanced_heavy_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_idea = GER_strengthen_for_player_heavy }
+			}
+			add_ideas = GER_strengthen_for_player_heavy
+		}
+		create_equipment_variant = {
+			name = "Tiger Amphibious"
+			type = heavy_tank_amphibious_chassis_3
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_cannon_3
+				turret_type_slot = tank_heavy_three_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_diesel_engine
+				special_type_slot_1 = secondary_turret_hmg
+				special_type_slot_2 = additional_machine_guns
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = amphibious_drive
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 14
+				tank_nsb_armor_upgrade = 15
+			}
+		}
+		add_equipment_to_stockpile = { type = heavy_tank_amphibious_chassis amount = 3000 }
+		add_equipment_to_stockpile = { type = amphibious_mechanized_equipment amount = 8000 }
+		hidden_effect = {
+			division_template = {
+				name = "Deutsches_Panzer_Division_00"
+				is_locked = yes
+				regiments = {
+					amphibious_heavy_armor = { x = 0 y = 0 }
+					amphibious_heavy_armor = { x = 0 y = 1 }
+					amphibious_heavy_armor = { x = 0 y = 2 }
+					amphibious_heavy_armor = { x = 0 y = 3 }
+					amphibious_heavy_armor = { x = 0 y = 4 }
+					amphibious_heavy_armor = { x = 1 y = 0 }
+					amphibious_heavy_armor = { x = 1 y = 1 }
+					amphibious_heavy_armor = { x = 1 y = 2 }
+					amphibious_heavy_armor = { x = 1 y = 3 }
+					amphibious_heavy_armor = { x = 1 y = 4 }
+					amphibious_mechanized = { x = 2 y = 0 }
+					amphibious_mechanized = { x = 2 y = 1 }
+					amphibious_mechanized = { x = 2 y = 2 }
+					amphibious_mechanized = { x = 2 y = 3 }
+					amphibious_mechanized = { x = 2 y = 4 }
+					amphibious_mechanized = { x = 3 y = 0 }
+					amphibious_mechanized = { x = 3 y = 1 }
+					amphibious_mechanized = { x = 3 y = 2 }
+					amphibious_mechanized = { x = 3 y = 3 }
+					amphibious_mechanized = { x = 3 y = 4 }
+					amphibious_heavy_armor = { x = 4 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					mot_recon = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					anti_air = { x = 0 y = 4 }
+				}
+			}
+				
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.4" 
+					owner = GER
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #德国AI装甲师
+	id = cjc_common.2604
+	title = cjc_common.2604.t
+	desc = cjc_common.2604.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_country_flag = ger_ai_super_panzer_division_1_start
+		date > 1940.6.1
+	}
+	
+	option = {
+		name = cjc_common.2604.a
+		if = {
+			limit = {
+				not = { has_tech = improved_medium_tank_chassis }
+			}
+			set_technology = { improved_medium_tank_chassis = 1 }
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #德国AI装甲师
+	id = cjc_common.2605
+	title = cjc_common.2605.t
+	desc = cjc_common.2605.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		is_ai = yes
+		or = {
+			has_country_flag = ger_ai_super_panzer_division_1_start
+			has_country_flag = ger_ai_super_panzer_division_2_start
+			has_country_flag = ger_ai_super_panzer_division_3_start
+		}
+		date > 1942.1.1
+	}
+	
+	option = {
+		name = cjc_common.2605.a
+		if = {
+			limit = {
+				not = { has_tech = advanced_medium_tank_chassis }
+				or = {
+					has_country_flag = ger_ai_super_panzer_division_1_start
+					has_country_flag = ger_ai_super_panzer_division_2_start
+				}
+			}
+			set_technology = { advanced_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = advanced_heavy_tank_chassis }
+				has_country_flag = ger_ai_super_panzer_division_3_start
+			}
+			set_technology = { advanced_heavy_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = mechanised_infantry2 }
+				has_country_flag = ger_ai_super_panzer_division_3_start
+			}
+			set_technology = { mechanised_infantry2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = amphibious_mechanized_infantry_2 }
+				has_country_flag = ger_ai_super_panzer_division_3_start
+			}
+			set_technology = { amphibious_mechanized_infantry_2 = 1 }
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #德国AI装甲师
+	id = cjc_common.2606
+	title = cjc_common.2606.t
+	desc = cjc_common.2606.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_country_flag = ger_ai_super_panzer_division_3_start
+		date > 1943.11.1
+	}
+	
+	option = {
+		name = cjc_common.2606.a
+		if = {
+			limit = {
+				not = { has_tech = mechanised_infantry3 }
+				has_country_flag = ger_ai_super_panzer_division_3_start
+			}
+			set_technology = { mechanised_infantry3 = 1 }
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #苏联AI装甲师
+	id = cjc_common.2607
+	title = cjc_common.2607.t
+	desc = cjc_common.2607.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_country_flag = sov_ai_super_panzer_division_1
+		any_country = {
+			or = {
+				has_country_flag = ger_ai_super_panzer_division_1_start
+				has_country_flag = ger_ai_super_panzer_division_2_start
+				has_country_flag = ger_ai_super_panzer_division_3_start
+				is_ai = no
+			}
+			has_war_with = SOV
+			num_of_factories > 65
+		}
+		date > 1939.1.1
+	}
+	
+	option = {
+		name = cjc_common.2607.a
+		SOV = {
+			set_country_flag = sov_ai_super_panzer_division_1_start
+		}
+		add_political_power = 50
+		if = {
+			limit = {
+				not = { has_tech = basic_medium_tank_chassis }
+			}
+			set_technology = { basic_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = improved_medium_tank_chassis }
+			}
+			set_technology = { improved_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery1 }
+			}
+			set_technology = { artillery1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery2 }
+			}
+			set_technology = { artillery2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery3 }
+			}
+			set_technology = { artillery3 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank1 }
+			}
+			set_technology = { antitank1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank2 }
+			}
+			set_technology = { antitank2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = electronic_mechanical_engineering }
+			}
+			set_technology = { electronic_mechanical_engineering = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = radio }
+			}
+			set_technology = { radio = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = radio_detection }
+			}
+			set_technology = { radio_detection = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = decimetric_radar }
+			}
+			set_technology = { decimetric_radar = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_logistics_company }
+			}
+			set_technology = { tech_logistics_company = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_maintenance_company }
+			}
+			set_technology = { tech_maintenance_company = 1 }
+		}
+		create_equipment_variant = {
+			name = "T-34-85"
+			type = medium_tank_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_hmg
+				special_type_slot_2 = tank_radio_2
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = wet_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 9
+				tank_nsb_armor_upgrade = 14
+			}
+			icon = "gfx/interface/technologies/SOV_imp_main_tank.dds"
+		}
+		if = {
+			limit = {
+				has_tech = advanced_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 4000 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 4000 }
+		}
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 4000 }
+		hidden_effect = {
+			division_template = {
+				name = "Soviet_Armor_Division_00"
+				is_locked = yes
+				regiments = {
+					medium_armor = { x = 0 y = 0 }
+					medium_armor = { x = 0 y = 1 }
+					medium_armor = { x = 0 y = 2 }
+					medium_armor = { x = 0 y = 3 }
+					medium_armor = { x = 0 y = 4 }
+					medium_armor = { x = 1 y = 0 }
+					medium_armor = { x = 1 y = 1 }
+					medium_armor = { x = 1 y = 2 }
+					medium_armor = { x = 1 y = 3 }
+					medium_armor = { x = 1 y = 4 }
+					motorized = { x = 2 y = 0 }
+					motorized = { x = 2 y = 1 }
+					motorized = { x = 2 y = 2 }
+					motorized = { x = 2 y = 3 }
+					motorized = { x = 2 y = 4 }
+					motorized = { x = 3 y = 0 }
+					motorized = { x = 3 y = 1 }
+					motorized = { x = 3 y = 2 }
+					mot_anti_tank_brigade = { x = 3 y = 3 }
+					mot_anti_air_brigade = { x = 3 y = 4 }
+					medium_armor = { x = 4 y = 0 }
+					medium_armor = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					mot_recon = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					artillery = { x = 0 y = 4 }
+				}
+			}
+				
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 252 }
+				create_unit = {
+					division = "name = \"Soviet Armor\" division_template = \"Soviet_Armor_Division_00\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Soviet Armor\" division_template = \"Soviet_Armor_Division_00\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Soviet Armor\" division_template = \"Soviet_Armor_Division_00\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Soviet Armor\" division_template = \"Soviet_Armor_Division_00\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Soviet Armor\" division_template = \"Soviet_Armor_Division_00\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Soviet Armor\" division_template = \"Soviet_Armor_Division_00\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Soviet Armor\" division_template = \"Soviet_Armor_Division_00\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #中日苏战机制造
+	id = cjc_common.27
+	title = cjc_common.27.t
+	desc = cjc_common.27.d
+	picture = GFX_report_event_generic_bombers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_government = communism
+		and = {
+			is_in_faction_with = JAP
+			is_in_faction_with = PRC
+		}
+		JAP = { has_idea = united_jet_production }
+		PRC = { has_idea = united_jet_production }
+	
+	}
+	
+	option = {
+		name = cjc_common.27.a
+		add_ideas = united_jet_production2
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.2701 days = 1 } }
+			JAP = { country_event = { id = cjc_common.2701 days = 1 } }
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = cjc_common.27.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #中日苏战机制造
+	id = cjc_common.2701
+	title = cjc_common.2701.t
+	desc = cjc_common.2701.d
+	picture = GFX_report_event_generic_bombers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.2701.a
+		swap_ideas = {
+			remove_idea = united_jet_production
+			add_idea = united_jet_production2
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #削减中国地区工厂数量
+	id = cjc_common.28
+	title = cjc_common.28.t
+	desc = cjc_common.28.d
+	picture = GFX_report_event_generic_bombers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CHI
+	}
+	
+	option = {
+		name = cjc_common.28.a
+		620 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		600 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		601 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		602 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		605 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		603 = {
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		607 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		add_offsite_building = { type = industrial_complex level = 6 }
+		add_offsite_building = { type = arms_factory level = 5 }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #削减中国地区工厂数量
+	id = cjc_common.2801
+	title = cjc_common.2801.t
+	desc = cjc_common.2801.d
+	picture = GFX_report_event_generic_bombers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = GXC
+	}
+	
+	option = {
+		name = cjc_common.2801.a
+		599 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		592 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		add_offsite_building = { type = industrial_complex level = 2 }
+		add_offsite_building = { type = arms_factory level = 2 }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #削减中国地区工厂数量
+	id = cjc_common.2802
+	title = cjc_common.2802.t
+	desc = cjc_common.2802.d
+	picture = GFX_report_event_generic_bombers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = XSM
+	}
+	
+	option = {
+		name = cjc_common.2802.a
+		604 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		add_offsite_building = { type = industrial_complex level = 1 }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #削减中国地区工厂数量
+	id = cjc_common.2803
+	title = cjc_common.2803.t
+	desc = cjc_common.2803.d
+	picture = GFX_report_event_generic_bombers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SIK
+	}
+	
+	option = {
+		name = cjc_common.2803.a
+		617 = {
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		add_offsite_building = { type = industrial_complex level = 1 }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #中共邀请日本加入共产国际
+	id = cjc_common.29
+	title = cjc_common.29.t
+	desc = cjc_common.29.d
+	picture = GFX_report_event_generic_bombers
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.29.a
+		SOV = { add_to_faction = JAP }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.29.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #AI海军加强
+	id = cjc_common.31
+	title = cjc_common.31.t
+	desc = cjc_common.31.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = cjc_common.31.a
+		GER = { add_ideas = idea_ai_navy_improve_3 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.b
+		GER = { add_ideas = idea_ai_navy_improve_2 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.c
+		GER = { add_ideas = idea_ai_navy_improve_1 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.e
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #AI海军加强
+	id = cjc_common.3101
+	title = cjc_common.31.t
+	desc = cjc_common.31.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = cjc_common.31.a
+		ENG = { add_ideas = idea_ai_navy_improve_3 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.b
+		ENG = { add_ideas = idea_ai_navy_improve_2 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.c
+		ENG = { add_ideas = idea_ai_navy_improve_1 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.e
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #AI海军加强
+	id = cjc_common.3102
+	title = cjc_common.31.t
+	desc = cjc_common.31.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = cjc_common.31.a
+		USA = { add_ideas = idea_ai_navy_improve_3 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.b
+		USA = { add_ideas = idea_ai_navy_improve_2 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.c
+		USA = { add_ideas = idea_ai_navy_improve_1 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.e
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #AI海军加强
+	id = cjc_common.3103
+	title = cjc_common.31.t
+	desc = cjc_common.31.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = cjc_common.31.a
+		ITA = { add_ideas = idea_ai_navy_improve_3 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.b
+		ITA = { add_ideas = idea_ai_navy_improve_2 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.c
+		ITA = { add_ideas = idea_ai_navy_improve_1 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.e
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #AI海军加强
+	id = cjc_common.3104
+	title = cjc_common.31.t
+	desc = cjc_common.31.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = cjc_common.31.a
+		FRA = { add_ideas = idea_ai_navy_improve_3 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.b
+		FRA = { add_ideas = idea_ai_navy_improve_2 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.c
+		FRA = { add_ideas = idea_ai_navy_improve_1 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.e
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #AI海军加强
+	id = cjc_common.3105
+	title = cjc_common.31.t
+	desc = cjc_common.31.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = cjc_common.31.a
+		SOV = { add_ideas = idea_ai_navy_improve_3 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.b
+		SOV = { add_ideas = idea_ai_navy_improve_2 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.c
+		SOV = { add_ideas = idea_ai_navy_improve_1 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.e
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #AI海军加强
+	id = cjc_common.3106
+	title = cjc_common.31.t
+	desc = cjc_common.31.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = cjc_common.31.a
+		JAP = { add_ideas = idea_ai_navy_improve_3 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.b
+		JAP = { add_ideas = idea_ai_navy_improve_2 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.c
+		JAP = { add_ideas = idea_ai_navy_improve_1 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = cjc_common.31.e
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #桂系参与东亚大战
+	id = cjc_common.32
+	title = cjc_common.32.t
+	desc = cjc_common.32.d
+	fire_only_once = yes
+	trigger = {
+		tag = GXC
+		is_ai = yes
+		is_subject = no
+		not = {
+			has_government = communism
+			is_in_faction_with = PRC
+			has_war_with = CHI
+			has_war_with = PRC
+		}
+		CHI = {
+			has_war_with = PRC
+			has_war_with = JAP
+			surrender_progress > 0.25
+		}
+	}
+	option = {
+		name = cjc_common.32.a
+		GXC = {
+			declare_war_on = {
+				type = annex_everything
+				target = PRC
+			}
+			declare_war_on = {
+				type = annex_everything
+				target = JAP
+			}
+		}
+		diplomatic_relation = {
+			country = CHI
+			relation = military_access
+			active = yes
+		}
+		CHI = {
+			diplomatic_relation = {
+				country = GXC
+				relation = military_access
+				active = yes
+			}
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #滇系参与东亚大战
+	id = cjc_common.3201
+	title = cjc_common.3201.t
+	desc = cjc_common.3201.d
+	fire_only_once = yes
+	trigger = {
+		tag = YUN
+		is_ai = yes
+		is_subject = no
+		not = {
+			has_government = communism
+			is_in_faction_with = PRC
+			has_war_with = CHI
+			has_war_with = PRC
+		}
+		CHI = {
+			has_war_with = PRC
+			has_war_with = JAP
+			surrender_progress > 0.25
+		}
+	}
+	option = {
+		name = cjc_common.3201.a
+		YUN = {
+			declare_war_on = {
+				type = annex_everything
+				target = PRC
+			}
+			declare_war_on = {
+				type = annex_everything
+				target = JAP
+			}
+		}
+		diplomatic_relation = {
+			country = CHI
+			relation = military_access
+			active = yes
+		}
+		CHI = {
+			diplomatic_relation = {
+				country = YUN
+				relation = military_access
+				active = yes
+			}
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #更换德国头像
+	id = cjc_common.33
+	title = cjc_common.33.t
+	desc = cjc_common.33.d
+	
+	is_triggered_only = yes
+	option = {
+		name = cjc_common.33.a
+		GER = {
+			set_country_leader_portrait = { portrait = "gfx/leaders/GER/Portrait_Germany_Adolf_Hitler2.dds" }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #立陶宛
+	id = cjc_common.34
+	title = cjc_common.34.t
+	desc = cjc_common.34.d
+	fire_only_once = yes
+	trigger = {
+		tag = LIT
+		is_in_faction = no
+		not = {
+			has_government = fascism
+		}
+		is_ai = yes
+		SOV = {
+			or = {
+				is_justifying_wargoal_against = LIT
+				has_wargoal_against = LIT
+			}
+			is_ai = yes
+		}
+	}
+	
+	option = {
+		name = cjc_common.34.a
+		SOV = {
+			annex_country = { target = LIT transfer_troops = yes }
+		}
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+}
+
+country_event = { #拉脱维亚
+	id = cjc_common.3401
+	title = cjc_common.3401.t
+	desc = cjc_common.3401.d
+	fire_only_once = yes
+	trigger = {
+		tag = LAT
+		is_in_faction = no
+		not = {
+			has_government = fascism
+		}
+		is_ai = yes
+		SOV = {
+			or = {
+				is_justifying_wargoal_against = LAT
+				has_wargoal_against = LAT
+			}
+			is_ai = yes
+		}
+	}
+	
+	option = {
+		name = cjc_common.3401.a
+		SOV = {
+			annex_country = { target = LAT transfer_troops = yes }
+		}
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+}
+
+country_event = { #爱沙尼亚
+	id = cjc_common.3402
+	title = cjc_common.3402.t
+	desc = cjc_common.3402.d
+	fire_only_once = yes
+	trigger = {
+		tag = EST
+		is_in_faction = no
+		not = {
+			has_government = fascism
+		}
+		is_ai = yes
+		SOV = {
+			or = {
+				is_justifying_wargoal_against = EST
+				has_wargoal_against = EST
+			}
+			is_ai = yes
+		}
+	}
+	
+	option = {
+		name = cjc_common.3402.a
+		SOV = {
+			annex_country = { target = EST transfer_troops = yes }
+		}
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+}
+
+country_event = { #检测dlc
+	id = cjc_common.35
+	title = cjc_common.35.t
+	desc = cjc_common.35.d
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		not = {
+			and = {
+				has_dlc = "Waking the Tiger"
+				has_dlc = "No Step Back"
+				has_dlc = "La Resistance"
+				has_dlc = "Man the Guns"
+			}
+		}
+	}
+	
+	option = {
+		name = cjc_common.35.a
+		
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+}
+
+country_event = { #移交阿尔萨斯洛林
+	id = cjc_common.36
+	title = cjc_common.36.t
+	desc = cjc_common.36.d
+	fire_only_once = yes
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_government = fascism
+		any_country = {
+			is_in_faction_with = GER
+			is_ai = yes
+			has_full_control_of_state = 28
+			not = {
+				tag = FRA
+				tag = GER
+			}
+		}
+	}
+	
+	option = {
+		name = cjc_common.36.a
+		transfer_state = 28
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+}
+
+country_event = { #移交阿尔萨斯洛林
+	id = cjc_common.3601
+	title = cjc_common.3601.t
+	desc = cjc_common.3601.d
+	fire_only_once = yes
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_government = fascism
+		any_country = {
+			is_in_faction_with = GER
+			is_ai = yes
+			has_full_control_of_state = 8
+			not = {
+				tag = GER
+			}
+		}
+	}
+	
+	option = {
+		name = cjc_common.3601.a
+		transfer_state = 8
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+}
+
+country_event = { #中美洲联盟内战
+	id = cjc_common.37
+	title = cjc_common.37.t
+	desc = cjc_common.37.d
+	fire_only_once = yes
+	trigger = {
+		tag = GUA
+		is_puppet = no
+		is_in_faction = no
+		has_war = no
+		not = {
+			has_government = communism
+		}
+		JAP = {
+			has_government = communism
+		}
+		date > 1937.9.1
+	}
+	
+	option = {
+		name = cjc_common.37.a
+		start_civil_war = {
+			ruling_party = communism
+			ideology = ROOT
+			size = 0.3
+			#only_own_territory = yes
+		}
+		set_cosmetic_tag = south_MA_union
+		add_popularity = {
+			ideology = communism
+			popularity = 0.40
+		}
+		JAP = {
+			country_event = { id = cjc_common.3702 days = 3 }
+		}
+		ai_chance = {
+		factor = 100
+		}
+	}
+}
+
+country_event = { #日本收到保障请求
+	id = cjc_common.3701
+	title = cjc_common.3701.t
+	desc = cjc_common.3701.d
+	picture = GFX_report_cjc_poster_4
+	fire_only_once = yes
+	trigger = {
+		tag = JAP
+		GUA = {
+			is_puppet = no
+			is_in_faction = no
+			has_war = no
+			has_civil_war = no
+			has_government = communism
+		}
+		date > 1937.9.1
+	}
+	
+	option = {
+		name = cjc_common.3701.a
+		give_guarantee = GUA
+		add_political_power = 15
+		custom_effect_tooltip = cjc_gua_would_with_jap_tt
+		set_global_flag = cjc_gua_would_with_jap_flag
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+	
+	option = {
+		name = cjc_common.3701.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #日本援助中美洲
+	id = cjc_common.3702
+	title = cjc_common.3702.t
+	desc = cjc_common.3702.d
+	picture = GFX_report_cjc_break_chains_1
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.3702.a
+		add_political_power = 10
+		army_experience = 10
+		send_equipment = {
+			target = GUA
+			equipment = infantry_equipment
+			amount = 3000
+			old_prioritised = yes
+		}
+		GUA = {
+			army_experience = 25
+		}
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+	
+	option = {
+		name = cjc_common.3702.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #日本收到加入请求
+	id = cjc_common.3703
+	title = cjc_common.3703.t
+	desc = cjc_common.3703.d
+	picture = GFX_report_cjc_lenin_1
+	fire_only_once = yes
+	trigger = {
+		tag = JAP
+		has_global_flag = cjc_gua_would_with_jap_flag
+		is_in_faction = yes
+		GUA = {
+			is_puppet = no
+			is_in_faction = no
+			has_war = no
+			has_civil_war = no
+			is_ai = yes
+			has_government = communism
+		}
+		date > 1938.2.1
+	}
+	
+	option = {
+		name = cjc_common.3703.a
+		every_country = {
+			limit = {
+				has_government = communism
+				is_faction_leader = yes
+				or = {
+					is_in_faction_with = JAP
+					tag = JAP
+				}
+			}
+			add_to_faction = GUA
+		}
+		add_political_power = 25
+		USA = {
+			add_war_support = 0.03
+		}
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+	
+	option = {
+		name = cjc_common.3703.b
+		add_political_power = -5
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #美国准备进攻中美洲
+	id = cjc_common.3704
+	title = cjc_common.3704.t
+	desc = cjc_common.3704.d
+	picture = GFX_report_cjc_lenin_3
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.3704.a
+		add_war_support = 0.05
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+	
+}
+
+country_event = { #美国对墨西哥施压
+	id = cjc_common.3705
+	title = cjc_common.3705.t
+	desc = cjc_common.3705.d
+	picture = GFX_report_cjc_poster_2
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.3705.a
+		GUA = {
+			every_state = {
+				limit = {
+					is_fully_controlled_by = GUA
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					GUA = {
+						has_full_control_of_state = 312
+					}
+				}
+				312 = {
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = anti_air_building
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 12865
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					GUA = {
+						has_full_control_of_state = 314
+					}
+				}
+				314 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						province = 12823
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					GUA = {
+						has_full_control_of_state = 317
+					}
+				}
+				317 = {
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = anti_air_building
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 1988
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					GUA = {
+						has_full_control_of_state = 313
+					}
+				}
+				313 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 4
+						province = 10886
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 10842
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 13085
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 4991
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					GUA = {
+						has_full_control_of_state = 316
+					}
+				}
+				316 = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 4
+						province = 12878
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 13092
+						instant_build = yes
+					}
+				}
+			}
+		}
+		add_timed_idea = {
+			idea = JAP_idea_help_defence_construction
+			days = 90
+		}
+		
+		ai_chance = {
+			factor = 60
+		}
+	}
+	
+	option = {
+		name = cjc_common.3705.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	option = {
+		name = cjc_common.3705.c #战略性撤退方案
+		custom_effect_tooltip = jap_cjc_make_strategy_retreat_from_ma_plan_tt
+		unlock_decision_tooltip = JAP_cjc_strategy_retreat_from_ma_decision
+		unlock_decision_tooltip = JAP_cjc_rise_resistance_in_ma_decision
+		set_country_flag = JAP_cjc_can_rise_resistance_in_ma_flag
+		
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				or = {
+					has_war_with = GER
+					has_war_with = ENG
+				}
+			}
+		}
+	}
+	
+}
+
+country_event = { #美国ai补充装备
+	id = cjc_common.38
+	title = cjc_common.38.t
+	desc = cjc_common.38.d
+	fire_only_once = yes
+	trigger = {
+		tag = USA
+		is_ai = yes
+		date > 1937.9.1
+		not = {
+			has_global_flag = cjc_im_freshman_flag
+		}
+	}
+	
+	option = {
+		name = cjc_common.38.a
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 200 }
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 500 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 500 }
+		army_experience = 30
+		add_political_power = 20
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+}
+
+country_event = { #中美洲收到通牒
+	id = cjc_common.39
+	title = cjc_common.39.t
+	desc = cjc_common.39.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.39.a
+		USA = {
+			set_autonomy = { target = GUA autonomy_state = autonomy_puppet }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	option = {
+		name = cjc_common.39.b
+		USA = {
+			#create_wargoal = {
+			#	target = GUA
+			#	type = puppet_wargoal_focus
+			#	expire = 0
+			#}
+			set_country_flag = cjc_usa_has_wargoal_to_ma_flag
+			add_war_support = 0.05
+		}
+		ai_chance = {
+		factor = 100
+		}
+	}
+}
+
+country_event = { #墨西哥收到通牒
+	id = cjc_common.3901
+	title = cjc_common.3901.t
+	desc = cjc_common.3901.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.3901.a
+		USA = {
+			set_autonomy = { target = MEX autonomy_state = autonomy_puppet }
+			set_country_flag = cjc_usa_has_wargoal_to_ma2_flag
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.3901.b
+		USA = {
+			create_wargoal = {
+				target = MEX
+				type = puppet_wargoal_focus
+				expire = 0
+			}
+			set_country_flag = cjc_usa_has_wargoal_to_ma2_flag
+			add_war_support = 0.05
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #美国最后通牒
+	id = cjc_common.3902
+	title = cjc_common.3902.t
+	desc = cjc_common.3902.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.3902.a
+		USA = {
+			set_autonomy = { target = GUA autonomy_state = autonomy_puppet }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	option = {
+		name = cjc_common.3902.b
+		if = {
+			limit = {
+				is_ai = no
+			}
+			add_political_power = -100
+		}
+		USA = {
+			set_country_flag = cjc_usa_has_wargoal_to_ma3_flag
+			set_country_flag = cjc_usa_can_start_mobilization_flag
+		}
+		custom_effect_tooltip = cjc_we_delay_usa_justify_war_tt
+		custom_effect_tooltip = cjc_usa_can_start_mobilization_tt
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_common.3902.c
+		declare_war_on = {
+			type = annex_everything
+			target = USA
+		}
+		USA = {
+			set_country_flag = cjc_usa_has_wargoal_to_ma3_flag
+			set_country_flag = cjc_usa_can_start_mobilization_flag
+		}
+		custom_effect_tooltip = cjc_usa_can_start_mobilization_tt
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #日共ai不造兵bug
+	id = cjc_common.41
+	title = cjc_common.41.t
+	desc = cjc_common.41.d
+	picture = GFX_report_Alice_Casillia_cjc_1
+	
+	fire_only_once = yes
+	is_triggered_only = yes #废弃事件
+	
+	option = {
+		name = cjc_common.41.a
+		add_political_power = 2
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+}
+
+country_event = { #中美洲合邦
+	id = cjc_common.42
+	title = cjc_common.42.t
+	desc = cjc_common.42.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.42.a
+		every_state = {
+			limit = {
+				is_core_of = ROOT
+			}
+			add_core_of = FROM
+		}
+		FROM = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+		FROM = {
+			set_cosmetic_tag = south_MA_union
+			hidden_effect = {
+				news_event = { id = cjc_news.18 }
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	option = {
+		name = cjc_common.42.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #法国投降
+	id = cjc_common.43
+	title = cjc_common.43.t
+	desc = cjc_common.43.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.43.a
+		add_threat = 3
+		FROM = {
+			transfer_state = 670
+			transfer_state = 671
+			transfer_state = 741
+			transfer_state = 286
+		}
+		ENG = {
+			transfer_state = 14
+		}
+		if = {
+			limit = {
+				FROM = {
+					is_in_faction_with = ITA
+				}
+			}
+			ITA = {
+				transfer_state = 735
+				transfer_state = 458
+				transfer_state = 665
+				transfer_state = 460
+				transfer_state = 513
+				transfer_state = 459
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					is_in_faction_with = HUN
+					has_war_with = CZE
+				}
+				is_in_faction_with = CZE
+			}
+			HUN = {
+				transfer_state = 664
+				transfer_state = 73
+			}
+			FROM = {
+				annex_country = {
+					target = CZE
+					#transfer_troops = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_war_with = POL
+				}
+				or = {
+					is_in_faction_with = POL
+					POL = {
+						surrender_progress > 0.25
+					}
+				}
+				POL = {
+					is_ai = yes
+					not = {
+						is_in_faction_with = SOV
+					}
+				}
+			}
+			FROM = {
+				annex_country = {
+					target = POL
+					#transfer_troops = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_war_with = BEL
+				}
+				is_in_faction_with = BEL
+			}
+			FROM = {
+				annex_country = {
+					target = BEL
+					#transfer_troops = yes
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				not = { is_core_of = ROOT }
+				is_owned_by = ROOT
+			}
+			transfer_state_to = ENG
+		}
+		FROM = {
+			annex_country = {
+				target = ROOT
+				#transfer_troops = yes
+			}
+			hidden_effect = {
+				news_event = { id = cjc_news.19 }
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	option = {
+		name = cjc_common.43.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #法国邀请波兰
+	id = cjc_common.44
+	title = cjc_common.44.t
+	desc = cjc_common.44.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.44.a
+		FRA = { add_to_faction = POL }
+		
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_in_faction_with = SOV
+			}
+		}
+	}
+	option = {
+		name = cjc_common.44.b
+		
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				not = {
+					is_in_faction_with = SOV
+				}
+			}
+		}
+	}
+}
+
+country_event = { #德军总部黑科技
+	id = cjc_common.45
+	title = cjc_common.45.t
+	desc = cjc_common.45.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.45.a
+		GER = {
+			add_ideas = GER_idea_wolfenstein_colon_army
+			add_ideas = GER_idea_wolfenstein_individual_armor
+			add_ideas = GER_idea_wolfenstein_energy_tech
+			add_ideas = GER_idea_wolfenstein_production_tech
+			add_ideas = GER_idea_wolfenstein_police_machine_dog
+			add_ideas = GER_idea_wolfenstein_luftwaffe
+			add_ideas = GER_idea_wolfenstein_marine
+			add_stability = 0.5
+			add_war_support = 0.8
+			add_political_power = 300
+			add_offsite_building = { type = industrial_complex level = 10 }
+			add_offsite_building = { type = arms_factory level = 10 }
+			add_offsite_building = { type = dockyard level = 10 }
+			add_equipment_to_stockpile = { type = convoy amount = 800 }
+		}
+		ger_get_wolfenstein_fleet_effect = yes
+		ger_wolfenstein_extra_army = yes
+		every_country = {
+			limit = {
+				has_war_with = GER
+			}
+			add_timed_idea = {
+				idea = GER_idea_wolfstein_enemies_shocked
+				days = 50
+			}
+		}
+		hidden_effect = {
+			news_event = { id = cjc_news.21 days = 1 }
+		}
+		GER = {
+			set_country_leader_portrait = { portrait = "gfx/leaders/GER/Portrait_Germany_Adolf_Hitler2.dds" }
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+	option = {
+		name = cjc_common.45.b
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #启用彩蛋
+	id = cjc_common.46
+	title = cjc_common.46.t
+	desc = cjc_common.46.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.46.a
+		set_global_flag = cjc_easter_egg_flag
+		custom_effect_tooltip = cjc_easter_egg_contents_tt
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = cjc_common.46.b
+		
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+country_event = { #德军完全控制明斯克
+	id = cjc_common.47
+	title = cjc_common.47.t
+	desc = cjc_common.47.d
+	
+	fire_only_once = yes
+	trigger = {
+		tag = GER
+		has_government = fascism
+		has_full_control_of_state = 206
+		SOV = {
+			has_government = communism
+		}
+	}
+	
+	option = {
+		name = cjc_common.47.a
+		set_global_flag = SOV_minsk_has_lost_flag
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #德军完全控制基辅
+	id = cjc_common.4701
+	title = cjc_common.4701.t
+	desc = cjc_common.4701.d
+	
+	fire_only_once = yes
+	trigger = {
+		tag = GER
+		has_government = fascism
+		has_full_control_of_state = 202
+		SOV = {
+			has_government = communism
+		}
+	}
+	
+	option = {
+		name = cjc_common.4701.a
+		set_global_flag = SOV_kiev_has_lost_flag
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #测试用
+	id = cjc_common.48
+	title = cjc_common.48.t
+	desc = cjc_common.48.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_common.48.a
+		add_to_variable = { cjc_jap_var_army_attack_factor = 0.05 }
+		add_dynamic_modifier = { modifier = cjc_jap_dmi_red_army }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = cjc_common.48.b
+		add_to_variable = { cjc_jap_var_planning_speed = 0.05 }
+		add_to_variable = { cjc_jap_var_army_org_factor = 0.05 }
+		add_to_variable = { cjc_jap_var_no_supply_grace = 24 }
+		add_to_variable = { cjc_jap_var_invasion_preparation = 0.10 }
+		custom_effect_tooltip = cjc_jap_dmi_red_army_change_X01_tt
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

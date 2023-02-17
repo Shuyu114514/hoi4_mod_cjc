@@ -1,0 +1,1637 @@
+add_namespace = SOV_mod
+
+
+
+country_event = {
+	id = SOV_mod.1
+	title = SOV_mod.1.t
+	desc = SOV_mod.1.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		SOV = { surrender_progress > 0.29 }
+	}
+	
+	option = {
+		name = SOV_mod.1.a
+		add_manpower = 2000000
+		army_experience = 110
+		air_experience = 100
+		navy_experience = 100
+		add_political_power = 150
+		add_war_support = 0.1
+		add_stability = 0.1
+		add_equipment_to_stockpile = { type = anti_tank_equipment amount = 800 }
+		add_equipment_to_stockpile = { type = anti_air_equipment amount = 800 }
+		add_equipment_to_stockpile = { type = light_tank_chassis amount = 400 }
+		if = {
+			limit = {
+				has_tech = advanced_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 3500 }
+		}
+		else_if = {
+			limit = {
+				has_tech = improved_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 3500 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 3500 }
+		}
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 2200 }
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 1200 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 12000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 1100 }
+		if = {
+			limit = {
+				NOT = { has_dlc = "By Blood Alone" }
+			}
+			if = {
+				limit = {
+					has_tech = fighter2
+				}
+				add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 1900 }
+				if = {
+					limit = {
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 2400 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = fighter1
+				}
+				add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 1900 }
+				if = {
+					limit = {
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 2400 }
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 1900 }
+				if = {
+					limit = {
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 2400 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_dlc = "By Blood Alone"
+			}
+			create_equipment_variant = {
+				name = "Yak-38M"
+				type = small_plane_airframe_2
+				modules = {
+					fixed_main_weapon_slot = light_mg_4x
+					fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
+					engine_type_slot = engine_3_1x
+					special_type_slot_1 = drop_tanks
+					special_type_slot_2 = empty
+				}
+				icon = "GFX_JAP_cv_fighter2_medium"
+			}
+			custom_effect_tooltip = cjc_get_2000_small_fighters_of_this_type_tt
+			add_equipment_to_stockpile = { type = small_plane_airframe_2 amount = 1800 variant_name = "Yak-38M" }
+			if = {
+				limit = {
+					has_war_with = ENG
+				}
+				custom_effect_tooltip = cjc_get_2000_small_fighters_of_this_type_tt
+				add_equipment_to_stockpile = { type = small_plane_airframe_2 amount = 2200 variant_name = "Yak-38M" }
+			}
+		}
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			add_offsite_building = { type = industrial_complex level = 5 }
+			add_offsite_building = { type = arms_factory level = 10 }
+		}
+		add_timed_idea = {
+			idea = SOV_great_war_for_soviet
+			days = 180
+		}
+		add_ideas = SOV_wartime_production
+		if = {
+			limit = {
+				has_full_control_of_state = 407
+			}
+			407 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 252
+			}
+			252 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 251
+			}
+			251 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 400
+			}
+			400 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_maintenance_company }
+			}
+			set_technology = { tech_maintenance_company = 1 }
+		}
+		custom_effect_tooltip = SOV_great_war_volunteers_tt
+		hidden_effect = {
+			division_template = {
+				name = "Final Defence Force"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					anti_tank = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 252 }
+				create_unit = {
+					division = "name = \"Final Defence Force1\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force2\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force3\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force4\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force5\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force6\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force7\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force8\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force9\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force10\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force11\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force12\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force13\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force14\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force15\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force16\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force17\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force18\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force19\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force20\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+
+country_event = {
+	id = SOV_mod.2
+	title = SOV_mod.2.t
+	desc = SOV_mod.2.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = SOV_mod.2.a
+	}
+	
+}
+
+country_event = {
+	id = SOV_mod.3
+	title = SOV_mod.3.t
+	desc = SOV_mod.3.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		SOV = { surrender_progress > 0.55 }
+		or = {
+			is_ai = no
+			not = {
+				and = {
+					any_country = {
+						is_ai = no
+						has_war_with = SOV
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = SOV_mod.3.a
+		add_manpower = 2000000
+		army_experience = 150
+		air_experience = 100
+		navy_experience = 100
+		add_political_power = 150
+		add_war_support = 0.1
+		add_stability = 0.1
+		add_equipment_to_stockpile = { type = anti_tank_equipment amount = 2000 }
+		add_equipment_to_stockpile = { type = anti_air_equipment amount = 2000 }
+		add_equipment_to_stockpile = { type = light_tank_chassis amount = 900 }
+		if = {
+			limit = {
+				has_tech = advanced_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 4000 }
+		}
+		else_if = {
+			limit = {
+				has_tech = improved_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 4000 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 4000 }
+		}
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 5000 }
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 5000 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 46000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 5000 }
+		if = {
+			limit = {
+				NOT = { has_dlc = "By Blood Alone" }
+			}
+			if = {
+				limit = {
+					has_tech = fighter2
+				}
+				add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 1800 }
+				if = {
+					limit = {
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 1500 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_tech = fighter1
+				}
+				add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 1800 }
+				if = {
+					limit = {
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 1500 }
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 1800 }
+				if = {
+					limit = {
+						has_war_with = ENG
+					}
+					add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 1500 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_dlc = "By Blood Alone"
+			}
+			add_equipment_to_stockpile = { type = small_plane_airframe_2 amount = 1500 variant_name = "Yak-38M" }
+			if = {
+				limit = {
+					has_war_with = ENG
+				}
+				add_equipment_to_stockpile = { type = small_plane_airframe_2 amount = 1500 variant_name = "Yak-38M" }
+			}
+		}
+		add_timed_idea = {
+			idea = SOV_great_war_for_soviet2
+			days = 360
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 652
+			}
+			652 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 398
+			}
+			398 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 397
+			}
+			397 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_full_control_of_state = 402
+			}
+			402 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		custom_effect_tooltip = SOV_great_war_volunteers2_tt
+		hidden_effect = {
+			division_template = {
+				name = "Final Defence Force"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					anti_tank = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 252 }
+				create_unit = {
+					division = "name = \"Final Defence Force01\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force02\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force03\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force04\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force05\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force06\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force07\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force08\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force09\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force010\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force011\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force012\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force013\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force014\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force015\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force016\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force017\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force018\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force019\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force020\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force021\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force022\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force023\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force024\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force025\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force026\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force027\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force028\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force029\" division_template = \"Final Defence Force\" start_experience_factor = 0.2" 
+					owner = SOV
+				}
+				
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = SOV_mod.4
+	title = SOV_mod.4.t
+	desc = SOV_mod.4.d
+	picture = GFX_report_event_soviet_tanks
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		date > 1939.1.1
+	}
+	
+	option = {
+		name = SOV_mod.4.a
+		add_tech_bonus = {
+			name = touhou_doll_factory
+			bonus = 2
+			uses = 2
+			category = armor
+		}
+		
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = SOV_mod.401
+	title = SOV_mod.401.t
+	desc = SOV_mod.401.d
+	picture = GFX_report_event_soviet_tanks
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		date > 1940.1.1
+		is_ai = yes
+	}
+	
+	option = {
+		name = SOV_mod.401.a
+		if = {
+			limit = { NOT = { has_tech = basic_medium_tank_chassis } }
+			set_technology = {
+				basic_medium_tank_chassis = 1
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = SOV_mod.402
+	title = SOV_mod.402.t
+	desc = SOV_mod.402.d
+	picture = GFX_report_event_soviet_tanks
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		date > 1939.2.1
+		has_tech = infantry_weapons2
+		is_ai = yes
+	}
+	
+	option = {
+		name = SOV_mod.402.a
+		if = {
+			limit = { NOT = { has_tech = improved_infantry_weapons } }
+			set_technology = {
+				improved_infantry_weapons = 1
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = SOV_mod.5
+	title = SOV_mod.5.t
+	desc = SOV_mod.5.d
+	picture = GFX_report_event_soviet_tanks
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		date > 1940.1.1
+	}
+	
+	option = {
+		name = SOV_mod.5.a
+		add_ideas = SOV_artillery_attacking
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #德国加强
+	id = SOV_mod.6
+	title = SOV_mod.6.t
+	desc = SOV_mod.6.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1939.6.1
+	}
+	
+	option = {
+		name = SOV_mod.6.a
+		add_manpower = 50000
+		add_political_power = 20
+		add_equipment_to_stockpile = { type = anti_tank_equipment amount = 100 }
+		add_equipment_to_stockpile = { type = anti_air_equipment amount = 100 }
+		if = {
+			limit = {
+				has_tech = advanced_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 300 }
+		}
+		else_if = {
+			limit = {
+				has_tech = improved_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 300 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 300 }
+		}
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 300 }
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 300 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 300 }
+		add_offsite_building = { type = industrial_complex level = 3 }
+		add_offsite_building = { type = arms_factory level = 3 }
+		hidden_effect = {
+			division_template = {
+				name = "SS"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"SS01\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS02\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS03\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS04\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS05\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS06\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS07\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS08\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #德国加强01
+	id = SOV_mod.601
+	title = SOV_mod.601.t
+	desc = SOV_mod.601.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1939.11.1
+	}
+	
+	option = {
+		name = SOV_mod.601.a
+		hidden_effect = {
+			division_template = {
+				name = "SS"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 } 
+				create_unit = {
+					division = "name = \"SS07\" division_template = \"SS\" start_experience_factor = 0.1" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS08\" division_template = \"SS\" start_experience_factor = 0.1" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS09\" division_template = \"SS\" start_experience_factor = 0.1" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS10\" division_template = \"SS\" start_experience_factor = 0.1" 
+					owner = GER
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #德国加强02
+	id = SOV_mod.602
+	title = SOV_mod.602.t
+	desc = SOV_mod.602.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1937.6.1
+	}
+	
+	option = {
+		name = SOV_mod.602.a
+		add_equipment_to_stockpile = { type = anti_tank_equipment amount = 100 }
+		add_equipment_to_stockpile = { type = anti_air_equipment amount = 100 }
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 300 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 300 }
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 250 }
+		
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #德国加强03
+	id = SOV_mod.603
+	title = SOV_mod.603.t
+	desc = SOV_mod.603.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_war = yes
+	}
+	
+	option = {
+		name = SOV_mod.603.a
+		hidden_effect = {
+			division_template = {
+				name = "SS"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"SS13\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS14\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS15\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS16\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS17\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS19\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS20\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS21\" division_template = \"SS\" start_experience_factor = 0.2" 
+					owner = GER
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #苏联援助日本内战
+	id = SOV_mod.7
+	title = SOV_mod.7.t
+	desc = SOV_mod.7.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		JAP = { has_civil_war = yes }
+		JAP = { has_government = communism }
+	}
+	
+	option = {
+		name = SOV_mod.7.a
+		add_political_power = 15
+		army_experience = 15
+		add_timed_idea = {
+			idea = SOV_support_jap_for_war
+			days = 90
+		}
+		JAP = { country_event = JAP_mod.21 }
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	option = {
+		name = SOV_mod.7.b
+		add_political_power = -20
+		
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #苏联援助中共吞并军阀
+	id = SOV_mod.701
+	title = SOV_mod.701.t
+	desc = SOV_mod.701.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		PRC = {	
+			OR = {
+				has_war_with = XSM
+				has_war_with = SHX
+			} 
+		}
+	}
+	
+	option = {
+		name = SOV_mod.701.a
+		add_political_power = 15
+		army_experience = 15
+		add_timed_idea = {
+			idea = SOV_support_prc_for_war
+			days = 90
+		}
+		PRC = { country_event = SOV_mod.70101 }
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	option = {
+		name = SOV_mod.701.b
+		add_political_power = -20
+		
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #苏联援助中共获得装备
+	id = SOV_mod.70101
+	title = SOV_mod.70101.t
+	desc = SOV_mod.70101.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = SOV_mod.70101.a
+		if = {
+			limit = { NOT = { has_tech = gw_artillery } }
+			set_technology = {
+				gw_artillery = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = tech_support } }
+			set_technology = {
+				tech_support = 1
+			}
+		}
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 400 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 400 }
+		if = { #这里主要是得确保ai中共会造出足够的兵力去填解放战争的线
+			limit = { is_ai = yes }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 200 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 300 }
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	
+}
+
+country_event = { #准备156工程援助
+	id = SOV_mod.702
+	title = SOV_mod.702.t
+	desc = SOV_mod.702.d
+	picture = GFX_report_event_generic_read_write
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = {
+			country_exists = SHX
+			country_exists = XSM
+		}
+		country_exists = PRC
+		PRC = { num_of_factories > 16 }
+	}
+	
+	option = {
+		name = SOV_mod.702.a
+		add_political_power = 20
+		add_stability = 0.05
+		add_timed_idea = {
+			idea = SOV_support_prc_for_156
+			days = 120
+		}
+		complete_national_focus = SOV_two_red_flags
+		PRC = { country_event = SOV_mod.70201 }
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	option = {
+		name = SOV_mod.702.b
+		add_political_power = -50
+		add_stability = -0.05
+		add_war_support = -0.05
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #156通知
+	id = SOV_mod.70201
+	title = SOV_mod.70201.t
+	desc = SOV_mod.70201.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = SOV_mod.70201.a
+		if = {
+			limit = { has_idea = PRC_no_industry_base }
+			swap_ideas = {
+				remove_idea = PRC_no_industry_base
+				add_idea = PRC_weak_industry_base
+			}
+			
+		}
+		set_country_flag = SOV_prepare_for_156
+		hidden_effect = {
+			news_event = { id = cjc_news.8 days = 1 random_days = 1 }
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	
+}
+
+country_event = { #苏联ai额外人力
+	id = SOV_mod.8
+	title = SOV_mod.8.t
+	desc = SOV_mod.8.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		SOV = { surrender_progress > 0.12 }
+	}
+	
+	option = {
+		name = SOV_mod.8.a
+		add_manpower = 2000000
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
+		if = {
+			limit = {
+				has_tech = advanced_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 800 }
+		}
+		else_if = {
+			limit = {
+				has_tech = improved_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 800 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 800 }
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #苏联ai额外人力
+	id = SOV_mod.801
+	title = SOV_mod.801.t
+	desc = SOV_mod.801.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		SOV = { surrender_progress > 0.40 }
+	}
+	
+	option = {
+		name = SOV_mod.801.a
+		add_manpower = 2000000
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #德国ai额外人力3
+	id = SOV_mod.804
+	title = SOV_mod.804.t
+	desc = SOV_mod.804.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_manpower < 60000
+		has_idea = scraping_the_barrel
+		not = {
+			has_global_flag = cjc_im_freshman_flag
+		}
+	}
+	
+	option = {
+		name = SOV_mod.804.a
+		add_manpower = 200000 #1800000
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #德国ai额外人力3
+	id = SOV_mod.805
+	title = SOV_mod.805.t
+	desc = SOV_mod.805.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_idea = all_adults_serve
+		not = {
+			has_global_flag = cjc_im_freshman_flag
+		}
+	}
+	
+	option = {
+		name = SOV_mod.805.a
+		add_manpower = 200000 #800000
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #德国ai送编制
+	id = SOV_mod.9
+	title = SOV_mod.9.t
+	desc = SOV_mod.9.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_tech = tech_logistics_company
+		date > 1941.1.1
+	}
+	
+	option = {
+		name = SOV_mod.9.a
+		if = {
+			limit = {
+				not = { has_tech = tech_maintenance_company }
+			}
+			set_technology = { tech_maintenance_company = 1 }
+		}
+		hidden_effect = {
+			division_template = {
+				name = "Deutsch Wehrmacht"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					anti_tank = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"Deutsch Wehrmacht\" division_template = \"Deutsch Wehrmacht\" start_experience_factor = 0.0" 
+					owner = GER
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #苏联ai人力科技
+	id = SOV_mod.11
+	title = SOV_mod.11.t
+	desc = SOV_mod.11.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		has_government = communism
+		or = {
+			SOV = { surrender_progress > 0.20 }
+			date > 1941.11.1
+		}
+		
+	}
+	
+	option = {
+		name = SOV_mod.11.a
+		set_technology = { engineers_save_manpower_ai = 1 }
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #苏联玩家选择难度
+	id = SOV_mod.12
+	title = SOV_mod.12.t
+	desc = SOV_mod.12.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = no
+		has_government = communism
+		
+	}
+	
+	option = {
+		name = SOV_mod.12.a
+		set_country_flag = sov_flag_difficulty_level_2
+		custom_effect_tooltip = sov_difficulty_level_2_tt
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = SOV_mod.12.b
+		set_country_flag = sov_flag_difficulty_level_1
+		custom_effect_tooltip = sov_difficulty_level_1_tt
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = SOV_mod.12.c
+		custom_effect_tooltip = sov_difficulty_level_0_tt
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #测试事件
+	id = SOV_mod.13
+	title = SOV_mod.13.t
+	desc = SOV_mod.13.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SOV_mod.13.a
+		set_technology = {
+			cjc_ai_ger_buff_production_tech_1942 = 1
+		}
+		set_technology = {
+			cjc_ai_ger_buff_production_tech_1943 = 1
+		}
+		set_technology = {
+			cjc_ai_ger_buff_production_tech_1944 = 1
+		}
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = SOV_mod.13.b
+		create_equipment_variant = {
+			name = "Yak-38M"
+			type = small_plane_airframe_2
+			modules = {
+				fixed_main_weapon_slot = light_mg_4x
+				fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
+				engine_type_slot = engine_3_1x
+				special_type_slot_1 = drop_tanks
+				special_type_slot_2 = empty
+			}
+			icon = "GFX_JAP_cv_fighter2_medium"
+		}
+		add_equipment_to_stockpile = { type = small_plane_airframe_2 amount = 100 variant_name = "Yak-38M" }
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = SOV_mod.13.c
+		add_ideas = GER_strengthen_for_player
+		add_ideas = GER_strengthen_for_player_heavy
+		add_ideas = GER_strengthen_for_player_2
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	option = {
+		name = SOV_mod.13.e
+		JAP = {
+			set_country_flag = {
+				flag = cjc_usa_will_attack_us_flag
+				days = 300
+				value = 1
+			}
+		}
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}

@@ -1,0 +1,864 @@
+add_namespace = JAP_mod
+
+country_event = {
+	id = JAP_mod.1
+	title = JAP_mod.1.t
+	desc = JAP_mod.1.d
+	picture = GFX_report_event_generic_read_write
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_mod.1.a
+		
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+
+country_event = {
+	id = JAP_mod.2
+	title = JAP_mod.2.t
+	desc = JAP_mod.2.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_mod.2.a
+		add_manpower = 2000
+		custom_effect_tooltip = cjc_support_from_prc_tt
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_mod.21
+	title = JAP_mod.21.t
+	desc = JAP_mod.21.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_mod.21.a
+		add_manpower = 20000
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 2000 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 800 }
+		add_equipment_to_stockpile = { type = fighter_equipment amount = 50 }
+		set_country_flag = JAP_stop_support
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #这里主要是得确保ai中共会造出足够的兵力去填解放战争的线
+	id = JAP_mod.12
+	title = JAP_mod.12.t
+	desc = JAP_mod.12.d
+	picture = GFX_report_event_generic_read_write
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PRC
+		is_ai = yes
+		JAP = { has_civil_war = yes }
+		JAP = { has_government = communism }
+	
+	
+	}
+	
+	option = {
+		name = JAP_mod.12.a
+		add_manpower = 300000
+		army_experience = 50
+		air_experience = 50
+		navy_experience = 50
+		add_political_power = 100
+		if = {
+			limit = { NOT = { has_tech = gw_artillery } }
+			set_technology = {
+				gw_artillery = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = tech_support } }
+			set_technology = {
+				tech_support = 1
+			}
+		}
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 500 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 500 }
+		add_equipment_to_stockpile = { type = convoy amount = 100 }
+		add_offsite_building = { type = industrial_complex level = 1 }
+		add_tech_bonus = {
+			name = touhou_secret_weapons
+			bonus = 2.0
+			uses = 2
+			category = electronics
+		}
+		add_tech_bonus = {
+			name = touhou_shenlingmiao_fu
+			bonus = 2
+			uses = 2
+			category = artillery
+		}
+		add_tech_bonus = {
+			name = touhou_shousi_wunv
+			bonus = 2
+			uses = 2
+			category = infantry_weapons
+		}
+		add_tech_bonus = {
+			name = touhou_RAB_with_kap
+			bonus = 2.0
+			uses = 2
+			category = industry
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+
+
+
+country_event = {
+	id = JAP_mod.13
+	title = JAP_mod.13.t
+	desc = JAP_mod.13.d
+	picture = GFX_report_event_generic_read_write
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes #废弃事件
+	
+	option = {
+		name = JAP_mod.13.a
+		add_manpower = 900000
+		army_experience = 100
+		air_experience = 100
+		navy_experience = 100
+		add_political_power = 150
+		add_stability = 0.1
+		add_equipment_to_stockpile = { type = light_tank_chassis amount = 300 }
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 600 }
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 1800 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 1000 }
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+
+
+country_event = {
+	id = JAP_mod.14
+	title = JAP_mod.14.t
+	desc = JAP_mod.14.d
+	picture = GFX_report_event_generic_read_write
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = JAP
+		is_ai = yes
+		JAP = { has_civil_war = yes }
+		JAP = { has_government = communism }
+	
+	
+	}
+	
+	option = {
+		name = JAP_mod.14.a
+		diplomatic_relation = {
+			country = SOV
+			relation = military_access
+			active = yes
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+
+country_event = {
+	id = JAP_mod.15
+	title = JAP_mod.15.t
+	desc = JAP_mod.15.d
+	picture = GFX_report_event_generic_read_write
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PRC
+		is_ai = yes
+		OR = {
+			has_war_with = XSM
+			has_war_with = SHX
+		}
+	}
+	
+	option = {
+		name = JAP_mod.15.a
+		add_tech_bonus = {
+			name = touhou_shousi_wunv
+			bonus = 2
+			uses = 1
+			category = infantry_weapons
+		}
+		add_tech_bonus = {
+			name = touhou_doll_factory
+			bonus = 2
+			uses = 1
+			category = armor
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+
+country_event = {
+	id = JAP_mod.16
+	title = JAP_mod.16.t
+	desc = JAP_mod.16.d
+	picture = GFX_report_event_generic_read_write
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PRC
+		is_ai = yes
+		OR = {
+			has_war_with = GER
+			has_war_with = USA
+		}
+	}
+	
+	option = {
+		name = JAP_mod.16.a
+		add_equipment_to_stockpile = { type = anti_tank_equipment amount = 5000 }
+		add_equipment_to_stockpile = { type = anti_air_equipment amount = 5000 }
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 5000 }
+		add_equipment_to_stockpile = { type = medium_tank_chassis amount = 5000 }
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+
+country_event = {
+	id = JAP_mod.3
+	title = JAP_mod.3.t
+	desc = JAP_mod.3.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_mod.3.a
+		add_political_power = 50
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_mod.4
+	title = JAP_mod.4.t
+	desc = JAP_mod.4.d
+	picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_mod.4.a
+		add_political_power = 50
+		add_stability = 0.05
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_mod.5
+	title = JAP_mod.5.t
+	desc = JAP_mod.5.d
+	picture = GFX_report_event_japanese_soldiers_03
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_mod.5.a
+		add_tech_bonus = {
+			name = touhou_ghost_extradite
+			bonus = 2
+			uses = 1
+			category = support_tech
+		}
+		add_tech_bonus = {
+			name = touhou_shenlingmiao_fu
+			bonus = 2
+			uses = 1
+			category = artillery
+		}
+		add_tech_bonus = {
+			name = touhou_shousi_wunv
+			bonus = 2
+			uses = 1
+			category = infantry_weapons
+		}
+		add_tech_bonus = {
+			name = JAP_cruiser_modernization
+			bonus = 2.0
+			uses = 1
+			category = cl_tech	
+			category = ca_tech	
+		}
+		add_tech_bonus = {
+			name = JAP_modern_escorts
+			bonus = 1.0
+			uses = 1
+			category = dd_tech	
+		}
+		add_tech_bonus = {
+			name = JAP_jet_prototypes
+			bonus = 1.0
+			uses = 2
+			category = jet_technology
+		}
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_mod.6
+	title = JAP_mod.6.t
+	desc = JAP_mod.6.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = JAP_mod.6.a
+		create_faction = PRC_maoism_faction
+		
+
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_mod.7
+	title = JAP_mod.7.t
+	desc = JAP_mod.7.d
+	picture = GFX_report_event_japanese_officers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = JAP
+		has_government = communism
+		date > 1939.1.1
+		#has_completed_focus = JAP_rebuild_navy
+	}
+	
+	option = {
+		name = JAP_mod.7.a
+		add_stability = -0.01
+		add_political_power = 15
+
+		ai_chance = {
+		factor = 2
+		}
+	}
+	
+	
+	option = {
+		name = JAP_mod.7.b
+		add_stability = 0.01
+		add_political_power = -15
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_mod.8
+	title = JAP_mod.8.t
+	desc = JAP_mod.8.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.8.a
+		set_country_flag = JAP_choose_navy
+		add_timed_idea = {
+				idea = JAP_army_unhappy
+				days = 60
+			}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+	option = {
+		name = JAP_mod.8.b
+		set_country_flag = JAP_choose_army
+		add_timed_idea = {
+				idea = JAP_navy_unhappy
+				days = 60
+			}
+		ai_chance = {
+		factor = 3
+		}
+	}
+	
+	
+}
+
+country_event = {
+	id = JAP_mod.9
+	title = JAP_mod.9.t
+	desc = JAP_mod.9.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.9.a
+		add_political_power = 30
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = JAP_mod.10
+	title = JAP_mod.10.t
+	desc = JAP_mod.10.d
+	picture = GFX_report_event_japanese_parade
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.10.a
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		if = {
+			limit = {
+				not = { has_country_flag = cjc_tokuda_has_been_release_flag }
+			}
+			set_country_flag = cjc_tokuda_has_been_release_flag
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = JAP_mod.11
+	title = JAP_mod.11.t
+	desc = JAP_mod.11.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.11.a
+		JAP = { country_event = JAP_mod.111 }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				JAP = { num_of_factories > 119 }
+			}
+			modifier = {
+				factor = 1.5
+				JAP = { num_of_factories > 159 }
+			}
+			modifier = {
+				factor = 1.5
+				JAP = { num_of_factories > 199 }
+			}
+		}
+	}
+	
+	option = {
+		name = JAP_mod.11.b
+		JAP = { country_event = JAP_mod.112 }
+		ai_chance = {
+			factor = 90
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = JAP_mod.111
+	title = JAP_mod.111.t
+	desc = JAP_mod.111.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.111.a
+		every_state = {
+			limit = {
+				is_core_of = KOR
+			}
+			add_core_of = JAP
+		}
+		if = {
+			limit = {
+				country_exists = KOR
+			}
+			JAP = {
+			annex_country = {
+					target = KOR
+					transfer_troops = yes
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = JAP_mod.112
+	title = JAP_mod.112.t
+	desc = JAP_mod.112.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.112.a
+		add_stability = 0.1
+		add_political_power = 150
+		add_manpower = 200000
+		if = {
+			limit = { not = { country_exists = KOR } }
+			release_autonomy = {
+				target = KOR
+				autonomy_state = autonomy_puppet
+				freedom_level=0.8
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	option = {
+		name = JAP_mod.112.b
+		trigger = {
+			not = { country_exists = KOR }
+		}
+		every_state = {
+			limit = {
+				is_core_of = KOR
+			}
+			add_compliance = -5
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = JAP_mod.102
+	title = JAP_mod.102.t
+	desc = JAP_mod.102.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.102.a
+		JAP = { country_event = JAP_mod.121 }
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	option = {
+		name = JAP_mod.102.b
+		JAP = { country_event = JAP_mod.122 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = JAP_mod.121
+	title = JAP_mod.121.t
+	desc = JAP_mod.121.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.121.a
+		every_state = {
+			limit = {
+				is_core_of = GUM
+			}
+			add_core_of = JAP
+		}
+		if = {
+			limit = {
+				country_exists = GUM
+			}
+			JAP = {
+			annex_country = {
+					target = GUM
+					transfer_troops = yes
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = JAP_mod.122
+	title = JAP_mod.122.t
+	desc = JAP_mod.122.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.122.a
+		add_stability = 0.05
+		add_political_power = 100
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	option = {
+		name = JAP_mod.122.b
+		trigger = {
+			not = { country_exists = GUM }
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = JAP_mod.103
+	title = JAP_mod.103.t
+	desc = JAP_mod.103.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.103.a
+		JAP = { country_event = JAP_mod.131 }
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 1.5
+				JAP = { num_of_factories > 109 }
+			}
+			modifier = {
+				factor = 2
+				JAP = { num_of_factories > 159 }
+			}
+			modifier = {
+				factor = 1.5
+				JAP = { num_of_factories > 199 }
+			}
+		}
+	}
+	
+	option = {
+		name = JAP_mod.103.b
+		JAP = { country_event = JAP_mod.132 }
+		ai_chance = {
+			factor = 20
+		}
+	}
+	
+
+}
+
+country_event = {
+	id = JAP_mod.131
+	title = JAP_mod.131.t
+	desc = JAP_mod.131.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.131.a
+		every_state = {
+			limit = {
+				is_core_of = FSM
+			}
+			add_core_of = JAP
+		}
+		if = {
+			limit = {
+				country_exists = FSM
+			}
+			JAP = {
+			annex_country = {
+					target = FSM
+					transfer_troops = yes
+				}
+			}
+		}
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_mod.132
+	title = JAP_mod.132.t
+	desc = JAP_mod.132.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_mod.132.a
+		add_stability = 0.05
+		add_political_power = 100
+		add_manpower = 20000
+		if = {
+			limit = { not = { country_exists = FSM } }
+			release_autonomy = {
+				target = FSM
+				autonomy_state = autonomy_puppet
+				freedom_level=0.8
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	option = {
+		name = JAP_mod.132.b
+		trigger = {
+			not = { country_exists = FSM }
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+
+}

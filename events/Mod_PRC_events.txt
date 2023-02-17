@@ -1,0 +1,557 @@
+add_namespace = PRC_mod
+
+country_event = {
+	id = PRC_mod.1
+	title = PRC_mod.1.t
+	desc = PRC_mod.1.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.1.a
+		PRC = { transfer_state = 434 }
+		PRC = { country_event = {id = PRC_mod.2 }}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 79 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 109 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 139 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 169 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 199 }
+			}
+		}
+	}
+	option = {
+		name = PRC_mod.1.b
+		PRC = { country_event = {id = PRC_mod.3 }}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0.6
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_government = communism
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = PRC_mod.2
+	title = PRC_mod.2.t
+	desc = PRC_mod.2.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.2.a
+	}
+	
+}
+
+country_event = {
+	id = PRC_mod.3
+	title = PRC_mod.3.t
+	desc = PRC_mod.3.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.3.a
+		434 = {
+			controller = {
+				PRC = {
+					create_wargoal = {
+						type = take_state_focus
+						target = PREV
+						generator = { 434 }
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = PRC_mod.4
+	title = PRC_mod.4.t
+	desc = PRC_mod.4.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.4.a
+	}
+	
+}
+
+
+
+country_event = {
+	id = PRC_mod.21
+	title = PRC_mod.21.t
+	desc = PRC_mod.21.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.21.a
+		PRC = { transfer_state = 326 }
+		PRC = { country_event = {id = PRC_mod.22 }}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 89 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 119 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 149 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 179 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 209 }
+			}
+		}
+	}
+	option = {
+		name = PRC_mod.21.b
+		PRC = { country_event = {id = PRC_mod.23 }}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0.6
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_government = communism
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = PRC_mod.31
+	title = PRC_mod.31.t
+	desc = PRC_mod.31.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.31.a
+		PRC = { transfer_state = 729 }
+		PRC = { country_event = {id = PRC_mod.22 }}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 89 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 119 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 149 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 179 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 209 }
+			}
+		}
+	}
+	option = {
+		name = PRC_mod.31.b
+		PRC = { country_event = {id = PRC_mod.33 }}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0.6
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_government = communism
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = PRC_mod.41
+	title = PRC_mod.41.t
+	desc = PRC_mod.41.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.41.a
+		PRC = { transfer_state = 728 }
+		PRC = { country_event = {id = PRC_mod.22 }}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 89 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 119 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 149 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 179 }
+			}
+			modifier = {
+				factor = 1.5
+				PRC = { num_of_factories > 209 }
+			}
+		}
+	}
+	option = {
+		name = PRC_mod.41.b
+		PRC = { country_event = {id = PRC_mod.43 }}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0.6
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				has_government = communism
+			}
+		}
+	}
+	
+}
+
+
+
+country_event = {
+	id = PRC_mod.22
+	title = PRC_mod.22.t
+	desc = PRC_mod.22.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.22.a
+	}
+	
+}
+
+country_event = {
+	id = PRC_mod.23
+	title = PRC_mod.23.t
+	desc = PRC_mod.23.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.23.a
+		326 = {
+			controller = {
+				PRC = {
+					create_wargoal = {
+						type = take_state_focus
+						target = PREV
+						generator = { 326 }
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = PRC_mod.33
+	title = PRC_mod.33.t
+	desc = PRC_mod.33.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.33.a
+		729 = {
+			controller = {
+				PRC = {
+					create_wargoal = {
+						type = take_state_focus
+						target = PREV
+						generator = { 729 }
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = PRC_mod.43
+	title = PRC_mod.43.t
+	desc = PRC_mod.43.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = PRC_mod.43.a
+		728 = {
+			controller = {
+				PRC = {
+					create_wargoal = {
+						type = take_state_focus
+						target = PREV
+						generator = { 728 }
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = PRC_mod.5
+	title = PRC_mod.5.t
+	desc = PRC_mod.5.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = yes
+	trigger = {
+		TIB = {
+			is_subject_of = PRC
+		
+		}
+
+	}
+	option = {
+		name = PRC_mod.5.a
+		PRC = { transfer_state = 322 }
+		PRC = { transfer_state = 757 }
+		PRC = { transfer_state = 758 }
+		PRC = { add_state_core = 322 }
+		PRC = { add_state_core = 757 }
+		PRC = { add_state_core = 758 }
+		
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = PRC_mod.5.b
+		ai_chance = {
+			factor = 0
+
+		}
+	}
+	
+}
+
+
+country_event = {
+	id = PRC_mod.6
+	title = PRC_mod.6.t
+	desc = PRC_mod.6.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = yes
+	trigger = {
+		MON = {
+			is_subject_of = PRC
+		
+		}
+
+	}
+	option = {
+		name = PRC_mod.6.a
+		PRC = { transfer_state = 330 }
+		PRC = { add_state_core = 330 }
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = PRC_mod.6.b
+		ai_chance = {
+			factor = 0
+
+		}
+	}
+	
+}
+
+
+country_event = {
+	id = PRC_mod.7
+	title = PRC_mod.7.t
+	desc = PRC_mod.7.d
+	picture = GFX_report_cjc_maozedong_1
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PRC
+		has_completed_focus = PRC_proclaim_the_peoples_republic
+	}
+	
+	option = {
+		name = PRC_mod.7.a
+		add_tech_bonus = {
+			name = PRC_qianxuesen
+			bonus = 1.0
+			uses = 1
+			category = nuclear
+		}
+		if = {
+			limit = { has_idea = PRC_no_industry_base }
+			swap_ideas = {
+				remove_idea = PRC_no_industry_base
+				add_idea = PRC_weak_industry_base
+			}
+		}
+		if = {
+			limit = { 
+				has_dlc = "By Blood Alone"
+				NOT = { has_tech = iw_small_airframe }
+			}
+			set_technology = {
+				iw_small_airframe = 1
+			}
+		}
+		else_if = {
+			limit = { 
+				NOT = { has_tech = early_fighter }
+				NOT = { has_dlc = "By Blood Alone" }
+			}
+			set_technology = {
+				early_fighter = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = motorised_infantry } }
+			set_technology = {
+				motorised_infantry = 1
+			}
+		}
+		add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 400 }
+		add_equipment_to_stockpile = { type = anti_air_equipment amount = 500 }
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 1000 }
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 }
+		add_equipment_to_stockpile = { type = support_equipment amount = 1000 }
+		if = {
+			limit = {
+				NOT = { has_dlc = "By Blood Alone" }
+			}
+			if = {
+				limit = {
+					has_tech = fighter2
+				}
+				add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 300 }
+			}
+			else_if = {
+				limit = {
+					has_tech = fighter1
+				}
+				add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 300 }
+			}
+			else = {
+				add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 300 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_dlc = "By Blood Alone"
+			}
+			create_equipment_variant = {
+				name = "Yak-3"
+				type = small_plane_airframe_1
+				modules = {
+					fixed_main_weapon_slot = light_mg_4x
+					fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_1x
+					engine_type_slot = engine_2_1x
+					special_type_slot_1 = drop_tanks
+					special_type_slot_2 = empty
+				}
+				icon = "GFX_JAP_cv_fighter2_medium"
+			}
+			custom_effect_tooltip = cjc_get_200_small_fighters_of_this_type_tt
+			add_equipment_to_stockpile = { type = small_plane_airframe_1 amount = 200 variant_name = "Yak-3" }
+		}
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = PRC_mod.8
+	title = PRC_mod.8.t
+	desc = PRC_mod.8.d
+	picture = GFX_report_event_generic_read_write
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PRC
+		num_of_military_factories > 12
+	}
+	
+	option = {
+		name = PRC_mod.8.a
+		remove_ideas = PRC_get_enemies_equipment
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_controlled_by = ROOT
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}

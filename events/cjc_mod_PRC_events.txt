@@ -1,0 +1,1606 @@
+add_namespace = cjc_mod_PRC
+
+
+
+country_event = {
+	id = cjc_mod_PRC.1
+	title = cjc_mod_PRC.1.t
+	desc = cjc_mod_PRC.1.d
+	picture = GFX_report_event_chinese_soldiers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.1.a
+		custom_effect_tooltip = PRC_army_from_chi_tt
+		hidden_effect = {
+			division_template = {
+				name = "KMT rise army"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 2 y = 0 }
+					artillery_brigade = { x = 3 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 622 }
+				create_unit = {
+					division = "name = \"KMT rise army1\" division_template = \"KMT rise army\" start_experience_factor = 0.1" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"KMT rise army2\" division_template = \"KMT rise army\" start_experience_factor = 0.1" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"KMT rise army3\" division_template = \"KMT rise army\" start_experience_factor = 0.1" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"KMT rise army4\" division_template = \"KMT rise army\" start_experience_factor = 0.1" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"KMT rise army5\" division_template = \"KMT rise army\" start_experience_factor = 0.1" 
+					owner = PRC
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+
+country_event = { #请求蒙古公投
+	id = cjc_mod_PRC.2
+	title = cjc_mod_PRC.2.t
+	desc = cjc_mod_PRC.2.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.2.a
+		MON = { country_event = { id = cjc_mod_PRC.201 days = 1 } }
+		PRC = { country_event = { id = cjc_mod_PRC.202 days = 1 } }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.2.b
+		
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #蒙古公投
+	id = cjc_mod_PRC.201
+	title = cjc_mod_PRC.201.t
+	desc = cjc_mod_PRC.201.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.201.a
+		
+		PRC = { country_event = { id = cjc_mod_PRC.203 days = 1 } }
+		ai_chance = {
+		factor = 20
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.201.b
+		
+		PRC = { country_event = { id = cjc_mod_PRC.204 days = 1 } }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #PRC收到消息
+	id = cjc_mod_PRC.202
+	title = cjc_mod_PRC.202.t
+	desc = cjc_mod_PRC.202.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.202.a
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #同意
+	id = cjc_mod_PRC.203
+	title = cjc_mod_PRC.203.t
+	desc = cjc_mod_PRC.203.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.203.a
+		every_state = {
+			limit = {
+				is_core_of = MON
+			}
+			add_core_of = PRC
+		}
+		every_state = {
+			limit = {
+				is_core_of = MON
+				is_fully_controlled_by = MON
+			}
+			PRC = { transfer_state = PREV }
+		}
+		every_state = {
+			limit = {
+				is_core_of = TAN
+				is_fully_controlled_by = TAN
+			}
+			add_core_of = PRC
+			PRC = { transfer_state = PREV }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #拒绝
+	id = cjc_mod_PRC.204
+	title = cjc_mod_PRC.204.t
+	desc = cjc_mod_PRC.204.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.204.a
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.204.b
+		every_state = {
+			limit = {
+				is_core_of = MON
+			}
+			add_core_of = PRC
+		}
+		every_state = {
+			limit = {
+				is_core_of = MON
+				is_fully_controlled_by = MON
+			}
+			PRC = { transfer_state = PREV }
+		}
+		every_state = {
+			limit = {
+				is_core_of = TAN
+				is_fully_controlled_by = TAN
+			}
+			add_core_of = PRC
+			PRC = { transfer_state = PREV }
+		}
+		custom_effect_tooltip = mon_back_cheating_option_tt
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = cjc_mod_PRC.3
+	title = cjc_mod_PRC.3.t
+	desc = cjc_mod_PRC.3.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes #废弃事件
+	
+	option = {
+		name = cjc_mod_PRC.3.a
+		add_equipment_to_stockpile = { type = medium_tank_chassis amount = 1000 }
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 1000 }
+		
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = cjc_mod_PRC.301
+	title = cjc_mod_PRC.301.t
+	desc = cjc_mod_PRC.301.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes #废弃事件
+	
+	option = {
+		name = cjc_mod_PRC.301.a
+		add_equipment_to_stockpile = { type = medium_tank_chassis amount = 1000 }
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 500 }
+		
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = cjc_mod_PRC.302
+	title = cjc_mod_PRC.302.t
+	desc = cjc_mod_PRC.302.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes #废弃事件
+	
+	option = {
+		name = cjc_mod_PRC.302.a
+		add_equipment_to_stockpile = { type = medium_tank_chassis amount = 1000 }
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 500 }
+		
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #AI赠送坦克编制
+	id = cjc_mod_PRC.4
+	title = cjc_mod_PRC.4.t
+	desc = cjc_mod_PRC.4.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.4.a
+		if = {
+			limit = {
+				not = { has_tech = basic_medium_tank_chassis }
+			}
+			set_technology = { basic_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = improved_medium_tank_chassis }
+			}
+			set_technology = { improved_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery1 }
+			}
+			set_technology = { artillery1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery2 }
+			}
+			set_technology = { artillery2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery3 }
+			}
+			set_technology = { artillery3 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank1 }
+			}
+			set_technology = { antitank1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank2 }
+			}
+			set_technology = { antitank2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = electronic_mechanical_engineering }
+			}
+			set_technology = { electronic_mechanical_engineering = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = radio }
+			}
+			set_technology = { radio = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = radio_detection }
+			}
+			set_technology = { radio_detection = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = decimetric_radar }
+			}
+			set_technology = { decimetric_radar = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_logistics_company }
+			}
+			set_technology = { tech_logistics_company = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_maintenance_company }
+			}
+			set_technology = { tech_maintenance_company = 1 }
+		}
+		create_equipment_variant = {
+			name = "T-34-85"
+			type = medium_tank_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_hmg
+				special_type_slot_2 = tank_radio_2
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = wet_ammo_storage
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 8
+				tank_nsb_armor_upgrade = 14
+			}
+			icon = "gfx/interface/technologies/SOV_imp_main_tank.dds"
+		}
+		if = {
+			limit = {
+				has_tech = advanced_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 2000 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 2000 }
+		}
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 1500 }
+		hidden_effect = {
+			division_template = {
+				name = "Expiremental Armor Dvision"
+				regiments = {
+					medium_armor = { x = 0 y = 0 }
+					medium_armor = { x = 0 y = 1 }
+					medium_armor = { x = 0 y = 2 }
+					medium_armor = { x = 0 y = 3 }
+					medium_armor = { x = 0 y = 4 }
+					medium_armor = { x = 1 y = 0 }
+					medium_armor = { x = 1 y = 1 }
+					medium_armor = { x = 1 y = 2 }
+					medium_armor = { x = 1 y = 3 }
+					medium_armor = { x = 1 y = 4 }
+					motorized = { x = 2 y = 0 }
+					motorized = { x = 2 y = 1 }
+					motorized = { x = 2 y = 2 }
+					motorized = { x = 2 y = 3 }
+					motorized = { x = 2 y = 4 }
+					motorized = { x = 3 y = 0 }
+					motorized = { x = 3 y = 1 }
+					motorized = { x = 3 y = 2 }
+					mot_anti_tank_brigade = { x = 3 y = 3 }
+					mot_anti_air_brigade = { x = 3 y = 4 }
+					medium_armor = { x = 4 y = 0 }
+					medium_armor = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					mot_recon = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					anti_air = { x = 0 y = 4 }
+				}
+			}
+				
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 622 }
+				create_unit = {
+					division = "name = \"Expiremental Armor Dvision 00\" division_template = \"Expiremental Armor Dvision\" start_experience_factor = 0.5" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"Expiremental Armor Dvision 01\" division_template = \"Expiremental Armor Dvision\" start_experience_factor = 0.5" 
+					owner = PRC
+				}
+			}
+		}
+		set_country_flag = prc_got_decision_pla_template_armor_flag
+		
+		prc_ai_build_army_infantry_3000 = yes
+		prc_ai_build_army_armor_1000 = yes
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = {
+	id = cjc_mod_PRC.401
+	title = cjc_mod_PRC.401.t
+	desc = cjc_mod_PRC.401.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PRC
+		is_ai = yes
+		date > 1940.1.1
+		has_equipment = { infantry_equipment > 100000 }
+		CHI = {
+			OR = {
+				has_capitulated = yes
+				exists = no
+				is_subject_of = PRC
+			}
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.401.a
+		if = {
+			limit = {
+				not = { has_tech = tech_maintenance_company }
+			}
+			set_technology = { tech_maintenance_company = 1 }
+		}
+		hidden_effect = {
+			division_template = {
+				name = "PLA"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					anti_tank = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 622 }
+				create_unit = {
+					division = "name = \"PLA 01\" division_template = \"PLA\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+			}
+		}
+		
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #AI赠送师团数量
+	id = cjc_mod_PRC.5
+	title = cjc_mod_PRC.5.t
+	desc = cjc_mod_PRC.5.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PRC
+		has_army_manpower = { size > 259999 }
+		is_ai = yes
+		not = {
+			has_war_with = SHX
+			has_war_with = XSM
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.5.a
+		if = {
+			limit = { NOT = { has_tech = tech_engineers } }
+			set_technology = {
+				tech_engineers = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = interwar_antitank } }
+			set_technology = {
+				interwar_antitank = 1
+			}
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_logistics_company }
+			}
+			set_technology = { tech_logistics_company = 1 }
+		}
+		if = {
+			limit = { NOT = { has_tech = tech_recon } }
+			set_technology = {
+				tech_recon = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = motorised_infantry } }
+			set_technology = {
+				motorised_infantry = 1
+			}
+		}
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 300 }
+		hidden_effect = {
+			division_template = {
+				name = "redarmy"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+				}
+			}
+				
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 622 }
+				create_unit = {
+					division = "name = \"红军1师\" division_template = \"redarmy\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军2师\" division_template = \"redarmy\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军3师\" division_template = \"redarmy\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军4师\" division_template = \"redarmy\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #AI赠送师团数量2
+	id = cjc_mod_PRC.501
+	title = cjc_mod_PRC.501.t
+	desc = cjc_mod_PRC.501.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = no
+	
+	trigger = {
+		tag = PRC
+		has_army_manpower = { size < 420000 }
+		is_ai = yes
+		date > 1939.1.1
+	}
+	
+	option = {
+		name = cjc_mod_PRC.501.a
+		if = {
+			limit = { NOT = { has_tech = tech_engineers } }
+			set_technology = {
+				tech_engineers = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = interwar_antitank } }
+			set_technology = {
+				interwar_antitank = 1
+			}
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_logistics_company }
+			}
+			set_technology = { tech_logistics_company = 1 }
+		}
+		if = {
+			limit = { NOT = { has_tech = tech_recon } }
+			set_technology = {
+				tech_recon = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = motorised_infantry } }
+			set_technology = {
+				motorised_infantry = 1
+			}
+		}
+		hidden_effect = {
+			division_template = {
+				name = "redarmy"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+				}
+			}
+				
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 622 }
+				create_unit = {
+					division = "name = \"red army 1\" division_template = \"redarmy\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"red army 2\" division_template = \"redarmy\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"red army 3\" division_template = \"redarmy\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"red army 4\" division_template = \"redarmy\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #AI打阎锡山
+	id = cjc_mod_PRC.503
+	title = cjc_mod_PRC.503.t
+	desc = cjc_mod_PRC.503.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.503.a
+		if = {
+			limit = {
+				not = {
+					has_war_with = SHX
+				}
+			}
+			declare_war_on = {
+				type = annex_everything
+				target = SHX
+			}
+		}
+		prc_ai_build_army_infantry_100 = yes
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #共和国陆军
+	id = cjc_mod_PRC.6
+	title = cjc_mod_PRC.6.t
+	desc = cjc_mod_PRC.6.d
+	picture = GFX_report_event_soviet_tank_parade
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.6.a
+		add_ideas = PRC_republic_army1
+		
+		ai_chance = {
+		factor = 20
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.6.b
+		add_ideas = PRC_republic_army2
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #共和国空军
+	id = cjc_mod_PRC.601
+	title = cjc_mod_PRC.601.t
+	desc = cjc_mod_PRC.601.d
+	picture = GFX_report_event_generic_bombers
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.601.a
+		add_ideas = PRC_republic_airforce
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #共和国海军
+	id = cjc_mod_PRC.602
+	title = cjc_mod_PRC.602.t
+	desc = cjc_mod_PRC.602.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.602.a
+		add_ideas = PRC_republic_navy
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #共和国的国际环境
+	id = cjc_mod_PRC.7
+	title = cjc_mod_PRC.7.t
+	desc = cjc_mod_PRC.7.d
+	picture = GFX_report_cjc_break_chains_1
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.7.a
+		add_political_power = 50
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #公审蒋介石
+	id = cjc_mod_PRC.8
+	title = cjc_mod_PRC.8.t
+	desc = cjc_mod_PRC.8.d
+	picture = GFX_report_event_soviet_purge_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.8.a
+		add_political_power = 25
+		add_stability = 0.05
+		CHI = {
+			kill_country_leader = yes
+		}
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.8.b
+		add_political_power = 25
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #购买战舰
+	id = cjc_mod_PRC.9
+	title = cjc_mod_PRC.9.t
+	desc = cjc_mod_PRC.9.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.9.a
+			PRC = { country_event = cjc_mod_PRC.901 }
+			custom_effect_tooltip = jap_if_we_sell_fleets_tt
+			effect_tooltip = {
+				PRC = {
+					add_timed_idea = {
+						idea = PRC_idea_bought_fleets
+						days = 120
+					}
+				}
+				add_timed_idea = {
+					idea = JAP_idea_sold_fleets
+					days = 120
+				}
+			}
+			PRC = {
+				custom_effect_tooltip = PRC_purchase_warships_tt
+			}
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.9.b
+		PRC = { country_event = cjc_mod_PRC.902 }
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #购买战舰
+	id = cjc_mod_PRC.901
+	title = cjc_mod_PRC.901.t
+	desc = cjc_mod_PRC.901.d
+	picture = GFX_report_cjc_full_scale_navy_1 #GFX_report_event_usa_british_sailors_destroyers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.901.a
+			add_timed_idea = {
+				idea = PRC_idea_bought_fleets
+				days = 120
+			}
+			JAP = {
+				add_timed_idea = {
+					idea = JAP_idea_sold_fleets
+					days = 120
+				}
+			}
+			create_equipment_variant = {
+				name = "Red Flag I Class"
+				type = ship_hull_cruiser_2
+				#name_group = SOV_BC_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_medium_battery_2
+					fixed_ship_anti_air_slot = ship_anti_air_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_1
+					fixed_ship_engine_slot = cruiser_ship_engine_2
+					fixed_ship_armor_slot = ship_armor_cruiser_2
+					fixed_ship_secondaries_slot = ship_secondaries_2
+					front_1_custom_slot = ship_medium_battery_2
+					mid_1_custom_slot = ship_torpedo_2
+					mid_2_custom_slot = ship_torpedo_2
+					rear_1_custom_slot = ship_airplane_launcher_2
+				}
+			}
+			
+			create_equipment_variant = {
+				name = "Red Flag II Class"
+				type = ship_hull_cruiser_2
+				#name_group = JAP_CA_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_light_medium_battery_2
+					fixed_ship_anti_air_slot = ship_anti_air_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_1
+					fixed_ship_engine_slot = cruiser_ship_engine_2
+					fixed_ship_armor_slot = ship_armor_cruiser_1
+					fixed_ship_secondaries_slot = ship_secondaries_2
+					front_1_custom_slot = ship_light_medium_battery_2
+					mid_1_custom_slot = ship_torpedo_2
+					mid_2_custom_slot = ship_torpedo_2
+					rear_1_custom_slot = ship_airplane_launcher_2
+				}
+			}
+			
+			### Destroyer Variants
+			create_equipment_variant = {
+				name = "Worker Class" #collection of various WWI and early interwar ships with similiar capabilities
+				type = ship_hull_light_2
+				#name_group = JAP_DD_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_light_battery_2
+					fixed_ship_anti_air_slot = ship_anti_air_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_1
+					fixed_ship_engine_slot = light_ship_engine_2
+					fixed_ship_torpedo_slot = ship_torpedo_2
+					mid_1_custom_slot = ship_torpedo_2
+					rear_1_custom_slot = ship_depth_charge_1
+				}
+			}
+			custom_effect_tooltip = PRC_purchase_warships_tt
+			hidden_effect = {
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_cruiser_2
+						creator = "PRC" 
+						version_name = "Red Flag I Class"
+					}
+					name = "Red Flag I 01" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_cruiser_2
+						creator = "PRC" 
+						version_name = "Red Flag I Class"
+					}
+					name = "Red Flag I 02" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_cruiser_2
+						creator = "PRC" 
+						version_name = "Red Flag II Class"
+					}
+					name = "Red Flag II 01" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_cruiser_2
+						creator = "PRC" 
+						version_name = "Red Flag II Class"
+					}
+					name = "Red Flag II 02" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_cruiser_2
+						creator = "PRC" 
+						version_name = "Red Flag II Class"
+					}
+					name = "Red Flag II 03" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_cruiser_2
+						creator = "PRC" 
+						version_name = "Red Flag II Class"
+					}
+					name = "Red Flag II 04" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_light_2
+						creator = "PRC" 
+						version_name = "Worker Class"
+					}
+					name = "Worker 01" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_light_2
+						creator = "PRC" 
+						version_name = "Worker Class"
+					}
+					name = "Worker 02" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_light_2
+						creator = "PRC" 
+						version_name = "Worker Class"
+					}
+					name = "Worker 03" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_light_2
+						creator = "PRC" 
+						version_name = "Worker Class"
+					}
+					name = "Worker 04" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_light_2
+						creator = "PRC" 
+						version_name = "Worker Class"
+					}
+					name = "Worker 05" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_light_2
+						creator = "PRC" 
+						version_name = "Worker Class"
+					}
+					name = "Worker 06" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_light_2
+						creator = "PRC" 
+						version_name = "Worker Class"
+					}
+					name = "Worker 07" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_light_2
+						creator = "PRC" 
+						version_name = "Worker Class"
+					}
+					name = "Worker 08" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_light_2
+						creator = "PRC" 
+						version_name = "Worker Class"
+					}
+					name = "Worker 09" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_light_2
+						creator = "PRC" 
+						version_name = "Worker Class"
+					}
+					name = "Worker 10" 
+					requested_factories = 1
+					progress = 0.95
+					amount = 1
+				}
+			}
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.901.b
+		add_political_power = -20
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #购买战舰
+	id = cjc_mod_PRC.902
+	title = cjc_mod_PRC.902.t
+	desc = cjc_mod_PRC.902.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.902.a
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+}
+
+country_event = { #速胜持久
+	id = cjc_mod_PRC.11
+	title = cjc_mod_PRC.11.t
+	desc = cjc_mod_PRC.11.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = { #持久战
+		name = cjc_mod_PRC.11.a
+		set_country_flag = PRC_protracted_plan_flag
+		add_doctrine_cost_reduction = {
+			name = land_doc_bonus
+			cost_reduction = 0.50
+			uses = 1
+			category = cat_mass_assault
+		}
+		custom_effect_tooltip = prc_unlock_protracted_focus_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = { #运动战
+		name = cjc_mod_PRC.11.b
+		set_country_flag = PRC_mobile_plan_flag
+		add_doctrine_cost_reduction = {
+			name = land_doc_bonus
+			cost_reduction = 0.50
+			uses = 1
+			category = cat_mobile_warfare
+		}
+		custom_effect_tooltip = prc_unlock_mobile_focus_tt
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #支援火车
+	id = cjc_mod_PRC.12
+	title = cjc_mod_PRC.12.t
+	desc = cjc_mod_PRC.12.d
+	picture = GFX_report_event_generic_train
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.12.a
+		add_political_power = 10
+		PRC = { country_event = cjc_mod_PRC.1201 }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.12.b
+		PRC = { country_event = cjc_mod_PRC.1202 }
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #支援火车
+	id = cjc_mod_PRC.1201
+	title = cjc_mod_PRC.1201.t
+	desc = cjc_mod_PRC.1201.d
+	picture = GFX_report_event_generic_train
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.1201.a
+		add_equipment_to_stockpile = {
+			type = train_equipment
+			amount = 5
+			producer = SOV
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #支援火车
+	id = cjc_mod_PRC.1202
+	title = cjc_mod_PRC.1202.t
+	desc = cjc_mod_PRC.1202.d
+	picture = GFX_report_event_generic_train
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.1202.a
+		add_political_power = -5
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #支援卡车
+	id = cjc_mod_PRC.13
+	title = cjc_mod_PRC.13.t
+	desc = cjc_mod_PRC.13.d
+	picture = GFX_report_event_generic_train
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.13.a
+		add_political_power = 10
+		PRC = { country_event = cjc_mod_PRC.1301 }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.13.b
+		PRC = { country_event = cjc_mod_PRC.1302 }
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #支援卡车
+	id = cjc_mod_PRC.1301
+	title = cjc_mod_PRC.1301.t
+	desc = cjc_mod_PRC.1301.d
+	picture = GFX_report_event_generic_train
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.1301.a
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 50
+			producer = SOV
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #支援卡车
+	id = cjc_mod_PRC.1302
+	title = cjc_mod_PRC.1302.t
+	desc = cjc_mod_PRC.1302.d
+	picture = GFX_report_event_generic_train
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.1302.a
+		add_political_power = -5
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #支援步枪
+	id = cjc_mod_PRC.14
+	title = cjc_mod_PRC.14.t
+	desc = cjc_mod_PRC.14.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.14.a
+		add_political_power = 15
+		SOV = { 
+			send_equipment = {
+				target = PRC
+				equipment = infantry_equipment
+				amount = 3000
+				old_prioritised = yes
+			}
+		}
+		PRC = { country_event = cjc_mod_PRC.1401 }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.14.b
+		PRC = { country_event = cjc_mod_PRC.1402 }
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #支援步枪
+	id = cjc_mod_PRC.1401
+	title = cjc_mod_PRC.1401.t
+	desc = cjc_mod_PRC.1401.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.1401.a
+		custom_effect_tooltip = cjc_prc_we_got_3000_guns_from_sov_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #支援步枪
+	id = cjc_mod_PRC.1402
+	title = cjc_mod_PRC.1402.t
+	desc = cjc_mod_PRC.1402.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.1402.a
+		add_political_power = -5
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #支援运输船
+	id = cjc_mod_PRC.15
+	title = cjc_mod_PRC.15.t
+	desc = cjc_mod_PRC.15.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.15.a
+		add_political_power = 25
+		JAP = { 
+			send_equipment = {
+				target = PRC
+				equipment = convoy
+				amount = 30
+			}
+		}
+		PRC = { country_event = cjc_mod_PRC.1501 }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_PRC.14.b
+		PRC = { country_event = cjc_mod_PRC.1502 }
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #支援运输船
+	id = cjc_mod_PRC.1501
+	title = cjc_mod_PRC.1501.t
+	desc = cjc_mod_PRC.1501.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.1401.a
+		add_equipment_to_stockpile = { type = convoy amount = 30 }
+		custom_effect_tooltip = cjc_prc_we_got_30_convoys_from_jap_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #支援运输船
+	id = cjc_mod_PRC.1502
+	title = cjc_mod_PRC.1502.t
+	desc = cjc_mod_PRC.1502.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.1402.a
+		add_political_power = -5
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #三大改造
+	id = cjc_mod_PRC.16
+	title = cjc_mod_PRC.16.t
+	desc = cjc_mod_PRC.16.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_PRC.16.a
+		add_political_power = 15
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}

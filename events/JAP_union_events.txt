@@ -1,0 +1,447 @@
+add_namespace = JAP_union
+
+country_event = {
+	id = JAP_union.1
+	title = JAP_union.1.t
+	desc = JAP_union.1.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_union.1.a
+		add_manpower = -500000
+		JAP = {
+			add_manpower = 500000
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_union.1.b
+		
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = JAP_union.2
+	title = JAP_union.2.t
+	desc = JAP_union.2.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_union.2.a
+		random_owned_controlled_state = {
+			limit = {
+				arms_factory > 1
+				is_core_of = ROOT
+			}
+			remove_building = {
+				type = arms_factory
+				level = 2
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				arms_factory > 1
+				is_core_of = ROOT
+			}
+			remove_building = {
+				type = arms_factory
+				level = 2
+			}
+		}
+		JAP = {
+			#add_offsite_building = { type = arms_factory level = 5 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_union.2.b
+		
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = JAP_union.3
+	title = JAP_union.3.t
+	desc = JAP_union.3.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_union.3.a
+		army_experience = 30
+		air_experience = 30
+		navy_experience = 30
+		add_political_power = -25
+		JAP = {
+			army_experience = 30
+			air_experience = 30
+			navy_experience = 30
+			add_political_power = -25
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_union.3.b
+		
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = JAP_union.4
+	title = JAP_union.4.t
+	desc = JAP_union.4.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_union.4.a
+		custom_effect_tooltip = union_army_special_tt
+		
+		PRC = { country_event = { id = JAP_union.401 days = 1 } }
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = JAP_union.4.b
+		custom_effect_tooltip = union_navy_special_tt
+		
+		PRC = { country_event = { id = JAP_union.402 days = 1 } }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = JAP_union.401
+	title = JAP_union.401.t
+	desc = JAP_union.401.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_union.401.a
+		add_ideas = union_navy_specialized
+		JAP = {
+			add_ideas = union_army_specialized
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_union.401.b
+		
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = JAP_union.402
+	title = JAP_union.402.t
+	desc = JAP_union.402.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_union.402.a
+		add_ideas = union_army_specialized
+		JAP = {
+			add_ideas = union_navy_specialized
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_union.402.b
+		
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = JAP_union.5
+	title = JAP_union.5.t
+	desc = JAP_union.5.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_union.5.a
+		add_ideas = united_jet_production
+		JAP = {
+			add_ideas = united_jet_production
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_union.5.b
+		
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = JAP_union.6
+	title = JAP_union.6.t
+	desc = JAP_union.6.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_union.6.a
+		add_ideas = united_economy_system
+		JAP = {
+			add_ideas = united_economy_system
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_union.6.b
+		
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = JAP_union.7
+	title = JAP_union.7.t
+	desc = JAP_union.7.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_union.7.a
+		swap_ideas = {
+			remove_idea = united_economy_system
+			add_idea = united_economy_system2
+		}
+		JAP = {
+			swap_ideas = {
+				remove_idea = united_economy_system
+				add_idea = united_economy_system2
+			}
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_union.7.b
+		
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+
+country_event = { #阵营合并
+	id = JAP_union.8
+	title = JAP_union.8.t
+	desc = JAP_union.8.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_union.8.a
+		SOV = { country_event = { id = cjc_common.3 days = 1 } }
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.301 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_union.8.b
+		
+		hidden_effect = {
+			JAP = { country_event = { id = cjc_common.302 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}

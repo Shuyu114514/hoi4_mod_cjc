@@ -1,0 +1,923 @@
+add_namespace = JAP_revo
+
+
+#对平民宣传
+country_event = {
+	id = JAP_revo.1
+	title = JAP_revo.1.t
+	desc = JAP_revo.1.d
+	picture = GFX_report_event_japanese_parade
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.1.a
+		add_political_power = -60
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+	}
+}
+
+#对士兵宣传
+country_event = {
+	id = JAP_revo.2
+	title = JAP_revo.2.t
+	desc = JAP_revo.2.d
+	picture = GFX_report_event_japanese_army_parade
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.2.a
+		add_political_power = -60
+		add_timed_idea = {
+			idea = JAP_soldiers_rebel
+			days = 480
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+	}
+}
+
+#发动工厂工人罢工
+country_event = {
+	id = JAP_revo.3
+	title = JAP_revo.3.t
+	desc = JAP_revo.3.d
+	picture = GFX_report_event_soviet_soldiers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.3.a
+		add_timed_idea = {
+			idea = JAP_workers_rebel
+			days = 240
+		}
+	}
+}
+
+#拉拢军官
+country_event = {
+	id = JAP_revo.4
+	title = JAP_revo.4.t
+	desc = JAP_revo.4.d
+	picture = GFX_report_event_japanese_officers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.4.a
+		add_political_power = -100
+		add_stability = -0.05
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_revo.4.b
+		custom_effect_tooltip = JAP_revo_more_enemey_troop_tt
+		set_country_flag = JAP_revo_more_enemey_troop
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+#掌控特高科
+country_event = {
+	id = JAP_revo.5
+	title = JAP_revo.5.t
+	desc = JAP_revo.5.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.5.a
+		add_political_power = -30
+		add_timed_idea = {
+			idea = JAP_clean_government
+			days = 210
+		}
+	}
+}
+
+#突袭储备站
+country_event = {
+	id = JAP_revo.6
+	title = JAP_revo.6.t
+	desc = JAP_revo.6.d
+	picture = GFX_report_event_japanese_army_parade
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.6.a
+		hidden_effect = {
+			JAP = { country_event = { id = JAP_revo.601 days = 15 } }
+		}
+		custom_effect_tooltip = JAP_revo_a_tt
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_revo.6.b
+		hidden_effect = {
+			JAP = { country_event = { id = JAP_revo.602 days = 15 } }
+		}
+		custom_effect_tooltip = JAP_revo_b_tt
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = JAP_revo.6.c
+		hidden_effect = {
+			JAP = { country_event = { id = JAP_revo.603 days = 15 } }
+		}
+		custom_effect_tooltip = JAP_revo_c_tt
+		ai_chance = {
+		factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = JAP_revo.601
+	title = JAP_revo.601.t
+	desc = JAP_revo.601.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.601.a
+		if = {
+			limit = {
+				NOT = { has_dlc = "By Blood Alone" }
+			}
+			if = {
+				limit = {
+					has_tech = fighter2
+				}
+				add_equipment_to_stockpile = { type = fighter_equipment_2 amount = 100 }
+			}
+			else_if = {
+				limit = {
+					has_tech = fighter1
+				}
+				add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 100 }
+			}
+			else = {
+				add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 100 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_dlc = "By Blood Alone"
+			}
+			add_equipment_to_stockpile = { type = small_plane_airframe_0 amount = 100 variant_name = "Ki-10" }
+		}
+	}
+}
+
+country_event = {
+	id = JAP_revo.602
+	title = JAP_revo.602.t
+	desc = JAP_revo.602.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.602.a
+		add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 100 }
+	}
+}
+
+country_event = {
+	id = JAP_revo.603
+	title = JAP_revo.603.t
+	desc = JAP_revo.603.d
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.603.a
+		add_equipment_to_stockpile = { type = artillery_equipment amount = 500 }
+	}
+}
+
+country_event = {
+	id = JAP_revo.7
+	title = JAP_revo.7.t
+	desc = JAP_revo.7.d
+	picture = GFX_report_event_japanese_army_parade
+
+	trigger = {
+		tag = MAN
+		JAP = { has_civil_war = no }
+		JAP = { has_government = communism }
+	}
+	fire_only_once = yes
+	
+	option = {
+		name = JAP_revo.7.a
+		set_cosmetic_tag = MAN_old_JAP_replace
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Shunroku Hata"
+			picture = "gfx/leaders/JAP/Portrait_Japan_Shunroku_Hata.dds"
+			expire = "1950.1.1"
+			ideology = rexism
+			traits = {
+				AI_correction_no_need_help_traits
+			}
+		}
+		load_focus_tree = old_jap_focus
+		if = {
+			limit = { NOT = { has_tech = tech_support } }
+			set_technology = {
+				tech_support = 1
+			}
+		}
+		if = {
+			limit = {
+				not = {
+					JAP = { has_country_flag = cjc_jap_stand_with_korean_revolution_flag }
+				}
+				JAP = {
+					has_full_control_of_state = 527
+					has_full_control_of_state = 525
+				}
+			}
+			transfer_state = 527
+			transfer_state = 525
+		}
+		if = {
+			limit = {
+				JAP = { has_country_flag = cjc_jap_stand_with_korean_revolution_flag }
+				has_full_control_of_state = 527
+				has_full_control_of_state = 525
+			}
+			JAP = {
+				transfer_state = 527
+				transfer_state = 525
+			}
+		}
+		hidden_effect = {
+			news_event = { id = cjc_news.5 days = 1 random_days = 1 }
+			division_template = {
+				name = "royal"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 3 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 714 }
+				create_unit = {
+					division = "name = \"royal1\" division_template = \"royal\" start_experience_factor = 0" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"royal2\" division_template = \"royal\" start_experience_factor = 0" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"royal3\" division_template = \"royal\" start_experience_factor = 0" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"royal4\" division_template = \"royal\" start_experience_factor = 0" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"royal5\" division_template = \"royal\" start_experience_factor = 0" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"royal6\" division_template = \"royal\" start_experience_factor = 0" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"royal7\" division_template = \"royal\" start_experience_factor = 0" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"royal8\" division_template = \"royal\" start_experience_factor = 0" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"royal9\" division_template = \"royal\" start_experience_factor = 0" 
+					owner = MAN
+				}
+				if = {
+					limit = { not = { has_country_flag = flag_MAN_got_weaker } }
+					create_unit = {
+						division = "name = \"royal8\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"royal9\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"roya20\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"roya21\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"roya22\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"roya23\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"roya24\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"roya26\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"roya34\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+				}
+				if = {
+					limit = {
+						or = {
+							JAP = {
+								and = {
+									is_ai = no
+									has_completed_focus = JAP_cast_the_die2
+								}
+							}
+							PRC = { is_ai = no }
+						}
+						not = {
+							has_global_flag = cjc_im_freshman_flag
+						}
+					}
+					create_unit = {
+						division = "name = \"royal14\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"royal15\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"royal16\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"royal17\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"royal27\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"royal28\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"royal29\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"royal31\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"royal32\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"royal33\" division_template = \"royal\" start_experience_factor = 0" 
+						owner = MAN
+					}
+				}
+			}
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_revo.701
+	title = JAP_revo.701.t
+	desc = JAP_revo.701.d
+	picture = GFX_report_event_japanese_army_parade
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MAN
+		is_ai = yes
+		JAP = { has_civil_war = no }
+		JAP = { has_government = communism }
+		or = {
+			and = {
+				JAP = {
+					is_ai = no
+					has_completed_focus = JAP_cast_the_die2
+				}
+				has_war_with = JAP
+			}
+			and = {
+				PRC = { is_ai = no }
+				has_war_with = PRC
+			}
+		}
+	}
+	
+	option = {
+		name = JAP_revo.701.a
+		hidden_effect = {
+			division_template = {
+				name = "empire_royal"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 3 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					artillery = { x = 0 y = 1 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 714 }
+				create_unit = {
+					division = "name = \"empire_royal\" division_template = \"empire_royal\" start_experience_factor = 0.1" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"empire_royal\" division_template = \"empire_royal\" start_experience_factor = 0.1" 
+					owner = MAN
+				}
+			}
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_revo.8
+	title = JAP_revo.8.t
+	desc = JAP_revo.8.d
+	picture = GFX_report_event_japanese_army_parade
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.8.a
+		MAN = {
+			give_guarantee = CHI
+		}
+		CHI = {
+			give_guarantee = MAN
+		}
+		JAP = { country_event = JAP_revo.801 }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_revo.8.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_revo.801
+	title = JAP_revo.801.t
+	desc = JAP_revo.801.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = JAP_revo.801.a
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_revo.9
+	title = JAP_revo.9.t
+	desc = JAP_revo.9.d
+	picture = GFX_report_event_japanese_army_parade
+
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = JAP_revo.9.a
+		add_timed_idea = {
+			idea = JAP_ojp_influence
+			days = 90
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_revo.11
+	title = JAP_revo.11.t
+	desc = JAP_revo.11.d
+	picture = GFX_report_event_japanese_army_parade
+
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = JAP_revo.11.a
+		declare_war_on = {
+			type = annex_everything
+			target = JAP
+		}
+		declare_war_on = {
+			type = annex_everything
+			target = PRC
+		}
+		if = {
+			limit = {
+				PRC = {
+					is_ai = yes
+				}
+			}
+			PRC = { country_event = JAP_revo.12 }
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+
+country_event = {
+	id = JAP_revo.12
+	title = JAP_revo.12.t
+	desc = JAP_revo.12.d
+	picture = GFX_report_event_japanese_army_parade
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = JAP_revo.12.a
+		if = {
+			limit = { NOT = { has_tech = tech_engineers } }
+			set_technology = {
+				tech_engineers = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = tech_recon } }
+			set_technology = {
+				tech_recon = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = motorised_infantry } }
+			set_technology = {
+				motorised_infantry = 1
+			}
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_logistics_company }
+			}
+			set_technology = { tech_logistics_company = 1 }
+		}
+		add_equipment_to_stockpile = { type = support_equipment amount = 1000 }
+		hidden_effect = {
+			division_template = {
+				name = "tmp_red_army"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 622 }
+				create_unit = {
+					division = "name = \"红军1\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军2\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军3\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军4\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军5\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军6\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军7\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军8\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军9\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军10\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军11\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军12\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军13\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军14\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军15\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军16\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军17\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军18\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军19\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				create_unit = {
+					division = "name = \"红军20\" division_template = \"tmp_red_army\" start_experience_factor = 0.2" 
+					owner = PRC
+				}
+				
+			}
+		}
+		
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = {
+	id = JAP_revo.13
+	title = JAP_revo.13.t
+	desc = JAP_revo.13.d
+	picture = GFX_report_event_albanian_partisans
+
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = JAP_revo.13.a
+		add_manpower = 5000
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 1000 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #学生运动
+	id = JAP_revo.14
+	title = JAP_revo.14.t
+	desc = JAP_revo.14.d
+	picture = GFX_report_cjc_anti_war
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = JAP_revo.14.a
+		add_manpower = 2000
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		add_stability = -0.03
+		if = {
+			limit = {
+				has_dlc = "By Blood Alone"
+			}
+			set_power_balance = {
+				id = JAP_power_balance
+				set_default = yes
+			}
+			add_power_balance_modifier = {
+				id = JAP_power_balance
+				modifier = JAP_bop_zaibatsu_modiffier
+			}
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	option = {
+		name = JAP_revo.14.b
+		if = {
+			limit = {
+				has_dlc = "By Blood Alone"
+			}
+			set_power_balance = {
+				id = JAP_power_balance
+				set_default = yes
+			}
+			add_power_balance_modifier = {
+				id = JAP_power_balance
+				modifier = JAP_bop_zaibatsu_modiffier
+			}
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #226兵变
+	id = JAP_revo.15
+	title = JAP_revo.15.t
+	desc = JAP_revo.15.d
+	picture = GFX_report_event_japanese_army_parade
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.15.a
+		hidden_effect = {
+			JAP = { country_event = { id = JAP_revo.1501 days = 3 } }
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	option = {
+		name = JAP_revo.15.b
+		hidden_effect = {
+			JAP = { country_event = { id = JAP_revo.1501 days = 3 } }
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.02
+		}
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #226兵变2
+	id = JAP_revo.1501
+	title = JAP_revo.1501.t
+	desc = JAP_revo.1501.d
+	picture = GFX_report_event_japanese_parade
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_revo.1501.a
+		add_popularity = {
+			ideology = communism
+			popularity = 0.02
+		}
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	option = {
+		name = JAP_revo.1501.b
+		if = {
+			limit = {
+				is_ai = no
+			}
+			add_political_power = -25
+		}
+		custom_effect_tooltip = cjc_jap_got_226_soldiers_in_civilwar_tt
+		set_country_flag = cjc_jap_got_226_soldiers_in_civilwar_flag
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+}

@@ -1,0 +1,2462 @@
+add_namespace = cjc_mod_JAP
+
+country_event = {
+	id = cjc_mod_JAP.1
+	title = cjc_mod_JAP.1.t
+	desc = cjc_mod_JAP.1.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.1.a
+		unlock_decision_tooltip = JAP_get_rubber_tech
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = {
+	id = cjc_mod_JAP.2
+	title = cjc_mod_JAP.2.t
+	desc = cjc_mod_JAP.2.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.2.a
+		PRC = { country_event = { id = cjc_mod_JAP.201 days = 1 } }
+		SOV = { country_event = { id = cjc_mod_JAP.201 days = 1 } }
+		custom_effect_tooltip = JAP_share_rubber_tech_with_comrades_tt
+		set_country_flag = JAP_flag_share_rubber_tech_with_comrades
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.2.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = cjc_mod_JAP.201
+	title = cjc_mod_JAP.201.t
+	desc = cjc_mod_JAP.201.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.201.a
+		modify_building_resources = {
+			building = synthetic_refinery
+			resource = rubber
+			amount = 2
+        }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.201.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = cjc_mod_JAP.202
+	title = cjc_mod_JAP.202.t
+	desc = cjc_mod_JAP.202.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	fire_only_once = no
+	
+	trigger = {
+		has_government = communism
+		is_in_faction_with = JAP
+		not = {
+			tag = JAP
+			tag = PRC
+			tag = SOV
+			tag = ENG
+		}
+		not = {
+			has_country_flag = flag_got_rubber_tech_from_jap
+		}
+		JAP = {
+			has_country_flag = JAP_flag_share_rubber_tech_with_comrades
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.202.a
+		modify_building_resources = {
+			building = synthetic_refinery
+			resource = rubber
+			amount = 2
+        }
+		set_country_flag = flag_got_rubber_tech_from_jap
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.202.b
+		set_country_flag = flag_got_rubber_tech_from_jap
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = cjc_mod_JAP.3
+	title = cjc_mod_JAP.3.t
+	desc = cjc_mod_JAP.3.d
+	picture = GFX_report_event_generic_bombers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.3.a
+		if = {
+			limit = {
+				has_idea = JAP_peoples_air1
+			}
+			swap_ideas = {
+				remove_idea = JAP_peoples_air1
+				add_idea = JAP_peoples_air_g
+			}
+		}
+		else = {
+			add_ideas = JAP_peoples_air
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.3.c
+		if = {
+			limit = {
+				has_idea = JAP_peoples_air1
+			}
+			swap_ideas = {
+				remove_idea = JAP_peoples_air1
+				add_idea = JAP_peoples_air2_g
+			}
+		}
+		else = {
+			add_ideas = JAP_peoples_air2
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.3.e
+		if = {
+			limit = {
+				has_idea = JAP_peoples_air1
+			}
+			swap_ideas = {
+				remove_idea = JAP_peoples_air1
+				add_idea = JAP_peoples_air3_g
+			}
+		}
+		else = {
+			add_ideas = JAP_peoples_air3
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = {
+	id = cjc_mod_JAP.4
+	title = cjc_mod_JAP.4.t
+	desc = cjc_mod_JAP.4.d
+	picture = GFX_report_event_soviet_tanks
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.4.a
+		add_tech_bonus = {
+			name = JAP_cruiser_modernization
+			bonus = 2.0
+			uses = 1
+			category = cl_tech	
+			category = ca_tech	
+		}
+		add_tech_bonus = {
+			name = JAP_modern_escorts
+			bonus = 1.0
+			uses = 1
+			category = dd_tech	
+		}
+		JAP = { country_event = cjc_mod_JAP.401 }
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.4.b
+		JAP = { country_event = cjc_mod_JAP.402 }
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = cjc_mod_JAP.401
+	title = cjc_mod_JAP.401.t
+	desc = cjc_mod_JAP.401.d
+	picture = GFX_report_event_soviet_tanks
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.401.a
+		if = {
+			limit = { NOT = { has_tech = basic_medium_tank_chassis } }
+			set_technology = {
+				basic_medium_tank_chassis = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = improved_medium_tank_chassis } 
+				is_ai = yes
+			}
+			set_technology = {
+				improved_medium_tank_chassis = 1
+			}
+		}
+		if = { #Why? You ruined your T-34
+			limit = {
+				has_tech = interwar_artillery
+			}
+			create_equipment_variant = {
+				name = "A-20"
+				type = medium_tank_chassis_1
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_small_cannon_2
+					turret_type_slot = tank_medium_two_man_tank_turret
+					suspension_type_slot = tank_christie_suspension
+					armor_type_slot = tank_welded_armor
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = sloped_armor
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 8
+					tank_nsb_armor_upgrade = 4
+				}
+				icon = "gfx/interface/technologies/SOV_imp_main_tank.dds"
+			}
+		}
+		else = { #Don't do this to yourself dude
+			create_equipment_variant = {
+				name = "A-20"
+				type = medium_tank_chassis_1
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_small_cannon
+					turret_type_slot = tank_medium_two_man_tank_turret
+					suspension_type_slot = tank_christie_suspension
+					armor_type_slot = tank_welded_armor
+					engine_type_slot = tank_diesel_engine
+					special_type_slot_1 = sloped_armor
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 8
+					tank_nsb_armor_upgrade = 4
+				}
+				icon = "gfx/interface/technologies/SOV_imp_main_tank.dds"
+			}
+		}
+		add_tech_bonus = {
+			name = JAP_soviet_armor_tech
+			bonus = 1.0
+			uses = 1
+			category = armor	
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = {
+	id = cjc_mod_JAP.402
+	title = cjc_mod_JAP.402.t
+	desc = cjc_mod_JAP.402.d
+	picture = GFX_report_event_soviet_tanks
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.402.a
+		if = {
+			limit = { NOT = { has_tech = basic_medium_tank } }
+			set_technology = {
+				basic_medium_tank = 1
+			}
+		}
+		if = {
+			limit = { NOT = { has_tech = improved_medium_tank } }
+			set_technology = {
+				improved_medium_tank = 1
+			}
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = { #拉中共进国际
+	id = cjc_mod_JAP.5
+	title = cjc_mod_JAP.5.t
+	desc = cjc_mod_JAP.5.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.5.a
+		SOV = { country_event = cjc_mod_JAP.501 }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.5.b
+		
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #拉中共进国际-苏联
+	id = cjc_mod_JAP.501
+	title = cjc_mod_JAP.501.t
+	desc = cjc_mod_JAP.501.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.501.a
+		SOV = { add_to_faction = PRC }
+		news_event = { id = cjc_news.7 days = 1 }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.501.b
+		
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #阵营合并提示
+	id = cjc_mod_JAP.502
+	title = cjc_mod_JAP.502.t
+	desc = cjc_mod_JAP.502.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.502.a
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = { #猎狼战术
+	id = cjc_mod_JAP.6
+	title = cjc_mod_JAP.6.t
+	desc = cjc_mod_JAP.6.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		has_government = communism
+		or = {
+			has_war_with = GER
+			has_war_with = ENG
+			has_war_with = USA
+		}
+		
+	}
+	
+	option = {
+		name = cjc_mod_JAP.6.a
+		add_ideas = JAP_anti_wolf
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = { #猎狼战术ai送人力
+	id = cjc_mod_JAP.601
+	title = cjc_mod_JAP.601.t
+	desc = cjc_mod_JAP.601.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		has_government = communism
+		is_ai = yes
+		or = {
+			has_war_with = GER
+			has_war_with = ENG
+			has_war_with = USA
+		}
+		
+	}
+	
+	option = {
+		name = cjc_mod_JAP.601.a
+		add_manpower = 1500000
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = { #国有化受阻
+	id = cjc_mod_JAP.7
+	title = cjc_mod_JAP.7.t
+	desc = cjc_mod_JAP.7.d
+	picture = GFX_report_event_albanian_partisans
+	
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.7.a
+		add_political_power = 20
+		add_stability = -0.03
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.7.b
+		
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = { #苏联科技援助
+	id = cjc_mod_JAP.8
+	title = cjc_mod_JAP.8.t
+	desc = cjc_mod_JAP.8.d
+	picture = GFX_report_event_generic_bombers
+	
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.8.a
+		add_timed_idea = {
+			idea = JAP_Soviet_tech_support
+			days = 180
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = { #八小时工作制
+	id = cjc_mod_JAP.9
+	title = cjc_mod_JAP.9.t
+	desc = cjc_mod_JAP.9.d
+	picture = GFX_report_cjc_break_chains_1
+	
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.9.a
+		unlock_decision_tooltip = JAP_workers_benefits_priority
+		if = {
+			limit = {
+				or = {
+					has_country_flag = JAP_kouzaha_politics_flag
+					has_country_flag = JAP_fukumotoha_politics_flag
+				}
+			}
+			unlock_decision_tooltip = JAP_reinfore_the_power_of_trade_union
+		}
+		if = {
+			limit = {
+				has_country_flag = JAP_rounouha_politics_flag
+			}
+			unlock_decision_tooltip = JAP_expand_the_militia_orgnazation
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = { #地主不满
+	id = cjc_mod_JAP.11
+	title = cjc_mod_JAP.11.t
+	desc = cjc_mod_JAP.11.d
+	picture = GFX_report_event_soviet_purge_speech
+	
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.11.a
+		add_stability = -0.02
+		add_political_power = -25
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			add_stability = 0.05
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.11.b
+		add_political_power = -10
+		add_timed_idea = {
+			idea = JAP_pay_for_famers
+			days = 90
+		}
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	
+}
+
+country_event = { #地主提高要价
+	id = cjc_mod_JAP.1101
+	title = cjc_mod_JAP.1101.t
+	desc = cjc_mod_JAP.1101.d
+	picture = GFX_report_event_soviet_purge_speech
+	
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.1101.a
+		add_stability = -0.02
+		add_political_power = -25
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			add_stability = 0.05
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.1101.b
+		add_political_power = -100
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	
+}
+
+country_event = { #采矿分配
+	id = cjc_mod_JAP.12
+	title = cjc_mod_JAP.12.t
+	desc = cjc_mod_JAP.12.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.12.a
+		282 = {
+			add_resource = {
+			type = steel
+			amount = 20
+			}
+		}
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.12.b
+		534 = {
+			add_resource = {
+			type = oil
+			amount = 10
+			}
+		}
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	
+}
+
+country_event = { #影响智利
+	id = cjc_mod_JAP.13
+	title = cjc_mod_JAP.13.t
+	desc = cjc_mod_JAP.13.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.13.a
+		set_country_flag = JAP_start_to_influence_chl
+		unlock_decision_tooltip = JAP_south_america_get_chl
+		add_political_power = 25
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #智利入阵营
+	id = cjc_mod_JAP.1301
+	title = cjc_mod_JAP.1301.t
+	desc = cjc_mod_JAP.1301.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = no
+	
+	trigger = {
+		tag = CHL
+		is_ai = yes
+		has_government = communism
+		JAP = { has_government = communism }
+		not = {
+			has_war_with = JAP
+		}
+		not = {
+			is_in_faction_with = JAP
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.1301.a
+		every_country = {
+			limit = {
+				has_government = communism
+				is_faction_leader = yes
+				or = {
+					is_in_faction_with = JAP
+					tag = JAP
+				}
+			}
+			add_to_faction = CHL
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #朝鲜入阵营
+	id = cjc_mod_JAP.1302
+	title = cjc_mod_JAP.1302.t
+	desc = cjc_mod_JAP.1302.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = no
+	
+	trigger = {
+		tag = KOR
+		is_ai = yes
+		has_government = communism
+		JAP = { has_government = communism }
+		not = {
+			has_war_with = JAP
+		}
+		not = {
+			is_in_faction_with = JAP
+		}
+		has_country_flag = KOR_flag_same_faction_jap
+	}
+	
+	option = {
+		name = cjc_mod_JAP.1302.a
+		every_country = {
+			limit = {
+				has_government = communism
+				is_faction_leader = yes
+				or = {
+					is_in_faction_with = JAP
+					tag = JAP
+				}
+			}
+			add_to_faction = KOR
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #登陆加成
+	id = cjc_mod_JAP.14
+	title = cjc_mod_JAP.14.t
+	desc = cjc_mod_JAP.14.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.14.a
+		set_technology = { engineers_landing_reinforce = 1 }
+		custom_effect_tooltip = tech_landing_reinforce_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #登陆加成
+	id = cjc_mod_JAP.1401
+	title = cjc_mod_JAP.1401.t
+	desc = cjc_mod_JAP.1401.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = JAP
+		has_government = communism
+		is_ai = yes
+	}
+	
+	option = {
+		name = cjc_mod_JAP.1401.a
+		set_technology = { engineers_landing_reinforce_ai = 1 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #三池煤矿
+	id = cjc_mod_JAP.15
+	title = cjc_mod_JAP.15.t
+	desc = cjc_mod_JAP.15.d
+	picture = GFX_report_cjc_poster_4
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.15.a
+		528 = {
+			add_resource = {
+				type = steel
+				amount = 8
+			}
+			add_resource = {
+				type = oil
+				amount = 2
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #团结其他政党
+	id = cjc_mod_JAP.16
+	title = cjc_mod_JAP.16.t
+	desc = cjc_mod_JAP.16.d
+	picture = GFX_report_event_soviet_purge_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.16.a
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #日共通知苏联将要革命
+	id = cjc_mod_JAP.17
+	title = cjc_mod_JAP.17.t
+	desc = cjc_mod_JAP.17.d
+	picture = GFX_report_cjc_soviet_1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.17.a
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #苏日解决领土争端问题
+	id = cjc_mod_JAP.18
+	title = cjc_mod_JAP.18.t
+	desc = cjc_mod_JAP.18.d
+	picture = GFX_report_cjc_anti_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.18.a
+		add_political_power = 10
+		JAP = { remove_state_claim = 655 }
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.18.b
+		add_political_power = -25
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	
+}
+
+country_event = { #苏日资源开采
+	id = cjc_mod_JAP.19
+	title = cjc_mod_JAP.19.t
+	desc = cjc_mod_JAP.19.d
+	picture = GFX_report_cjc_poster_3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.19.a
+		537 = {
+			add_resource = {
+				type = oil
+				amount = 8
+			}
+		}
+		655 = {
+			add_resource = {
+				type = oil
+				amount = 14
+			}
+		}
+		282 = {
+			add_resource = {
+				type = aluminium
+				amount = 16
+			}
+		}
+		408 = {
+			add_resource = {
+				type = aluminium
+				amount = 16
+			}
+		}
+		JAP = { country_event = cjc_mod_JAP.1901 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.19.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	
+}
+
+country_event = { #苏日资源开采，日本收到消息
+	id = cjc_mod_JAP.1901
+	title = cjc_mod_JAP.1901.t
+	desc = cjc_mod_JAP.1901.d
+	picture = GFX_report_cjc_poster_3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.1901.a
+		effect_tooltip = {
+			537 = {
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+			655 = {
+				add_resource = {
+					type = oil
+					amount = 14
+				}
+			}
+			282 = {
+				add_resource = {
+					type = aluminium
+					amount = 16
+				}
+			}
+			408 = {
+				add_resource = {
+					type = aluminium
+					amount = 16
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #中日资源开采
+	id = cjc_mod_JAP.21
+	title = cjc_mod_JAP.21.t
+	desc = cjc_mod_JAP.21.d
+	picture = GFX_report_cjc_poster_2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.21.a
+		716 = {
+			add_resource = {
+				type = steel
+				amount = 25
+			}
+		}
+		282 = {
+			add_resource = {
+				type = steel
+				amount = 25
+			}
+		}
+		JAP = { country_event = cjc_mod_JAP.2101 }
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.21.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	
+}
+
+country_event = { #中日资源开采，日本收到消息
+	id = cjc_mod_JAP.2101
+	title = cjc_mod_JAP.2101.t
+	desc = cjc_mod_JAP.2101.d
+	picture = GFX_report_cjc_poster_2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.2101.a
+		effect_tooltip = {
+			716 = {
+				add_resource = {
+					type = steel
+					amount = 25
+				}
+			}
+			282 = {
+				add_resource = {
+					type = steel
+					amount = 25
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #旧殖民地问题
+	id = cjc_mod_JAP.22
+	title = cjc_mod_JAP.22.t
+	desc = cjc_mod_JAP.22.d
+	picture = GFX_report_cjc_generic_3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.22.a
+		set_country_flag = flag_free_korea
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.22.b
+		set_country_flag = flag_control_korea
+		if = {
+			limit = {
+				or = {
+					has_completed_focus = JAP_again_colonization
+					has_completed_focus = JAP_stand_with_korean_revolution
+				}
+			}
+			set_country_flag = flag_free_korea
+		}
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				JAP = { has_completed_focus = JAP_again_colonization }
+			}
+		}
+	}
+	
+	
+}
+
+country_event = { #国际纵队事件1
+	id = cjc_mod_JAP.23
+	title = cjc_mod_JAP.23.t
+	desc = cjc_mod_JAP.23.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.23.a
+		add_political_power = 25
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #文化繁荣
+	id = cjc_mod_JAP.24
+	title = cjc_mod_JAP.24.t
+	desc = cjc_mod_JAP.24.d
+	picture = GFX_report_Alice_Casillia_cjc_1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.24.a
+		add_political_power = 25
+		if = {
+			limit = {
+				has_idea = JAP_idea_social_collective_care
+			}
+			remove_ideas = JAP_idea_social_collective_care
+			swap_ideas = {
+				remove_idea = JAP_idea_new_japan4
+				add_idea = JAP_idea_new_japan6
+			}
+		}
+		else = {
+			swap_ideas = {
+				remove_idea = JAP_idea_new_japan4
+				add_idea = JAP_idea_new_japan5
+			}
+		}
+		hidden_effect = {
+			news_event = { id = cjc_news.25 }
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #日共将领
+	id = cjc_mod_JAP.25
+	title = cjc_mod_JAP.25.t
+	desc = cjc_mod_JAP.25.d
+	picture = GFX_report_cjc_red_jap_2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.25.a
+		set_country_flag = jap_communist_generals_flag
+		custom_effect_tooltip = receive_six_communist_generals_tt
+		if = {
+			limit = {
+				has_country_flag = cjc_jap_we_have_met_mao_flag
+			}
+			add_timed_idea = {
+				idea = JAP_maoism
+				days = 120
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = cjc_im_freshman_flag
+				has_idea = JAP_soldiers_rebel
+			}
+			hidden_effect = {
+				remove_ideas = JAP_soldiers_rebel
+			}
+		}
+		if = {
+			limit = {
+				or = {
+					has_country_flag = cjc_jap_got_226_soldiers_in_civilwar_flag
+					is_ai = yes
+				}
+			}
+			custom_effect_tooltip = cjc_jap_civilwar_got_seinen_kiyugun_division_tt
+			hidden_effect = {
+				division_template = {
+					name = "Seinen Kiyugun"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+					}
+				}
+				
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 531 }
+					create_unit = {
+						division = "name = \"Nippon Seinen Kiyugun\" division_template = \"Seinen Kiyugun\" start_experience_factor = 0.1" 
+						owner = JAP
+					}
+				}
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #北京密电
+	id = cjc_mod_JAP.26
+	title = cjc_mod_JAP.26.t
+	desc = cjc_mod_JAP.26.d
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.26.a
+		if = {
+			limit = {
+				PRC = {
+					not = { has_government = communism }
+				}
+			}
+			PRC = {
+				add_ideas = cjc_the_communists_rise_again
+			}
+		}
+		if = {
+			limit = {
+				CHI = {
+					exists = yes
+					not = {
+						has_government = communism
+					}
+				}
+			}
+			CHI = {
+				add_ideas = cjc_the_communists_rise_again
+			}
+		}
+		if = {
+			limit = {
+				YUN = {
+					exists = yes
+					not = {
+						has_government = communism
+					}
+				}
+			}
+			YUN = {
+				add_ideas = cjc_the_communists_rise_again
+			}
+		}
+		if = {
+			limit = {
+				GXC = {
+					exists = yes
+					not = {
+						has_government = communism
+					}
+				}
+			}
+			GXC = {
+				add_ideas = cjc_the_communists_rise_again
+			}
+		}
+		if = {
+			limit = {
+				XSM = {
+					exists = yes
+					not = {
+						has_government = communism
+					}
+				}
+			}
+			XSM = {
+				add_ideas = cjc_the_communists_rise_again
+			}
+		}
+		if = {
+			limit = {
+				SHX = {
+					exists = yes
+					not = {
+						has_government = communism
+					}
+				}
+			}
+			SHX = {
+				add_ideas = cjc_the_communists_rise_again
+			}
+		}
+		if = {
+			limit = {
+				MAN = {
+					exists = yes
+					not = {
+						has_government = communism
+					}
+				}
+			}
+			MAN = {
+				add_ideas = cjc_the_communists_rise_again
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = PRC
+				not = {
+					is_controlled_by = PRC
+					is_controlled_by = JAP
+				}
+			}
+			add_resistance_target = 30
+			add_resistance = 30
+			add_compliance = -20
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #东京急电
+	id = cjc_mod_JAP.2601
+	title = cjc_mod_JAP.2601.t
+	desc = cjc_mod_JAP.2601.d
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.2601.a
+		if = {
+			limit = {
+				not = { has_tech = basic_medium_tank_chassis }
+			}
+			set_technology = { basic_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = improved_medium_tank_chassis }
+			}
+			set_technology = { improved_medium_tank_chassis = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery1 }
+			}
+			set_technology = { artillery1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery2 }
+			}
+			set_technology = { artillery2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = artillery3 }
+			}
+			set_technology = { artillery3 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank1 }
+			}
+			set_technology = { antitank1 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = antitank2 }
+			}
+			set_technology = { antitank2 = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = electronic_mechanical_engineering }
+			}
+			set_technology = { electronic_mechanical_engineering = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = radio }
+			}
+			set_technology = { radio = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = radio_detection }
+			}
+			set_technology = { radio_detection = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = decimetric_radar }
+			}
+			set_technology = { decimetric_radar = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_logistics_company }
+			}
+			set_technology = { tech_logistics_company = 1 }
+		}
+		if = {
+			limit = {
+				not = { has_tech = tech_maintenance_company }
+			}
+			set_technology = { tech_maintenance_company = 1 }
+		}
+		create_equipment_variant = {
+			name = "T-34/85"
+			type = medium_tank_chassis_2
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_medium_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = secondary_turret_hmg
+				special_type_slot_2 = tank_radio_2
+				special_type_slot_3 = additional_machine_guns
+				special_type_slot_4 = easy_maintenance
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 10
+				tank_nsb_armor_upgrade = 15
+			}
+			icon = "gfx/interface/technologies/SOV_imp_main_tank.dds"
+		}
+		if = {
+			limit = {
+				has_tech = advanced_medium_tank_chassis
+			}
+			add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 2000 }
+		}
+		else = {
+			add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 2000 }
+		}
+		add_equipment_to_stockpile = { type = motorized_equipment amount = 1500 }
+		custom_effect_tooltip = JAP_we_are_back_give_army_tt
+		hidden_effect = {
+			division_template = {
+				name = "Final Defence Force"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					anti_tank = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 282 }
+				create_unit = {
+					division = "name = \"Final Defence Force 1\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 2\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 3\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 4\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 5\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 6\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 7\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 8\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 9\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 10\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 11\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 12\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 13\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 14\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 15\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 16\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 17\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 18\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 19\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 20\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 21\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 22\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 23\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Defence Force 24\" division_template = \"Final Defence Force\" start_experience_factor = 0.8" 
+					owner = JAP
+				}
+			}
+			division_template = {
+				name = "Final Armor Guard"
+				regiments = {
+					medium_armor = { x = 0 y = 0 }
+					medium_armor = { x = 0 y = 1 }
+					medium_armor = { x = 0 y = 2 }
+					medium_armor = { x = 0 y = 3 }
+					medium_armor = { x = 0 y = 4 }
+					medium_armor = { x = 1 y = 0 }
+					medium_armor = { x = 1 y = 1 }
+					medium_armor = { x = 1 y = 2 }
+					medium_armor = { x = 1 y = 3 }
+					medium_armor = { x = 1 y = 4 }
+					motorized = { x = 2 y = 0 }
+					motorized = { x = 2 y = 1 }
+					motorized = { x = 2 y = 2 }
+					motorized = { x = 2 y = 3 }
+					motorized = { x = 2 y = 4 }
+					motorized = { x = 3 y = 0 }
+					motorized = { x = 3 y = 1 }
+					motorized = { x = 3 y = 2 }
+					mot_anti_tank_brigade = { x = 3 y = 3 }
+					mot_anti_air_brigade = { x = 3 y = 4 }
+					medium_armor = { x = 4 y = 0 }
+					medium_armor = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					mot_recon = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					anti_air = { x = 0 y = 4 }
+				}
+			}
+				
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 282 }
+				create_unit = {
+					division = "name = \"Final Armor Guard 00\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 01\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 02\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 03\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 04\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 05\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 06\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 07\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 08\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 09\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 10\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+				create_unit = {
+					division = "name = \"Final Armor Guard 11\" division_template = \"Final Armor Guard\" start_experience_factor = 0.5" 
+					owner = JAP
+				}
+			}
+		}
+		
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #莫斯科密电
+	id = cjc_mod_JAP.2602
+	title = cjc_mod_JAP.2602.t
+	desc = cjc_mod_JAP.2602.d
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.2602.a
+		if = {
+			limit = {
+				SOV = {
+					not = { has_government = communism }
+				}
+			}
+			SOV = {
+				add_ideas = cjc_the_communists_rise_again
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = SOV
+				not = {
+					is_controlled_by = SOV
+					is_controlled_by = JAP
+				}
+			}
+			add_resistance_target = 30
+			add_resistance = 30
+			add_compliance = -20
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #大和
+	id = cjc_mod_JAP.27
+	title = cjc_mod_JAP.27.t
+	desc = cjc_mod_JAP.27.d
+	picture = GFX_report_cjc_navy_3
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.27.a
+		if = {
+			limit = {
+				not = { has_dlc = "Man the Guns" }
+			}
+			add_tech_bonus = {
+				name = JAP_the_ultimate_battleship
+				bonus = 3.0
+				uses = 1
+				category = shbb_tech	
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					not = { has_tech = ship_hull_super_heavy }
+				}
+				set_technology = {
+					ship_hull_super_heavy = 1
+				}
+			}
+			create_equipment_variant = {
+				name = "Yamato Class"
+				type = ship_hull_super_heavy_1
+				name_group = JAP_BB_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_super_heavy_battery_1
+					fixed_ship_anti_air_slot = ship_anti_air_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = ship_radar_1
+					fixed_ship_engine_slot = heavy_ship_engine_2
+					fixed_ship_secondaries_slot = ship_secondaries_2
+					fixed_ship_armor_slot = ship_armor_shbb
+					front_1_custom_slot = ship_anti_air_2
+					front_2_custom_slot = empty
+					mid_1_custom_slot = empty
+					mid_2_custom_slot = ship_secondaries_2
+					mid_3_custom_slot = ship_secondaries_2
+					rear_1_custom_slot = ship_super_heavy_battery_1
+					rear_2_custom_slot = ship_airplane_launcher_2
+				}
+			}
+			custom_effect_tooltip = JAP_yamato_tt
+			hidden_effect = {
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_super_heavy_1
+						creator = "JAP" 
+						version_name = "Yamato Class"
+					}
+					name = "Yamato" 
+					requested_factories = 1
+					progress = 0.75
+					amount = 1
+				}
+				add_equipment_production = {
+					equipment = {
+						type = ship_hull_super_heavy_1
+						creator = "JAP" 
+						version_name = "Yamato Class"
+					}
+					name = "Musashi" 
+					requested_factories = 1
+					progress = 0.5
+					amount = 1
+				}
+			}
+		}
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	
+}
+
+country_event = { #重燃太平洋
+	id = cjc_mod_JAP.28
+	title = cjc_mod_JAP.28.t
+	desc = cjc_mod_JAP.28.d
+	picture = GFX_report_cjc_navy_1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.28.a
+		custom_effect_tooltip = jap_get_all_1940_naval_tech_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					not = { has_tech = basic_ship_hull_heavy }
+				}
+				set_technology = {
+					basic_ship_hull_heavy = 1
+				}
+			}
+			if = {
+				limit = {
+					not = { has_tech = improved_ship_hull_heavy }
+				}
+				set_technology = {
+					improved_ship_hull_heavy = 1
+				}
+			}
+			if = {
+				limit = {
+					not = { has_tech = improved_ship_hull_carrier }
+				}
+				set_technology = {
+					improved_ship_hull_carrier = 1
+				}
+			}
+			if = {
+				limit = {
+					not = { has_tech = improved_ship_hull_cruiser }
+				}
+				set_technology = {
+					improved_ship_hull_cruiser = 1
+				}
+			}
+		}
+		create_equipment_variant = {
+			name = "Kyusanshugi Class"
+			type = ship_hull_carrier_2
+			name_group = JAP_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_deck_slot_1 = ship_deck_space
+				fixed_ship_deck_slot_2 = ship_deck_space
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_engine_slot = carrier_ship_engine_3
+				fixed_ship_secondaries_slot = dp_ship_secondaries_2
+				front_1_custom_slot = ship_deck_space
+				mid_1_custom_slot = ship_deck_space
+			}
+		}
+		create_equipment_variant = {
+			name = "Nippon Class"
+			type = ship_hull_heavy_3
+			name_group = JAP_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_engine_slot = heavy_ship_engine_3
+				fixed_ship_secondaries_slot = dp_ship_secondaries_2
+				fixed_ship_armor_slot = ship_armor_bb_2
+				front_1_custom_slot = ship_heavy_battery_2
+				mid_1_custom_slot = dp_ship_secondaries_2
+				mid_2_custom_slot = ship_airplane_launcher_2
+				rear_1_custom_slot = ship_heavy_battery_2
+			}
+		}
+		create_equipment_variant = {
+			name = "Red Flag Class"
+			type = ship_hull_cruiser_3
+			#name_group = JAP_BC_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_medium_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+				fixed_ship_radar_slot = ship_radar_2
+				fixed_ship_engine_slot = cruiser_ship_engine_3
+				fixed_ship_armor_slot = ship_armor_cruiser_2
+				fixed_ship_secondaries_slot = dp_ship_secondaries_2
+				front_1_custom_slot = ship_medium_battery_2
+				mid_1_custom_slot = ship_torpedo_2
+				mid_2_custom_slot = dp_ship_secondaries_2
+				rear_1_custom_slot = ship_airplane_launcher_2
+			}
+		}
+		custom_effect_tooltip = jap_build_big_fleet_tt
+		hidden_effect = {
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_2
+					creator = "JAP" 
+					version_name = "Kyusanshugi Class"
+				}
+				name = "Heiwa"
+				requested_factories = 1
+				progress = 0.95
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_2
+					creator = "JAP" 
+					version_name = "Kyusanshugi Class"
+				}
+				name = "Gakumei"
+				requested_factories = 1
+				progress = 0.95
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "JAP" 
+					version_name = "Nippon Class"
+				}
+				name = "Tokyo"
+				requested_factories = 1
+				progress = 0.95
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "JAP" 
+					version_name = "Nippon Class"
+				}
+				name = "Osaka"
+				requested_factories = 1
+				progress = 0.95
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "JAP" 
+					version_name = "Red Flag Class"
+				}
+				name = "Tangetsu"
+				requested_factories = 1
+				progress = 0.95
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "JAP" 
+					version_name = "Red Flag Class"
+				}
+				name = "Sakubana"
+				requested_factories = 1
+				progress = 0.95
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "JAP" 
+					version_name = "Red Flag Class"
+				}
+				name = "Mamoru"
+				requested_factories = 1
+				progress = 0.95
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "JAP" 
+					version_name = "Red Flag Class"
+				}
+				name = "Utagoe"
+				requested_factories = 1
+				progress = 0.95
+				amount = 1
+			}
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #本土紧急要塞化
+	id = cjc_mod_JAP.29
+	title = cjc_mod_JAP.29.t
+	desc = cjc_mod_JAP.29.d
+	picture = GFX_report_cjc_full_scale_navy_1
+	fire_only_once = yes
+	trigger = {
+		has_government = communism
+		tag = JAP
+		has_civil_war = no
+		or = {
+			647 = {
+				is_owned_by = JAP
+				not = {
+					is_fully_controlled_by = JAP
+				}
+			}
+			648 = {
+				is_owned_by = JAP
+				not = {
+					is_fully_controlled_by = JAP
+				}
+			}
+			any_owned_state = {
+				is_core_of = JAP
+				not = {
+					is_fully_controlled_by = JAP
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.29.a
+		add_war_support = 0.02
+		unlock_decision_tooltip = JAP_cjc_homeland_fortify
+		unlock_decision_tooltip = JAP_cjc_homeland_defense_decision
+		set_country_flag = jap_cjc_unlock_fortify_homeland_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #到工人中去
+	id = cjc_mod_JAP.31
+	title = cjc_mod_JAP.31.t
+	desc = cjc_mod_JAP.31.d
+	picture = GFX_report_cjc_generic_3
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.31.a
+		add_political_power = -30
+		add_stability = 0.03
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.31.b
+		add_ideas = jap_idea_officialism
+		add_political_power = 100
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #向着美好希望的明天 - 提高社会福利
+	id = cjc_mod_JAP.32
+	title = cjc_mod_JAP.32.t
+	desc = cjc_mod_JAP.32.d
+	picture = GFX_report_Alice_Casillia_cjc_3
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.32.a
+		if = {
+			limit = {
+				has_dlc = "By Blood Alone"
+			}
+			add_power_balance_modifier = {
+				id = JAP_power_balance
+				modifier = JAP_bop_social_welfare_modiffier
+			}
+		}
+		set_country_flag = jap_build_more_schools_and_hospitals_flag
+		unlock_decision_tooltip = jap_build_more_schools_and_hospitals_decision
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #战争状态加贫困
+	id = cjc_mod_JAP.33
+	title = cjc_mod_JAP.33.t
+	desc = cjc_mod_JAP.33.d
+	
+	trigger = {
+		has_war = yes
+		tag = JAP
+		not = {
+			has_country_flag = cjc_bop_we_are_in_war_flag
+		}
+		has_dlc = "By Blood Alone"
+	}
+	
+	option = {
+		name = cjc_mod_JAP.33.a
+		add_power_balance_modifier = {
+			id = JAP_power_balance
+			modifier = JAP_bop_we_are_in_war_modiffier
+		}
+		custom_effect_tooltip = this_modiffier_will_be_removed_after_war_tt
+		set_country_flag = cjc_bop_we_are_in_war_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #结束战争状态
+	id = cjc_mod_JAP.3301
+	title = cjc_mod_JAP.3301.t
+	desc = cjc_mod_JAP.3301.d
+	
+	trigger = {
+		has_war = no
+		tag = JAP
+		has_country_flag = cjc_bop_we_are_in_war_flag
+	}
+	
+	option = {
+		name = cjc_mod_JAP.3301.a
+		remove_power_balance_modifier = {
+			id = JAP_power_balance
+			modifier = JAP_bop_we_are_in_war_modiffier
+		}
+		clr_country_flag = cjc_bop_we_are_in_war_flag
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #暹罗傀儡
+	id = cjc_mod_JAP.34
+	title = cjc_mod_JAP.34.t
+	desc = cjc_mod_JAP.34.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.34.a
+		JAP = { country_event = { id = cjc_mod_JAP.3401 days = 1 } }
+		
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 2
+				JAP = { num_of_factories > 89 }
+			}
+			modifier = {
+				factor = 2
+				JAP = {
+					has_army_manpower = { size > 999999 }
+				}
+			}
+			modifier = {
+				factor = 2
+				CHI = {
+					OR = {
+						has_capitulated = yes
+						exists = no
+						has_government = communism
+					}
+				}
+			}
+			modifier = {
+				factor = 5
+				JAP = {
+					is_ai = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.34.b
+		JAP = { country_event = { id = cjc_mod_JAP.3402 days = 1 } }
+		
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 2
+				JAP = {
+					or = {
+						has_war_with = USA
+						has_war_with = ENG
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+country_event = { #暹罗同意
+	id = cjc_mod_JAP.3401
+	title = cjc_mod_JAP.3401.t
+	desc = cjc_mod_JAP.3401.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.3401.a
+		#set_autonomy = { target = SIA autonomy_state = autonomy_puppet }
+		every_country = {
+			limit = {
+				has_government = communism
+				is_faction_leader = yes
+				or = {
+					is_in_faction_with = JAP
+					tag = JAP
+				}
+			}
+			add_to_faction = SIA
+		}
+		SIA = {
+			set_politics = { ruling_party = communism elections_allowed = yes }
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #暹罗拒绝
+	id = cjc_mod_JAP.3402
+	title = cjc_mod_JAP.3402.t
+	desc = cjc_mod_JAP.3402.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.3402.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = SIA			
+			expire = 0
+		}
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+}
+
+country_event = { #规划工业用地1
+	id = cjc_mod_JAP.35
+	title = cjc_mod_JAP.35.t
+	desc = cjc_mod_JAP.35.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.35.a
+		add_timed_idea = {
+			idea = JAP_idea_utilize_industrial_space
+			days = 90
+		}
+		every_state = {
+			limit = {
+				or = {
+					is_core_of = JAP
+					is_controlled_by = JAP
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = cjc_jap_perfectly_use_industrial_space
+			}
+		}
+		custom_effect_tooltip = cjc_tip_for_industrial_space_modifier_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.35.b
+		
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}
+
+country_event = { #规划工业用地2
+	id = cjc_mod_JAP.3501
+	title = cjc_mod_JAP.3501.t
+	desc = cjc_mod_JAP.3501.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_mod_JAP.3501.a
+		every_state = {
+			limit = {
+				or = {
+					is_core_of = JAP
+					is_controlled_by = JAP
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = cjc_jap_perfectly_use_industrial_space
+			}
+		}
+		custom_effect_tooltip = cjc_tip_for_industrial_space_modifier_tt
+		
+		ai_chance = {
+		factor = 5
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.3501.b
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	option = {
+		name = cjc_mod_JAP.3501.c
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+}

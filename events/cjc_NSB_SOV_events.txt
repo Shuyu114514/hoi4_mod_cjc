@@ -1,0 +1,30 @@
+add_namespace = cjc_NSB_SOV
+
+country_event = { #布哈林买手稿
+	id = cjc_NSB_SOV.1
+	title = cjc_NSB_SOV.1.t
+	desc = cjc_NSB_SOV.1.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_NSB_SOV.1.a
+		
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	option = {
+		name = cjc_NSB_SOV.1.b
+		
+		
+		ai_chance = {
+		factor = 50
+		}
+	}
+	
+	
+}

@@ -1,0 +1,457 @@
+add_namespace = PRC_union
+
+country_event = {
+	id = PRC_union.1
+	title = PRC_union.1.t
+	desc = PRC_union.1.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PRC_union.1.a
+		add_timed_idea = {
+			idea = union_consumption
+			days = 120
+		}
+		PRC = {
+			#add_offsite_building = { type = industrial_complex level = 5 }
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = PRC_union.1.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = PRC_union.2
+	title = PRC_union.2.t
+	desc = PRC_union.2.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PRC_union.2.a
+		random_owned_controlled_state = {
+			limit = {
+				dockyard > 1
+				is_core_of = ROOT
+			}
+			remove_building = {
+				type = dockyard
+				level = 2
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				dockyard > 1
+				is_core_of = ROOT
+			}
+			remove_building = {
+				type = dockyard
+				level = 2
+			}
+		}
+		PRC = {
+			#add_offsite_building = { type = dockyard level = 5 }
+			745 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			613 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = PRC_union.2.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = PRC_union.3
+	title = PRC_union.3.t
+	desc = PRC_union.3.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PRC_union.3.a
+		army_experience = 30
+		air_experience = 30
+		navy_experience = 30
+		add_political_power = -25
+		PRC = {
+			army_experience = 30
+			air_experience = 30
+			navy_experience = 30
+			add_political_power = -25
+		}
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = PRC_union.3.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = PRC_union.4
+	title = PRC_union.4.t
+	desc = PRC_union.4.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PRC_union.4.a
+		custom_effect_tooltip = union_army_special_tt
+		
+		JAP = { country_event = { id = PRC_union.401 days = 1 } }
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = PRC_union.4.b
+		custom_effect_tooltip = union_navy_special_tt
+		
+		JAP = { country_event = { id = PRC_union.402 days = 1 } }
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = PRC_union.401
+	title = PRC_union.401.t
+	desc = PRC_union.401.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PRC_union.401.a
+		add_ideas = union_navy_specialized
+		PRC = {
+			add_ideas = union_army_specialized
+		}
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = PRC_union.401.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = PRC_union.402
+	title = PRC_union.402.t
+	desc = PRC_union.402.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PRC_union.402.a
+		add_ideas = union_army_specialized
+		PRC = {
+			add_ideas = union_navy_specialized
+		}
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = PRC_union.402.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = PRC_union.5
+	title = PRC_union.5.t
+	desc = PRC_union.5.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PRC_union.5.a
+		add_ideas = united_jet_production
+		PRC = {
+			add_ideas = united_jet_production
+		}
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = PRC_union.5.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = PRC_union.6
+	title = PRC_union.6.t
+	desc = PRC_union.6.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PRC_union.6.a
+		add_ideas = united_economy_system
+		if = {
+			limit = {
+				has_dlc = "By Blood Alone"
+			}
+			add_power_balance_value = {
+				id = JAP_power_balance
+				value = -0.02
+			}
+		}
+		PRC = {
+			add_ideas = united_economy_system
+		}
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = PRC_union.6.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = PRC_union.7
+	title = PRC_union.7.t
+	desc = PRC_union.7.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PRC_union.7.a
+		swap_ideas = {
+			remove_idea = united_economy_system
+			add_idea = united_economy_system2
+		}
+		if = {
+			limit = {
+				has_dlc = "By Blood Alone"
+			}
+			add_power_balance_value = {
+				id = JAP_power_balance
+				value = -0.02
+			}
+		}
+		PRC = {
+			swap_ideas = {
+				remove_idea = united_economy_system
+				add_idea = united_economy_system2
+			}
+		}
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.1 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = PRC_union.7.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.2 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #阵营合并
+	id = PRC_union.8
+	title = PRC_union.8.t
+	desc = PRC_union.8.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	option = {
+		name = PRC_union.8.a
+		SOV = { country_event = { id = cjc_common.3 days = 1 } }
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.301 days = 1 } }
+		}
+		ai_chance = {
+		factor = 10
+		}
+	}
+	option = {
+		name = PRC_union.8.b
+		
+		hidden_effect = {
+			PRC = { country_event = { id = cjc_common.302 days = 1 } }
+		}
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+
+

@@ -1,0 +1,352 @@
+add_namespace = JAP_kourou
+
+country_event = { #工业结构分歧
+	id = JAP_kourou.1
+	title = JAP_kourou.1.t
+	desc = JAP_kourou.1.d
+	picture = GFX_report_cjc_poster_2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_kourou.1.a
+		set_country_flag = JAP_rounouha_industry_flag
+		custom_effect_tooltip = rounouha_industry_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.1.b
+		set_country_flag = JAP_kouzaha_industry_flag
+		custom_effect_tooltip = kouzaha_industry_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.1.c
+		set_country_flag = JAP_fukumotoha_industry_flag
+		custom_effect_tooltip = fukumotoha_industry_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+}
+
+country_event = { #土地改革分歧
+	id = JAP_kourou.2
+	title = JAP_kourou.2.t
+	desc = JAP_kourou.2.d
+	picture = GFX_report_cjc_break_chains_1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_kourou.2.a
+		set_country_flag = JAP_rounouha_soil_flag
+		custom_effect_tooltip = rounouha_soil_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.2.b
+		set_country_flag = JAP_kouzaha_soil_flag
+		custom_effect_tooltip = kouzaha_soil_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.2.c
+		set_country_flag = JAP_fukumotoha_soil_flag
+		custom_effect_tooltip = fukumotoha_soil_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+}
+
+country_event = { #政治架构分歧
+	id = JAP_kourou.3
+	title = JAP_kourou.3.t
+	desc = JAP_kourou.3.d
+	picture = GFX_report_cjc_poster_0 #GFX_report_event_bul_boris_tour
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_kourou.3.a
+		set_country_flag = JAP_rounouha_politics_flag
+		custom_effect_tooltip = rounouha_politics_tt
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = JAP_zhuyujin_nanxiong
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.3.b
+		set_country_flag = JAP_kouzaha_politics_flag
+		custom_effect_tooltip = kouzaha_politics_tt
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = JAP_yelv_rongtailang
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.3.c
+		set_country_flag = JAP_fukumotoha_politics_flag
+		custom_effect_tooltip = fukumotoha_politics_tt
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = JAP_fukumoto_hefu
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+}
+
+country_event = { #军事建设分歧
+	id = JAP_kourou.4
+	title = JAP_kourou.4.t
+	desc = JAP_kourou.4.d
+	picture = GFX_report_cjc_soviet_1 #GFX_report_event_japanese_parade
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_kourou.4.a
+		set_country_flag = JAP_rounouha_army_flag
+		custom_effect_tooltip = rounouha_army_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.4.b
+		set_country_flag = JAP_kouzaha_army_flag
+		custom_effect_tooltip = kouzaha_army_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.4.c
+		set_country_flag = JAP_fukumotoha_army_flag
+		custom_effect_tooltip = fukumotoha_army_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+}
+
+country_event = { #外交政策分歧
+	id = JAP_kourou.5
+	title = JAP_kourou.5.t
+	desc = JAP_kourou.5.d
+	picture = GFX_report_cjc_marx_1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_kourou.5.a
+		set_country_flag = JAP_rounouha_foreign_flag
+		add_stability = 0.03
+		
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				not = { has_country_flag = JAP_rounouha_politics_flag }
+			}
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.5.b
+		set_country_flag = JAP_kouzaha_foreign_flag
+		add_political_power = 15
+		
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				not = { has_country_flag = JAP_kouzaha_politics_flag }
+			}
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.5.c
+		set_country_flag = JAP_fukumotoha_foreign_flag
+		add_war_support = 0.03
+		
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				not = { has_country_flag = JAP_fukumotoha_politics_flag }
+			}
+		}
+	}
+}
+
+country_event = { #革命方针分歧
+	id = JAP_kourou.6
+	title = JAP_kourou.6.t
+	desc = JAP_kourou.6.d
+	picture = GFX_report_cjc_redflag_paper
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_kourou.6.a
+		set_country_flag = JAP_rounouha_revo_flag
+		custom_effect_tooltip = rounouha_revo_tt
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.6.b
+		set_country_flag = JAP_kouzaha_revo_flag
+		custom_effect_tooltip = kouzaha_revo_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.6.c
+		set_country_flag = JAP_fukumotoha_revo_flag
+		custom_effect_tooltip = fukumotoha_revo_tt
+		
+		ai_chance = {
+		factor = 0
+		}
+	}
+}
+
+country_event = { #开局两派介绍
+	id = JAP_kourou.7
+	title = JAP_kourou.7.t
+	desc = JAP_kourou.7.d
+	picture = GFX_report_cjc_red_jap_1
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_kourou.7.a
+		custom_effect_tooltip = JAP_introduce_the_difference_in_our_party_tt
+		unlock_decision_tooltip = JAP_release_tokuda_decision
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #解决反动集团
+	id = JAP_kourou.8
+	title = JAP_kourou.8.t
+	desc = JAP_kourou.8.d
+	picture = GFX_report_cjc_generic_4 #GFX_report_event_soviet_purge_speech
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_kourou.8.a
+		set_country_flag = flag_start_to_solve_reactionary
+		custom_effect_tooltip = start_to_solve_reactionary_tt
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #解决反动集团
+	id = JAP_kourou.801
+	title = JAP_kourou.801.t
+	desc = JAP_kourou.801.d
+	picture = GFX_report_event_soviet_purge_speech
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_kourou.801.a
+		unlock_decision_tooltip = JAP_arrest_reactionary
+		retire_character = JAP_iwane_matsui
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}
+
+country_event = { #解决反动集团
+	id = JAP_kourou.802
+	title = JAP_kourou.802.t
+	desc = JAP_kourou.802.d
+	picture = GFX_report_event_soviet_purge_speech
+
+	is_triggered_only = yes
+	
+	option = {
+		name = JAP_kourou.802.a
+		add_political_power = 15
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.802.b
+		add_manpower = -15
+		add_stability = 0.02
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+	option = {
+		name = JAP_kourou.802.c
+		add_manpower = -200
+		add_stability = 0.05
+		
+		ai_chance = {
+		factor = 10
+		}
+	}
+	
+}

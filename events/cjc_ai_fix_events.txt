@@ -1,0 +1,22 @@
+add_namespace = cjc_ai
+
+country_event = {
+	id = cjc_ai.1
+	title = cjc_ai.1.t
+	desc = cjc_ai.1.d
+	picture = GFX_report_event_generic_read_write
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_ai.3.a
+		ger_ai_build_army_motorized_10 = yes
+		
+		ai_chance = {
+		factor = 100
+		}
+	}
+	
+}

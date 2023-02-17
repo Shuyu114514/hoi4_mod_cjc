@@ -1,0 +1,669 @@
+add_namespace = cjc_news
+
+
+news_event = {
+	id = cjc_news.1
+	title = cjc_news.1.t
+	desc = cjc_news.1.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.1.a
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = PRC
+			}
+		}
+	}
+	option = {
+		name = cjc_news.1.b
+		trigger = { TAG = JAP }
+	}
+	option = {
+		name = cjc_news.1.c
+		trigger = { TAG = PRC }
+	}
+	
+}
+
+news_event = { #共同防御委员会
+	id = cjc_news.2
+	title = cjc_news.2.t
+	desc = cjc_news.2.d
+	picture = GFX_news_event_prc_declared
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.2.a
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = PRC
+			}
+		}
+	}
+	option = {
+		name = cjc_news.2.b
+		trigger = { TAG = JAP }
+	}
+	option = {
+		name = cjc_news.2.c
+		trigger = { TAG = PRC }
+	}
+	
+}
+
+news_event = { #国共内战
+	id = cjc_news.3
+	title = cjc_news.3.t
+	desc = cjc_news.3.d
+	picture = GFX_news_cjc_prc_liberate_shanghai #GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.3.a
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = PRC
+			}
+		}
+	}
+	option = {
+		name = cjc_news.3.b
+		trigger = { TAG = JAP }
+	}
+	option = {
+		name = cjc_news.3.c
+		trigger = { TAG = PRC }
+	}
+	
+}
+
+news_event = { #阵营合并
+	id = cjc_news.4
+	title = cjc_news.4.t
+	desc = cjc_news.4.d
+	picture = GFX_news_cjc_marx_1 #GFX_news_event_006
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.4.a
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = cjc_news.4.b
+		trigger = { has_government = communism }
+	}
+	
+	
+}
+
+news_event = { #旧日本残军
+	id = cjc_news.5
+	title = cjc_news.5.t
+	desc = cjc_news.5.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.5.a
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = cjc_news.5.b
+		trigger = { has_government = communism }
+	}
+	
+	
+}
+
+news_event = { #美国宣布干涉
+	id = cjc_news.6
+	title = cjc_news.6.t
+	desc = cjc_news.6.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.6.a
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = cjc_news.6.b
+		trigger = { has_government = communism }
+	}
+	
+	
+}
+
+news_event = { #中共加入国际
+	id = cjc_news.7
+	title = cjc_news.7.t
+	desc = cjc_news.7.d
+	picture = GFX_news_cjc_marx_1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.7.a
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = cjc_news.7.b
+		trigger = { has_government = communism }
+	}
+	
+	
+}
+
+news_event = { #156工程
+	id = cjc_news.8
+	title = cjc_news.8.t
+	desc = cjc_news.8.d
+	picture = GFX_news_cjc_prc_stalin_1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.8.a
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = cjc_news.8.b
+		trigger = { has_government = communism }
+	}
+	
+	
+}
+
+news_event = { #美国加入轴心抗苏
+	id = cjc_news.9
+	title = cjc_news.9.t
+	desc = cjc_news.9.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.9.a
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = cjc_news.9.b
+		trigger = { has_government = communism }
+	}
+	
+	
+}
+
+news_event = { #五一之歌
+	id = cjc_news.11
+	title = cjc_news.11.t
+	desc = cjc_news.11.d
+	picture = GFX_news_cjc_marx_1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.11.a
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = cjc_news.11.b
+		trigger = { has_government = communism }
+	}
+	
+	
+}
+
+news_event = { #收复北京
+	id = cjc_news.12
+	title = cjc_news.12.t
+	desc = cjc_news.12.d
+	picture = GFX_news_cjc_prc_liberate_shanghai #GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.12.a
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = PRC
+			}
+		}
+	}
+	option = {
+		name = cjc_news.12.b
+		trigger = { TAG = JAP }
+	}
+	option = {
+		name = cjc_news.12.c
+		trigger = { TAG = PRC }
+	}
+	
+}
+
+news_event = { #收复上海
+	id = cjc_news.13
+	title = cjc_news.13.t
+	desc = cjc_news.13.d
+	picture = GFX_news_cjc_prc_liberate_shanghai #GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.13.a
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = PRC
+			}
+		}
+	}
+	option = {
+		name = cjc_news.13.b
+		trigger = { TAG = JAP }
+	}
+	option = {
+		name = cjc_news.13.c
+		trigger = { TAG = PRC }
+	}
+	
+}
+
+news_event = { #新中国成立
+	id = cjc_news.14
+	title = wtt_news.37.t
+	desc = wtt_news.37.desc
+	picture = GFX_news_event_prc_declared
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.14.a
+		trigger = {
+			has_government = communism
+			not = {
+				TAG = PRC
+			}
+		}
+	}
+	option = {
+		name = wtt_news.37.d
+		trigger = { not = { has_government = communism } }
+	}
+	option = {
+		name = cjc_news.14.c
+		trigger = { TAG = PRC }
+	}
+	
+}
+
+news_event = { #联合舰队-重燃太平洋
+	id = cjc_news.15
+	title = cjc_news.15.t
+	desc = cjc_news.15.d
+	picture = GFX_news_cjc_reburn_pacific
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.15.a
+		trigger = {
+			has_government = communism
+			not = {
+				TAG = JAP
+			}
+		}
+	}
+	option = {
+		name = cjc_news.15.b
+		trigger = { not = { has_government = communism } }
+	}
+	option = {
+		name = cjc_news.15.c
+		trigger = { TAG = JAP }
+	}
+}
+
+news_event = { #赤旗之胜利
+	id = cjc_news.16
+	title = cjc_news.16.t
+	desc = cjc_news.16.d
+	picture = GFX_news_cjc_generic_9
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.16.a
+		trigger = {
+			has_government = communism
+			or = {
+				tag = PRC
+				tag = JAP
+			}
+		}
+	}
+	option = {
+		name = cjc_news.16.b
+		trigger = { not = { has_government = communism } }
+	}
+	option = {
+		name = cjc_news.16.c
+		trigger = {
+			has_government = communism
+			not = {
+				tag = PRC
+				tag = JAP
+			}
+		}
+	}
+}
+
+news_event = { #最终胜利
+	id = cjc_news.17
+	title = cjc_news.17.t
+	desc = cjc_news.17.d
+	picture = GFX_news_cjc_generic_9
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.17.a
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = cjc_news.17.b
+		trigger = { not = { has_government = communism } }
+	}
+}
+
+news_event = { #中美洲合邦
+	id = cjc_news.18
+	title = cjc_news.18.t
+	desc = cjc_news.18.d
+	picture = GFX_news_cjc_generic_6
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.18.a
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = cjc_news.18.b
+		trigger = { not = { has_government = communism } }
+	}
+}
+
+news_event = { #小协约国投降
+	id = cjc_news.19
+	title = cjc_news.19.t
+	desc = cjc_news.19.d
+	picture = GFX_news_event_generic_sign_treaty2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.19.a
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = cjc_news.19.b
+		trigger = { not = { has_government = communism } }
+	}
+}
+
+news_event = { #德军总部崛起
+	id = cjc_news.21
+	title = cjc_news.21.t
+	desc = cjc_news.21.d
+	picture = GFX_news_cjc_wolfenstein_1
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.21.a
+		trigger = {
+			has_government = communism
+			not = {
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = cjc_news.21.b
+		trigger = {
+			not = { has_government = communism }
+			not = {
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = cjc_news.21.c
+		trigger = { tag = GER }
+	}
+}
+
+news_event = { #解放明斯克
+	id = cjc_news.22
+	title = cjc_news.22.t
+	desc = cjc_news.22.d
+	picture = GFX_news_cjc_minsk_ruin_1
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.22.a
+		trigger = {
+			has_government = communism
+			not = {
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = cjc_news.22.e
+		trigger = {
+			has_government = communism
+			tag = SOV
+		}
+	}
+	option = {
+		name = cjc_news.22.b
+		trigger = {
+			not = { has_government = communism }
+			not = {
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = cjc_news.22.c
+		trigger = { tag = GER }
+	}
+}
+
+news_event = { #解放基辅
+	id = cjc_news.23
+	title = cjc_news.23.t
+	desc = cjc_news.23.d
+	picture = GFX_news_cjc_kiev_ruin_1
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.23.a
+		trigger = {
+			has_government = communism
+			not = {
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = cjc_news.23.e
+		trigger = {
+			has_government = communism
+			tag = SOV
+		}
+	}
+	option = {
+		name = cjc_news.23.b
+		trigger = {
+			not = { has_government = communism }
+			not = {
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = cjc_news.23.c
+		trigger = { tag = GER }
+	}
+}
+
+news_event = { #解放奥斯维辛集中营
+	id = cjc_news.24
+	title = cjc_news.24.t
+	desc = cjc_news.24.d
+	picture = GFX_news_cjc_auschwitz_1
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.24.a
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = cjc_news.24.b
+		trigger = {
+			not = { has_government = communism }
+			not = {
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = cjc_news.24.c
+		trigger = { tag = GER }
+	}
+}
+
+news_event = { #第一节动漫艺术展
+	id = cjc_news.25
+	title = cjc_news.25.t
+	desc = cjc_news.25.d
+	picture = GFX_news_cjc_japanese_anime_1
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = cjc_news.25.a
+		trigger = {
+			tag = JAP
+		}
+	}
+	option = {
+		name = cjc_news.25.b
+		trigger = {
+			not = { has_government = fascism }
+			not = {
+				tag = JAP
+			}
+		}
+	}
+	option = {
+		name = cjc_news.24.c
+		trigger = { has_government = fascism }
+	}
+}
