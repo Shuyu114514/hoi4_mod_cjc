@@ -1,0 +1,3114 @@
+ger_ai_build_army_motorized_1 = { #德国ai摩托化，37年1月决议触发
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = 1
+		}
+	}
+}
+
+ger_ai_build_army_motorized_2 = { #德国ai摩托化，在德国开战时决议触发
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = 2
+		}
+	}
+}
+
+ger_ai_build_army_motorized_10 = { #德国ai摩托化
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = 10
+		}
+	}
+}
+
+ger_ai_build_army_motorized_20 = { #德国ai摩托化
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = 20
+		}
+	}
+}
+
+ger_ai_build_army_motorized_minus_16000 = { #德国aidebug测试
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = -16000
+		}
+	}
+}
+
+ger_ai_build_army_motorized_16000 = { #德国aidebug测试
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = motorized
+			value = 16000
+		}
+	}
+}
+
+ger_ai_build_army_standard_1 = { #初始
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 80
+		}
+	}
+}
+
+ger_ai_build_army_standard_1B = { #初始2
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 100
+		}
+	}
+}
+
+ger_ai_build_army_standard_1C = { #初始3
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 120
+		}
+	}
+}
+
+ger_ai_build_army_standard_1D = { #初始4
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 1
+		}
+	}
+}
+
+ger_ai_build_army_standard_1E = { #初始5
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 50
+		}
+	}
+}
+
+ger_ai_build_army_standard_2 = { #解锁装甲师配置
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 100
+		}
+	}
+}
+
+ger_ai_build_army_standard_3 = { #1942年之后，开战中
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 300
+		}
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 200
+		}
+	}
+}
+
+ger_ai_build_army_standard_4 = { #1943年之后
+	GER = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 600
+		}
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 400
+		}
+	}
+}
+
+ger_get_wolfenstein_fleet_effect = { #德军总部舰队
+	GER = {
+		if = {
+			limit = {
+				not = { has_tech = basic_ship_hull_heavy }
+			}
+			set_technology = {
+				basic_ship_hull_heavy = 1
+			}
+		}
+		if = {
+			limit = {
+				not = { has_tech = improved_ship_hull_heavy }
+			}
+			set_technology = {
+				improved_ship_hull_heavy = 1
+			}
+		}
+		if = {
+			limit = {
+				not = { has_tech = improved_ship_hull_carrier }
+			}
+			set_technology = {
+				improved_ship_hull_carrier = 1
+			}
+		}
+		if = {
+			limit = {
+				not = { has_tech = improved_ship_hull_cruiser }
+			}
+			set_technology = {
+				improved_ship_hull_cruiser = 1
+			}
+		}
+		create_equipment_variant = {
+			name = "Adler des Reiches"
+			type = ship_hull_carrier_3
+			name_group = GER_CV_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_deck_slot_1 = ship_deck_space
+				fixed_ship_deck_slot_2 = ship_deck_space
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_engine_slot = carrier_ship_engine_3
+				fixed_ship_secondaries_slot = dp_ship_secondaries_2
+				front_1_custom_slot = ship_deck_space
+				mid_1_custom_slot = ship_deck_space
+			}
+		}
+		create_equipment_variant = {
+			name = "Germania"
+			type = ship_hull_heavy_3
+			name_group = GER_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_engine_slot = heavy_ship_engine_3
+				fixed_ship_secondaries_slot = dp_ship_secondaries_2
+				fixed_ship_armor_slot = ship_armor_bb_2
+				front_1_custom_slot = ship_heavy_battery_2
+				mid_1_custom_slot = dp_ship_secondaries_2
+				mid_2_custom_slot = ship_airplane_launcher_2
+				rear_1_custom_slot = ship_heavy_battery_2
+			}
+		}
+		create_equipment_variant = {
+			name = "Fuhrer"
+			type = ship_hull_cruiser_3
+			name_group = GER_BC_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_medium_battery_3
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_engine_slot = cruiser_ship_engine_3
+				fixed_ship_armor_slot = ship_armor_cruiser_2
+				fixed_ship_secondaries_slot = dp_ship_secondaries_2
+				front_1_custom_slot = ship_medium_battery_2
+				mid_1_custom_slot = ship_torpedo_2
+				mid_2_custom_slot = dp_ship_secondaries_2
+				rear_1_custom_slot = ship_airplane_launcher_2
+			}
+		}
+		create_equipment_variant = {
+			name = "Leistung"
+			type = ship_hull_cruiser_3
+			name_group = GER_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_3
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_engine_slot = cruiser_ship_engine_3
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				fixed_ship_secondaries_slot = ship_secondaries_2
+				front_1_custom_slot = ship_light_medium_battery_2
+				mid_1_custom_slot = ship_torpedo_3
+				mid_2_custom_slot = ship_torpedo_3
+				rear_1_custom_slot = ship_airplane_launcher_2
+			}
+		}
+		create_equipment_variant = {
+			name = "Blitz"
+			type = ship_hull_light_3
+			name_group = GER_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_3
+				fixed_ship_anti_air_slot = ship_anti_air_3
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+				fixed_ship_radar_slot = ship_radar_3
+				fixed_ship_engine_slot = light_ship_engine_3
+				fixed_ship_torpedo_slot = ship_torpedo_3
+				mid_1_custom_slot = ship_torpedo_3
+				rear_1_custom_slot = ship_depth_charge_2
+			}
+		}
+		custom_effect_tooltip = ger_wolfenstein_build_big_fleet_tt
+		hidden_effect = {
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_3
+					creator = "GER" 
+					version_name = "Adler des Reiches"
+				}
+				name = "Adler des Reiches 01"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_3
+					creator = "GER" 
+					version_name = "Adler des Reiches"
+				}
+				name = "Adler des Reiches 02"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_3
+					creator = "GER" 
+					version_name = "Adler des Reiches"
+				}
+				name = "Adler des Reiches 03"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_3
+					creator = "GER" 
+					version_name = "Adler des Reiches"
+				}
+				name = "Adler des Reiches 04"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_3
+					creator = "GER" 
+					version_name = "Adler des Reiches"
+				}
+				name = "Adler des Reiches 05"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_3
+					creator = "GER" 
+					version_name = "Adler des Reiches"
+				}
+				name = "Adler des Reiches 06"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "GER" 
+					version_name = "Germania"
+				}
+				name = "Germania 01"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "GER" 
+					version_name = "Germania"
+				}
+				name = "Germania 02"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "GER" 
+					version_name = "Germania"
+				}
+				name = "Germania 03"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "GER" 
+					version_name = "Germania"
+				}
+				name = "Germania 04"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "GER" 
+					version_name = "Germania"
+				}
+				name = "Germania 05"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "GER" 
+					version_name = "Germania"
+				}
+				name = "Germania 06"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "GER" 
+					version_name = "Germania"
+				}
+				name = "Germania 07"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "GER" 
+					version_name = "Germania"
+				}
+				name = "Germania 08"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 01"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 02"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 03"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 04"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 05"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 06"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 07"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 08"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 09"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 10"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 11"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 12"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 13"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 14"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 15"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Fuhrer"
+				}
+				name = "Fuhrer 16"
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_3
+					creator = "GER" 
+					version_name = "Leistung"
+				}
+				name = "Leistung 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_light_3
+					creator = "GER" 
+					version_name = "Blitz"
+				}
+				name = "Blitz 01" 
+				requested_factories = 1
+				progress = 1 #0.99
+				amount = 1
+			}
+		}
+	}
+}
+
+ger_wolfenstein_extra_army = { 
+	GER = {
+		if = {
+			limit = { not = { has_tech = antiair1 } }
+			set_technology = { antiair1 = 1 }
+		}
+		if = {
+			limit = { not = { has_tech = antiair2 } }
+			set_technology = { antiair2 = 1 }
+		}
+		if = {
+			limit = { not = { has_tech = antiair3 } }
+			set_technology = { antiair3 = 1 }
+		}
+		if = {
+			limit = { not = { has_tech = antiair4 } }
+			set_technology = { antiair4 = 1 }
+		}
+		cjc_ai_support_tech_1 = yes
+		cjc_ai_support_tech_2 = yes
+		cjc_ai_support_tech_3 = yes
+		cjc_ai_support_tech_4_a = yes
+		hidden_effect = {
+			division_template = {
+				name = "SS Panzer"
+				regiments = {
+					medium_armor = { x = 0 y = 0 }
+					medium_armor = { x = 0 y = 1 }
+					medium_armor = { x = 0 y = 2 }
+					medium_armor = { x = 0 y = 3 }
+					medium_armor = { x = 0 y = 4 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					motorized = { x = 1 y = 3 }
+					motorized = { x = 1 y = 4 }
+					mot_anti_tank_brigade = { x = 2 y = 0 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					mot_recon = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 2 }
+					logistics_company = { x = 0 y = 3 }
+					anti_air = { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"SS Panzer 01\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 02\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 03\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 04\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 05\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 06\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 07\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 08\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 09\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 10\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 11\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 12\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 13\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 14\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 15\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 16\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 17\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Panzer 18\" division_template = \"SS Panzer\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+			}
+			division_template = {
+				name = "SS Guard"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+					anti_air_brigade = { x = 4 y = 0 }
+					anti_tank_brigade = { x = 4 y = 1 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 2 }
+					anti_tank = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 4 }
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { ROOT = { has_full_control_of_state = PREV } }
+				prioritize = { 64 }
+				create_unit = {
+					division = "name = \"SS Guard 1\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 2\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 3\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 4\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 5\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 6\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 7\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 8\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 9\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 10\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 11\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 12\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 13\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 14\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 15\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 16\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 17\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 18\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 19\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 20\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 21\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 22\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 23\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 24\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 25\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 26\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 27\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 28\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 29\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 30\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 31\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 32\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 33\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 34\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 35\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+				create_unit = {
+					division = "name = \"SS Guard 36\" division_template = \"SS Guard\" start_experience_factor = 1.0" 
+					owner = GER
+				}
+			}
+		}
+	}
+}

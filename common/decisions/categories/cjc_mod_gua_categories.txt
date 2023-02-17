@@ -1,0 +1,17 @@
+gua_ai_common_functions = {
+	allowed = {
+		original_tag = GUA
+	}
+	visible = {
+		is_ai = yes
+	}
+}
+
+gua_common_functions = {
+	allowed = {
+		original_tag = GUA
+	}
+	visible = {
+		
+	}
+}

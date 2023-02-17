@@ -1,0 +1,505 @@
+on_actions = {
+
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					date > 1936.04.29
+					NOT = { has_global_flag = flag_show_the_51_song }
+				}
+				news_event = { id = cjc_news.11 days = 0 }
+				#play_song = "Workers_of_all_countries"
+				set_global_flag = flag_show_the_51_song
+			}
+		}
+		effect = {
+			every_country = {
+				limit = {
+					is_ai = yes
+					not = {
+						has_idea = cjc_idea_build_naval_base_quickly_plz
+					}
+				}
+				add_ideas = cjc_idea_build_naval_base_quickly_plz
+			}
+		}
+	}
+	
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				country_event = { id = cjc_common.9 }
+				#country_event = { id = cjc_common.905 } #测试版更新说明
+				#country_event = { id = cjc_common.903 }
+			}
+			set_global_flag = fall_of_singapore
+			set_global_flag = fall_of_pearl_harbor
+			set_global_flag = fall_of_sydney
+			set_global_flag = fall_of_los_angeles
+			set_global_flag = fall_of_nanjing
+			set_global_flag = fall_of_vladivostok
+			set_global_flag = fall_of_hong_kong
+			set_global_flag = fall_of_manila
+			set_global_flag = fall_of_calcutta
+			set_global_flag = fall_of_new_delhi
+			set_global_flag = fall_of_panama
+			#set_global_flag = cjc_english_version_flag
+			add_victory_points = {
+				province = 8049
+				value = 7
+			}
+			every_state = {
+				limit = {
+					or = {
+						is_core_of = HON
+						is_core_of = ELS
+						is_core_of = NIC
+						is_core_of = COS
+					}
+				}
+				add_core_of = GUA
+			}
+			GUA = {
+				annex_country = { target = HON transfer_troops = yes }
+				annex_country = { target = ELS transfer_troops = yes }
+				annex_country = { target = NIC transfer_troops = yes }
+				annex_country = { target = COS transfer_troops = yes }
+				set_cosmetic_tag = north_MA_union
+				add_popularity = {
+					ideology = communism
+					popularity = 0.40
+				}
+			}
+			PRC = {
+				country_event = cjc_common.902
+				add_ideas = PRC_get_enemies_equipment
+				add_ideas = PRC_no_research_abillity_1
+				add_ideas = PRC_no_industry_base
+				add_country_leader_trait = great_stratagy_thought
+				add_timed_idea = {
+					idea = PRC_army_on_the_road
+					days = 320
+				}
+				build_railway = {
+					level = 1
+					start_state = PRC.capital
+					target_state = SHX.capital
+				}
+				build_railway = {
+					level = 1
+					start_state = PRC.capital
+					target_state = XSM.capital
+				}
+				build_railway = {
+					level = 1
+					start_province = 4801
+					target_province = 7803
+				}
+				build_railway = {
+					level = 1
+					start_province = 7803
+					target_province = 5025
+				}
+				build_railway = {
+					level = 1
+					path = { 4801 10554 4766 }
+				}
+				build_railway = {
+					level = 1
+					path = { 8049 12356 7314 3427 4960 2087 12609 1723 4856 12612 7749 7752 4801 }
+				}
+				build_railway = {
+					level = 1
+					path = { 11752 4612 12331 12609 }
+				}
+			}
+			JAP = {
+				add_ideas = JAP_red_problem
+				add_ideas = JAP_mines_unity_conflicts
+				country_event = { id = JAP_revo.15 days = 56 }
+				add_popularity = {
+					ideology = communism
+					popularity = 0.12
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.05
+				}
+				add_war_support = -0.25
+				build_railway = {
+					level = 2
+					path = { 6944 11879 957 }
+				}
+			}
+			SOV = {
+				add_ideas = SOV_idea_materialism
+				add_ideas = SOV_women_equality
+				#add_country_leader_trait = iron_comrade
+				set_country_flag = SOV_barbarossa_scorched_earth_delay #永久禁止苏联焦土
+				253 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 280
+						instant_build = yes
+					}
+				}
+				255 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 6329
+						instant_build = yes
+					}
+				}
+				214 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 6075
+						instant_build = yes
+					}
+				}
+				397 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 108
+						instant_build = yes
+					}
+				}
+				398 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 12587
+						instant_build = yes
+					}
+				}
+				351 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 9200
+						instant_build = yes
+					}
+				}
+				252 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 3349
+						instant_build = yes
+					}
+				}
+				250 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 3276
+						instant_build = yes
+					}
+				}
+				401 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 6502
+						instant_build = yes
+					}
+				}
+				407 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 11457
+						instant_build = yes
+					}
+				}
+				407 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 6588
+						instant_build = yes
+					}
+				}
+				407 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 9462
+						instant_build = yes
+					}
+				}
+				406 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 3618
+						instant_build = yes
+					}
+				}
+				652 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 3265
+						instant_build = yes
+					}
+				}
+				582 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 7281
+						instant_build = yes
+					}
+				}
+				215 = {
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 94
+						instant_build = yes
+					}
+				}
+				213 = {
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 6181
+						instant_build = yes
+					}
+				}
+				build_railway = {
+					level = 2
+					path = { 11262 3371 9324 6329 }
+				}
+				build_railway = {
+					level = 2
+					start_province = 9202
+					target_province = 3079
+				}
+				build_railway = {
+					level = 2
+					start_province = 3079
+					target_province = 108
+				}
+				build_railway = {
+					level = 2
+					start_province = 108
+					target_province = 12587
+				}
+				build_railway = {
+					level = 2
+					start_province = 12587
+					target_province = 4874
+				}
+				build_railway = {
+					level = 2
+					start_province = 4874
+					target_province = 9553
+				}
+				build_railway = {
+					level = 2
+					path = { 6075 72 9202 9110 11095 2996 }
+				}
+				build_railway = {
+					level = 2
+					path = { 108 6202 9155 9114 6171 6124 }
+				}
+				build_railway = {
+					level = 2
+					path = { 11348 9391 9337 9339 6502 }
+				}
+				build_railway = {
+					level = 2
+					start_province = 11457
+					target_province = 6588
+				}
+				build_railway = {
+					level = 2
+					start_province = 6588
+					target_province = 9462
+				}
+				build_railway = {
+					level = 2
+					start_province = 470
+					target_province = 11523
+				}
+				build_railway = {
+					level = 2
+					path = { 11523 3578 }
+				}
+				build_railway = {
+					level = 2
+					path = { 11457 9455 }
+				}
+				build_railway = {
+					level = 2
+					path = { 9462 3502 3563 }
+				}
+				build_railway = {
+					level = 2
+					path = { 6588 470 }
+				}
+				build_railway = {
+					level = 2
+					path = { 10253 4254 1247 12235 11591 9453 3618 }
+				}
+				build_railway = {
+					level = 2
+					start_province = 3349
+					target_province = 11387
+				}
+				build_railway = {
+					level = 2
+					path = { 11387 6338 }
+				}
+				build_railway = {
+					level = 2
+					path = { 6502 6339 9337 9391 11348 }
+				}
+				build_railway = {
+					level = 2
+					path = { 10253 4394 7313 10224 7281 4411 7401 12157 }
+				}
+			}
+			MEN = {
+				add_country_leader_trait = AI_correction_no_need_help_traits
+			}
+			MAN = {
+				add_country_leader_trait = AI_correction_no_need_help_traits
+			}
+			CHI = {
+				add_country_leader_trait = AI_correction_no_need_help_traits
+			}
+			GXC = {
+				add_country_leader_trait = AI_correction_no_need_help_traits
+			}
+			YUN = {
+				add_country_leader_trait = AI_correction_no_need_help_traits
+			}
+			SIA = {
+				add_country_leader_trait = AI_correction_no_need_help_traits
+			}
+			XSM = {
+				add_ideas = cjc_warlord_army_spirit
+			}
+			SHX = {
+				add_ideas = cjc_warlord_army_spirit
+			}
+			USA = {
+				add_offsite_building = { type = industrial_complex level = 20 }
+				add_offsite_building = { type = arms_factory level = 16 }
+			}
+			GER = {
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory level = 1 }
+				add_manpower = 20000
+			}
+			FRA = {
+				if = {
+					limit = {
+						has_game_rule = { #新轴心世界线判定
+							rule = cjc_new_axis_rule
+							option = cjc_new_axis_established_rule
+						}
+						has_game_rule = {
+							rule = FRA_ai_behavior
+							option = DEFAULT
+						}
+					}
+					set_country_flag = FRA_AI_DEMOCRATIC_ALTERNATE
+				}
+			}
+		}
+	}
+
+	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					tag = PRC
+					FROM = {
+						tag = CHI
+					}
+					FROM.FROM = { 
+						state = 608
+					}
+					NOT = { has_global_flag = prc_peking_is_liberated_flag }
+				}
+				set_global_flag = prc_peking_is_liberated_flag
+				news_event = { id = cjc_news.12 days = 1 }
+			}
+			if = {
+				limit = {
+					tag = PRC
+					FROM = {
+						tag = CHI
+					}
+					FROM.FROM = { 
+						state = 613
+					}
+					NOT = { has_global_flag = prc_shanghai_is_liberated_flag }
+				}
+				set_global_flag = prc_shanghai_is_liberated_flag
+				news_event = { id = cjc_news.13 days = 1 }
+			}
+			
+			if = {
+				limit = { #解放明斯克
+					has_global_flag = SOV_minsk_has_lost_flag
+					tag = SOV
+					FROM = {
+						tag = GER
+					}
+					FROM.FROM = { 
+						state = 206
+					}
+					NOT = { has_global_flag = SOV_minsk_is_liberated_flag }
+				}
+				set_global_flag = SOV_minsk_is_liberated_flag
+				news_event = { id = cjc_news.22 days = 1 } #todo
+			}
+			
+			if = {
+				limit = { #解放基辅
+					has_global_flag = SOV_kiev_has_lost_flag
+					tag = SOV
+					FROM = {
+						tag = GER
+					}
+					FROM.FROM = { 
+						state = 202
+					}
+					NOT = { has_global_flag = SOV_kiev_is_liberated_flag }
+				}
+				set_global_flag = SOV_kiev_is_liberated_flag
+				news_event = { id = cjc_news.23 days = 1 } #todo
+			}
+			
+			if = {
+				limit = { #解放奥斯维辛集中营
+					has_government = communism
+					FROM = {
+						tag = GER
+					}
+					FROM.FROM = { 
+						state = 88 #奥斯维辛
+					}
+					NOT = { has_global_flag = POL_auschwitz_is_liberated_flag }
+				}
+				set_global_flag = POL_auschwitz_is_liberated_flag
+				news_event = { id = cjc_news.24 days = 1 } #todo
+			}
+			
+		}
+	}
+
+}

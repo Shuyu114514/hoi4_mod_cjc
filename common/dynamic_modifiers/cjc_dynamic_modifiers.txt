@@ -1,0 +1,45 @@
+cjc_jap_centralized_industry_states = {
+	enable = { always = yes }
+	icon = GFX_unplanned_offensive
+	
+	local_factories = 0.40
+}
+
+cjc_jap_perfectly_use_industrial_space = {
+	enable = { always = yes }
+	icon = GFX_unplanned_offensive
+	
+	state_production_speed_buildings_factor = -0.30
+	local_factories = 0.20
+}
+
+cjc_jap_dmi_red_army = { # dmi = dynamic modifier idea
+	enable = { always = yes }
+	icon = GFX_idea_jap_idea_red_army
+	
+	conscription = cjc_jap_var_conscription
+	army_org_factor = cjc_jap_var_army_org_factor
+	experience_gain_army = cjc_jap_var_experience_gain_army
+	breakthrough_factor = cjc_jap_var_breakthrough_factor
+	supply_node_range = cjc_jap_var_supply_node_range
+	army_defence_factor = cjc_jap_var_army_defence_factor
+	army_attack_factor = cjc_jap_var_army_attack_factor
+	army_morale_factor = cjc_jap_var_army_morale_factor
+	land_reinforce_rate = cjc_jap_var_land_reinforce_rate
+	special_forces_cap = cjc_jap_var_special_forces_cap
+	special_forces_training_time_factor = cjc_jap_var_special_forces_training_time_factor
+	attrition = cjc_jap_var_attrition
+	planning_speed = cjc_jap_var_planning_speed
+	max_planning = cjc_jap_var_max_planning
+	max_command_power = cjc_jap_var_max_command_power
+	command_power_gain_mult = cjc_jap_var_command_power_gain_mult
+	no_supply_grace = cjc_jap_var_no_supply_grace
+	supply_consumption_factor = cjc_jap_var_supply_consumption_factor
+	out_of_supply_factor = cjc_jap_var_out_of_supply_factor
+	amphibious_invasion = cjc_jap_var_amphibious_invasion
+	invasion_preparation = cjc_jap_var_invasion_preparation
+	naval_invasion_capacity = cjc_jap_var_naval_invasion_capacity
+	consumer_goods_factor = cjc_jap_var_consumer_goods_factor
+	conscription_factor = cjc_jap_var_conscription_factor
+	
+}

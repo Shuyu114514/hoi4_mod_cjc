@@ -1,0 +1,98 @@
+unit_medals = {
+
+	japan_hero_of_revolution = {
+		
+		available = { should_have_japanese_medals_trigger = yes }
+		frame = 3
+		icon = "GFX_medal_icon_sov" #GFX_generic_communism_medal_3
+		
+		cost = 30
+		
+		unit_modifiers = {
+			army_strength_factor = 0.1
+		}
+		
+		one_time_effect = {
+			add_divisional_commander_xp = 100
+		}
+		
+	}
+	
+	japan_serve_to_the_people = {
+		
+		available = { should_have_japanese_medals_trigger = yes }
+		frame = 4
+		icon = "GFX_medal_icon_sov"
+		
+		cost = 30
+		
+		unit_modifiers = {
+			supply_consumption_factor = -0.15
+			army_fuel_consumption_factor = -0.15
+		}
+		
+		one_time_effect = {
+			add_divisional_commander_xp = 100
+		}
+		
+	}
+	
+	japan_awesome_youngs = {
+		
+		available = { should_have_japanese_medals_trigger = yes }
+		frame = 1
+		icon = "GFX_medal_icon_communism"
+		
+		cost = 30
+		
+		unit_modifiers = {
+			recon_factor = 0.15
+		}
+		
+		one_time_effect = {
+			add_divisional_commander_xp = 100
+		}
+		
+	}
+	
+	japan_new_red_sun = {
+		
+		available = { should_have_japanese_medals_trigger = yes }
+		frame = 3
+		icon = "GFX_medal_icon_communism"
+		
+		cost = 30
+		
+		unit_modifiers = {
+			experience_loss_factor = -0.25
+		}
+		
+		one_time_effect = {
+			add_divisional_commander_xp = 100
+		}
+		
+	}
+	
+	japan_liberate_world_medal = {
+		
+		available = {
+			should_have_japanese_medals_trigger = yes
+			has_country_flag = JAP_unlock_liberating_world_medal_flag
+		}
+		frame = 4
+		icon = "GFX_medal_icon_communism"
+		
+		cost = 30
+		
+		unit_modifiers = {
+			breakthrough_factor = 0.1
+			army_org_factor = 0.05
+		}
+		
+		one_time_effect = {
+			add_divisional_commander_xp = 100
+		}
+		
+	}
+
+}

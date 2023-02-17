@@ -1,0 +1,45 @@
+raj_ai_common_functions = {
+	
+	raj_cjc_ai_fix_buff = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = RAJ
+		}
+		available = {
+			
+		}
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					tag = RAJ
+					has_dlc = "Together for Victory"
+					not = {
+						has_idea = RAJ_agrarian_society
+					}
+				}
+				RAJ = {
+					remove_dynamic_modifier = { modifier = RAJ_agrarian_society_dynamic }
+					add_ideas = RAJ_agrarian_society
+				}
+			}
+		}	
+	}
+}

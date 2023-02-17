@@ -1,0 +1,109 @@
+prc_ai_build_army_infantry_50 = { #三马开打
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 50
+		}
+	}
+}
+
+prc_ai_build_army_infantry_100 = { #晋系开打
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 100
+		}
+	}
+}
+
+prc_ai_build_army_infantry_200 = { #解放战争
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 200
+		}
+	}
+}
+
+prc_ai_build_army_infantry_1000 = { #成立新中国
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 1000
+		}
+	}
+}
+
+prc_ai_build_army_infantry_3000 = { #第一波装甲师
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 3000
+		}
+	}
+}
+
+prc_ai_build_army_armor_50 = {
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 50
+		}
+	}
+}
+
+prc_ai_build_army_armor_100 = { #军队现代化
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 100
+		}
+	}
+}
+
+prc_ai_build_army_armor_200 = {
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 200
+		}
+	}
+}
+
+prc_ai_build_army_armor_500 = {
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 500
+		}
+	}
+}
+
+prc_ai_build_army_armor_800 = {
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 800
+		}
+	}
+}
+
+prc_ai_build_army_armor_1000 = { #第一波装甲师
+	PRC = {
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 1000
+		}
+	}
+}

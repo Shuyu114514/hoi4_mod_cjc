@@ -1,0 +1,130 @@
+PRC_historical_plan = {
+	name = "Communist China historical plan"
+	desc = "Historical behavior for Communist China"
+
+	allowed = {
+		original_tag = PRC
+	}
+	enable = {
+		OR = {
+			has_game_rule = {
+				rule = PRC_ai_behavior
+				option = DEFAULT
+			}
+			has_country_flag = PRC_AI_RANDOM_HISTORICAL
+			has_country_flag = PRC_AI_RANDOM_ALTERNATE_1
+			has_game_rule = {
+				rule = PRC_ai_behavior
+				option = HISTORICAL
+			}
+			has_game_rule = {
+				rule = PRC_ai_behavior
+				option = ALTERNATE
+			}
+			has_country_flag = PRC_AI_RANDOM_ALTERNATE_2
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		PRC_invite_foreign_investors #35
+		PRC_mission_to_the_soviet_union #21
+		PRC_collaboration_with_the_japanese #21
+		PRC_strengthen_the_central_secretariat #42
+		PRC_the_yanan_base_area #49
+		PRC_land_redistribution #42
+		PRC_enforce_the_three_rules #35
+		PRC_agrarian_socialism #35
+		PRC_revolutionary_military_commission #56
+		PRC_ban_the_opium_trade #35
+		PRC_rectification_campaign #35
+		
+		PRC_maoism #35
+		PRC_army_theory #35
+		PRC_army_strategy #35
+		
+		PRC_exploit_the_weak_neighbours #21
+		PRC_abolish_the_land_rent #35
+		PRC_literacy_programs #56测试，原本在农业社会主义之后
+		PRC_fast_vic_or_stable_plan #21
+		PRC_protracted_warfare #35
+		PRC_peoples_war #35
+		PRC_china_medical_university #56
+		
+		PRC_proletariat_arts #35
+		PRC_comintern_advisor #35
+		PRC_central_military_commission #42
+		PRC_peoples_liberation_army #42 1938 July finished
+		PRC_information_agency #35
+		PRC_free_women #42
+		PRC_free_thought #42
+		PRC_eastasia_communistunion #42测试，原本在解放全中国后面
+		PRC_liberating_war #35
+		PRC_sik_problem #35
+		PRC_liberating_war_2 #35
+		
+		PRC_proclaim_the_peoples_republic #70
+		PRC_liberate_tibet #35
+		PRC_form_the_academy_of_sciences #56
+		
+		PRC_156_proj #35
+		PRC_input_tech_fromJAP #70
+		
+		PRC_three_main_reformation #35
+		PRC_three_main_reformation_handicraft #35
+		PRC_handicraft_collectivization #42
+		PRC_handicraft_reformation_finished #35
+		
+		PRC_three_main_reformation_agriculture #35
+		PRC_basic_rural_commune #42
+		PRC_basic_reinforce_collectivization #35
+		PRC_agriculture_reformation_finished #35
+		
+		PRC_three_main_reformation_industry #35
+		PRC_workers_soviet_control_factories #42
+		PRC_completely_industry_nationalize #70
+		PRC_industry_reformation_finished #35
+		PRC_three_reformation_finished #42
+		
+		PRC_basic_industry #42
+		PRC_156_industry_support #42
+		PRC_156_industry_resources #42
+		PRC_156_factories_building #42
+		PRC_156_research_support #42
+		PRC_sov_tank_factory #42
+		PRC_156_tank_tech #42
+		
+		PRC_soil_reformation #42
+		PRC_land_agency #35
+		PRC_basic_railway_net #35
+		PRC_resources_research #35
+		PRC_expand_railway_net #56
+		PRC_south_resources_expand #56
+		PRC_east_resources_expand #56
+		
+		
+		PRC_training_arimy #42
+		PRC_air_fighter_factory #42
+		PRC_training_air #42
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

@@ -1,0 +1,104 @@
+cjc_new_axis_rule = {
+	name = "cjc_new_axis_rule"
+	group = "RULE_GROUP_CJC_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_NO"
+		desc = "cjc_new_axis_rule_default_desc"
+	}
+	option = {
+		name = cjc_new_axis_established_rule
+		text = "cjc_new_axis_established_rule_t"
+		desc = "cjc_new_axis_established_rule_desc"
+	}
+}
+
+USA_request_middle_america_rule = {
+	name = "USA_request_middle_america_rule"
+	group = "RULE_GROUP_CJC_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "USA_request_middle_america_rule_default_desc"
+	}
+	option = {
+		name = USA_request_but_cautious_to_declare_war_rule
+		text = "USA_request_but_cautious_to_declare_war_rule_t"
+		desc = "USA_request_but_cautious_to_declare_war_rule_desc"
+	}
+}
+
+USA_cjc_join_eng_allies_rule = {
+	name = "USA_cjc_join_eng_allies_rule"
+	group = "RULE_GROUP_CJC_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "USA_cjc_join_eng_allies_rule_default_desc"
+	}
+	option = {
+		name = USA_cjc_must_join_eng_allies_rule
+		text = "USA_cjc_must_join_eng_allies_rule_t"
+		desc = "USA_cjc_must_join_eng_allies_rule_desc"
+	}
+}
+
+cjc_ger_etra_manpower_rule = {
+	name = "cjc_ger_etra_manpower_rule"
+	group = "RULE_GROUP_CJC_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "cjc_ger_etra_2m_manpower_rule_desc"
+	}
+	option = {
+		name = cjc_ger_etra_6m_manpower_rule
+		text = "cjc_ger_etra_6m_manpower_rule_t"
+		desc = "cjc_ger_etra_6m_manpower_rule_desc"
+	}
+	option = {
+		name = cjc_ger_no_etra_manpower_rule
+		text = "cjc_ger_no_etra_manpower_rule_t"
+		desc = "cjc_ger_no_etra_manpower_rule_desc"
+	}
+	option = {
+		name = cjc_ger_1m_per_year_etra_manpower_rule
+		text = "cjc_ger_1m_per_year_etra_manpower_rule_t"
+		desc = "cjc_ger_1m_per_year_etra_manpower_rule_desc"
+	}
+	option = {
+		name = cjc_ger_infinite_manpower_rule
+		text = "cjc_ger_infinite_manpower_rule_t"
+		desc = "cjc_ger_infinite_manpower_rule_desc"
+	}
+}
+
+cjc_ger_panzer_buff_rule = {
+	name = "cjc_ger_panzer_buff_rule"
+	group = "RULE_GROUP_CJC_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "cjc_ger_panzer_buff_rule_default_desc"
+	}
+	option = {
+		name = cjc_ger_panzer_buff_on_rule
+		text = "cjc_ger_panzer_buff_on_rule_t"
+		desc = "cjc_ger_panzer_buff_on_rule_desc"
+	}
+}
+
+cjc_easter_egg_rule = {
+	name = "cjc_easter_egg_rule"
+	group = "RULE_GROUP_CJC_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "cjc_easter_egg_rule_off_desc"
+	}
+	option = {
+		name = cjc_easter_egg_rule_on
+		text = "cjc_easter_egg_rule_on_t"
+		desc = "cjc_easter_egg_rule_on_desc"
+	}
+}

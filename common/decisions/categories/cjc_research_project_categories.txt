@@ -1,0 +1,9 @@
+cjc_research_project = {
+	allowed = {
+		
+	}
+	visible = {
+		has_government = communism
+		has_country_flag = cjc_national_research_project
+	}
+}

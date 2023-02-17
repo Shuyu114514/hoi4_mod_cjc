@@ -1,0 +1,293 @@
+ideas = {
+
+	hidden_ideas = {
+		cjc_jap_idea_main_ai_buff = {
+			picture = generic_infantry_bonus
+			allowed = {
+				original_tag = JAP
+			}
+			available = {
+				is_ai = yes
+			}
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				convoy = {
+					instant = yes
+					build_cost_ic = -0.2
+				}
+			}
+			modifier = {
+				industrial_capacity_dockyard = 0.5
+				industrial_capacity_factory = 0.15
+				production_speed_buildings_factor = 0.05
+				naval_speed_factor = 0.1
+				navy_capital_ship_attack_factor = 0.10
+				navy_capital_ship_defence_factor = 0.10
+				navy_screen_attack_factor = 0.10
+				navy_screen_defence_factor = 0.10
+				convoy_escort_efficiency = 0.2
+				convoy_raiding_efficiency_factor = 0.1
+				navy_max_range_factor = 0.2
+				navy_fuel_consumption_factor = -0.2
+				port_strike = 1
+				carrier_capacity_penalty_reduction = -0.2
+				sortie_efficiency = 0.15
+				naval_strike_attack_factor = 0.15
+				naval_strike_targetting_factor = 0.15
+				naval_strike_agility_factor = 0.15
+				no_supply_grace = 48
+				out_of_supply_factor = -0.15
+				naval_invasion_penalty = -0.3
+				amphibious_invasion_defence = 0.4
+				amphibious_invasion = 0.3
+				shore_bombardment_bonus = 0.25
+				attrition = -0.05
+			}
+		}
+		
+		cjc_jap_idea_ai_consumer_buff = {
+			picture = generic_infantry_bonus
+			allowed = {
+				original_tag = JAP
+			}
+			available = {
+				is_ai = yes
+			}
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.03
+			}
+		}
+		
+		cjc_prc_idea_ai_battle_with_xsm_shx = {
+			picture = generic_infantry_bonus
+			allowed = {
+				original_tag = PRC
+			}
+			available = {
+				or = {
+					country_exists = SHX
+					country_exists = XSM
+				}
+			}
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				army_defence_factor = 0.10
+				army_speed_factor = 0.10
+				org_loss_when_moving = -0.10
+				no_supply_grace = 24
+				supply_node_range = 0.20
+				supply_consumption_factor = -0.15
+			}
+		}
+		
+		cjc_common_idea_ai_production_buff_1 = {
+			picture = generic_infantry_bonus
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				motorized = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				infantry_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				anti_air_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				anti_tank_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+			}
+			modifier = {
+				
+			}
+		}
+		
+		cjc_common_idea_ai_attrition_buff_1 = {
+			picture = generic_infantry_bonus
+			allowed = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				attrition = -0.04
+			}
+		}
+		
+		cjc_ger_idea_ai_production_buff_normal_1 = {
+			picture = generic_infantry_bonus
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				motorized = {
+					build_cost_ic = -0.35 instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.35 instant = yes
+				}
+				infantry_equipment = {
+					build_cost_ic = -0.35 instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.35 instant = yes
+				}
+				anti_air_equipment = {
+					build_cost_ic = -0.35 instant = yes
+				}
+				anti_tank_equipment = {
+					build_cost_ic = -0.35 instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.35 instant = yes
+				}
+			}
+			modifier = {
+				
+			}
+		}
+		
+		cjc_ger_idea_ai_production_buff_normal_2 = {
+			picture = generic_infantry_bonus
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				motorized = {
+					build_cost_ic = -0.55 instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.55 instant = yes
+				}
+				infantry_equipment = {
+					build_cost_ic = -0.55 instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.55 instant = yes
+				}
+				anti_air_equipment = {
+					build_cost_ic = -0.55 instant = yes
+				}
+				anti_tank_equipment = {
+					build_cost_ic = -0.55 instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.55 instant = yes
+				}
+			}
+			modifier = {
+				
+			}
+		}
+		
+		cjc_ger_idea_ai_production_buff_normal_3 = {
+			picture = generic_infantry_bonus
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				motorized = {
+					build_cost_ic = -0.65 instant = yes
+				}
+				mechanized = {
+					build_cost_ic = -0.65 instant = yes
+				}
+				infantry_equipment = {
+					build_cost_ic = -0.65 instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.65 instant = yes
+				}
+				anti_air_equipment = {
+					build_cost_ic = -0.65 instant = yes
+				}
+				anti_tank_equipment = {
+					build_cost_ic = -0.65 instant = yes
+				}
+				support_equipment = {
+					build_cost_ic = -0.65 instant = yes
+				}
+			}
+			modifier = {
+				
+			}
+		}
+		
+		cjc_idea_build_naval_base_quickly_plz = {
+			picture = generic_infantry_bonus
+			allowed = {
+				always = yes
+			}
+			available = {
+				is_ai = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_naval_base_factor = 3.5
+			}
+		}
+		
+		cjc_idea_jap_bop_poverty_decrease = {
+			picture = generic_infantry_bonus
+			allowed = {
+				always = yes
+			}
+			available = {
+				is_ai = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				power_balance_weekly = -0.002
+			}
+		}
+		
+	}
+
+}

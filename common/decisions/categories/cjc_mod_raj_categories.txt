@@ -1,0 +1,8 @@
+raj_ai_common_functions = {
+	allowed = {
+		original_tag = RAJ
+	}
+	visible = {
+		is_ai = yes
+	}
+}

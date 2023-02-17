@@ -1,0 +1,215 @@
+leader_traits = {
+	
+	great_stratagy_thought = {
+		random = no
+		org_loss_when_moving = -0.10
+		max_planning = 0.05
+		political_power_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_trait_combined_commune = {
+		random = no
+		drift_defence_factor = 0.20
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+		stability_factor = 0.05
+		army_morale_factor = 0.05
+		required_garrison_factor = -0.15
+		resistance_growth_on_our_occupied_states = 0.1
+		opinion_gain_monthly_same_ideology_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_trait_communist_committee = {
+		random = no
+		drift_defence_factor = 0.20
+		civilian_intel_to_others = -20
+		surrender_limit = 0.1
+		stability_factor = 0.05
+		required_garrison_factor = -0.15
+		conscription_factor = 0.10
+		max_command_power = 20
+		mobilization_speed = 0.30
+		political_advisor_cost_factor = -0.25
+		trade_laws_cost_factor = -0.25
+		mobilization_laws_cost_factor = -0.25
+		economy_cost_factor = -0.25
+		justify_war_goal_time = -0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	all_for_peoples = {
+		random = no
+		production_speed_industrial_complex_factor = 0.05
+		production_speed_infrastructure_factor = 0.05
+		communism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	jap_leader_of_concession = {
+		random = no
+		political_power_factor = -0.08
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	iron_comrade = {
+		random = no
+		stability_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	jap_revolutionary_novelist = {
+		random = no
+		sprite = 12
+		
+		political_power_factor = 0.20
+		communism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	jap_revolutionary_agent = {
+		random = no
+		army_intel_factor = 0.25
+		navy_intel_factor = 0.25
+		airforce_intel_factor = 0.25
+		civilian_intel_factor = 0.25
+		intel_network_gain = 0.2
+		agency_upgrade_time = -0.15
+		enemy_operative_recruitment_chance = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	AI_correction_no_need_help_traits = {
+		random = no
+		ai_get_ally_desire_factor = -500
+		join_faction_tension = 100
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	mao_warfare_expert = {
+		sprite = 14
+		cat_mass_assault_cost_factor = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	all_range_developement_industry = {
+		random = no
+		equipment_bonus = {
+			train_equipment = {
+				build_cost_ic = -0.15
+				instant = yes
+			}
+		}
+		political_power_cost = 0.10
+		conscription_factor = -0.50
+		consumer_goods_factor = -0.02
+		production_speed_industrial_complex_factor = 0.10
+		production_speed_infrastructure_factor = 0.10
+		production_speed_rail_way_factor = 0.15
+		production_speed_naval_base_factor = 0.1
+		industry_repair_factor = 0.25
+		production_factory_efficiency_gain_factor = 0.1
+		line_change_production_efficiency_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	Japan_railway_department = {
+		random = no
+		production_speed_infrastructure_factor = 0.1
+		production_speed_rail_way_factor = 0.3
+		production_speed_supply_node_factor = 0.4
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	Japan_organizer_of_commune = {
+		random = no
+		sprite = 10
+		
+		consumer_goods_factor = -0.035
+		stability_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	Japan_conflicts_solver = {
+		random = no
+		sprite = 10
+		
+		stability_factor = 0.15
+		war_support_factor = 0.10
+		political_power_gain = 0.10
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	cjc_communist_revolutionary = {
+		random = no
+		sprite = 13
+		communism_drift = 0.1
+		training_time_factor = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	naval_carrier_air_aid_2 = {
+		sprite = 1
+		experience_gain_navy = 0.3
+		navy_carrier_air_attack_factor = 0.08
+		navy_carrier_air_targetting_factor = 0.12
+		spotting_chance = 0.05
+
+		command_cap = 20
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				command_power < 20
+			}
+		}
+	}
+
+
+}

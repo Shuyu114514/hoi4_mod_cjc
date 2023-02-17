@@ -1,0 +1,19 @@
+JAP_bop_child_protection_modiffier = { 
+	power_balance_weekly = -0.001
+}
+
+JAP_bop_we_are_in_war_modiffier = { 
+	power_balance_weekly = 0.002
+}
+
+JAP_bop_society_is_working_modiffier = {
+	power_balance_weekly = -0.001
+}
+
+JAP_bop_social_welfare_modiffier = {
+	power_balance_weekly = -0.001
+}
+
+JAP_bop_zaibatsu_modiffier = {
+	power_balance_weekly = 0.001
+}

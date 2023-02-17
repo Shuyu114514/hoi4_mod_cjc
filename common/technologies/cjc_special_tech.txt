@@ -1,0 +1,297 @@
+technologies = {
+	engineers_landing_reinforce = {
+
+		engineer = {
+			amphibious = {
+				attack = 0.20
+			}
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	engineers_cross_river_reinforce = {
+
+		engineer = {
+			river = {
+				attack = 0.10
+			}
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	engineers_landing_reinforce_ai = {
+
+		engineer = {
+			river = {
+				attack = 0.1
+			}
+			amphibious = {
+				attack = 0.90
+			}
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	engineers_save_manpower_ai = {
+
+		engineer = {
+			casualty_trickleback = 0.30
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	infantry_add_width_ai = {
+
+		infantry = {
+			combat_width = 0.4
+		}
+		category_army = {
+			breakthrough = 0.10
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_decryption_recon_tech = {
+				
+		research_cost = 1.5
+		start_year = 1944
+
+		allow = {
+			always = no
+		}
+		decryption_power = 10
+		category_recon = {
+			recon = 1
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	cjc_cas_restriction_1 = {
+
+		air_cas_efficiency = -0.20
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_cas_restriction_2 = {
+
+		category_cas = {
+			air_ground_attack = -5
+		}
+		
+		category_tac_bomber = {
+			air_ground_attack = -5
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_ai_extra_production_tech_1 = {
+
+		production_factory_max_efficiency_factor = 0.05
+		production_factory_efficiency_gain_factor = 0.05
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_ai_extra_production_tech_2 = {
+
+		production_factory_max_efficiency_factor = 0.05
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_ai_ger_buff_tank_production_tech_1 = {
+
+		industrial_capacity_factory = 0.10
+		#attrition = -0.05
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_ai_ger_buff_tank_production_tech_2 = {
+
+		industrial_capacity_factory = 0.20
+		experience_loss_factor = -0.20
+		local_resources_factor = 0.1
+		#attrition = -0.05
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_ai_ger_buff_tank_production_tech_3 = {
+
+		industrial_capacity_factory = 0.40
+		experience_loss_factor = -0.30
+		local_resources_factor = 0.2
+		#attrition = -0.05
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_ai_ger_buff_production_tech_1942 = {
+
+		industrial_capacity_factory = 0.05
+		experience_loss_factor = -0.05
+		attrition = -0.05
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_ai_ger_buff_production_tech_1943 = {
+
+		industrial_capacity_factory = 0.05
+		supply_consumption_factor = -0.05
+		experience_loss_factor = -0.05
+		attrition = -0.03
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_ai_ger_buff_production_tech_1944 = {
+
+		industrial_capacity_factory = 0.05
+		
+		category_all_infantry = {
+			defense = 0.05
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	cjc_ai_ger_higher_sp_1 = {
+
+		anti_tank = {
+			ap_attack = 0.1
+		}
+		anti_tank_brigade = {
+			ap_attack = 0.1
+		}
+		mot_anti_tank_brigade = {
+			ap_attack = 0.1
+		}
+		light_tank_destroyer_brigade = {
+			ap_attack = 0.1
+		}
+		medium_tank_destroyer_brigade = {
+			ap_attack = 0.1
+		}
+		heavy_tank_destroyer_brigade = {
+			ap_attack = 0.1
+		}
+		super_heavy_tank_destroyer_brigade = {
+			ap_attack = 0.1
+		}
+		modern_tank_destroyer_brigade = {
+			ap_attack = 0.1
+		}
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+	}
+	
+	
+}

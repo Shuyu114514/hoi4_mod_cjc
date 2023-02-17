@@ -1,0 +1,8 @@
+eng_ai_common_functions = {
+	allowed = {
+		original_tag = ENG
+	}
+	visible = {
+		is_ai = yes
+	}
+}

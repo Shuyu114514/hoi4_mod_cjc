@@ -1,0 +1,17 @@
+mex_ai_common_functions = {
+	allowed = {
+		original_tag = MEX
+	}
+	visible = {
+		is_ai = yes
+	}
+}
+
+mex_common_functions = {
+	allowed = {
+		original_tag = MEX
+	}
+	visible = {
+		
+	}
+}

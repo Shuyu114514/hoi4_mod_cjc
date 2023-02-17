@@ -1,0 +1,79 @@
+jap_ai_build_army_standard_1 = { #东亚战争结束
+	JAP = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 100
+		}
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 5
+		}
+		add_ai_strategy = {
+			type = build_army
+			id = marines
+			value = 2
+		}
+	}
+}
+
+jap_ai_build_army_standard_2 = { #1941年6月之后
+	JAP = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 200
+		}
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 15
+		}
+		add_ai_strategy = {
+			type = build_army
+			id = marines
+			value = 2
+		}
+	}
+}
+
+jap_ai_build_army_standard_3 = { #1941年之后，与主要国家开打
+	JAP = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 500
+		}
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 50
+		}
+		add_ai_strategy = {
+			type = build_army
+			id = marines
+			value = 10
+		}
+	}
+}
+
+jap_ai_build_army_standard_4 = { #1943年之后
+	JAP = {
+		add_ai_strategy = {
+			type = build_army
+			id = infantry
+			value = 1000
+		}
+		add_ai_strategy = {
+			type = build_army
+			id = armor
+			value = 100
+		}
+		add_ai_strategy = {
+			type = build_army
+			id = marines
+			value = 20
+		}
+	}
+}

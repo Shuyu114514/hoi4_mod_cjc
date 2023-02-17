@@ -1,0 +1,51 @@
+PRC_volunteer_support = {
+	allowed = {
+		original_tag = PRC
+	}
+	visible = {
+		has_government = communism
+	}
+}
+
+PRC_repeat_get_army_decesions = {
+	allowed = {
+		original_tag = PRC
+	}
+	visible = {
+		has_government = communism
+		has_completed_focus = PRC_three_reformation_finished
+	}
+}
+
+
+PRC_mine_resources = {
+	allowed = {
+		original_tag = PRC
+	}
+	visible = {
+		has_government = communism
+	}
+}
+
+PRC_asia_communist_union = {
+	allowed = {
+		original_tag = PRC
+	}
+	visible = {
+		has_government = communism
+		has_completed_focus = PRC_eastasia_communistunion
+		JAP = {
+			has_completed_focus = JAP_prc_together
+		}
+	}
+}
+
+prc_supply_our_allies_decisions = {
+	allowed = {
+		original_tag = PRC
+	}
+	visible = {
+		has_government = communism
+		has_completed_focus = PRC_provide_supply_to_revolution
+	}
+}

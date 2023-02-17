@@ -1,0 +1,55 @@
+
+cjc_jap_our_alliance_are_crushed = {
+	custom_trigger_tooltip = {
+		tooltip = cjc_jap_our_alliance_are_crushed_tt
+		or = {
+			is_in_faction_with = PRC
+			is_in_faction_with = SOV
+		}
+		and = {
+			PRC = {
+				or = {
+					has_capitulated = yes
+					exists = no
+					not = { has_government = communism }
+				}
+			}
+			SOV = {
+				or = {
+					has_capitulated = yes
+					exists = no
+					not = { has_government = communism }
+				}
+			}
+		}
+		any_country = {
+			is_faction_leader = yes
+			has_war_with = JAP
+		}
+	}
+}
+
+cjc_east_asia_is_not_peace = {
+	custom_trigger_tooltip = {
+		tooltip = cjc_east_asia_is_not_peace_tt
+		CHI= {
+			exists = yes
+		}
+		YUN = {
+			exists = yes
+		}
+		GXC = {
+			exists = yes
+		}
+	}
+}
+
+cjc_jap_one_year_after_civilwar = {
+	custom_trigger_tooltip = {
+		tooltip = cjc_jap_one_year_after_civilwar_tt
+		has_country_flag = {
+			flag = JAP_finish_revo
+			days > 729
+		}
+	}
+}

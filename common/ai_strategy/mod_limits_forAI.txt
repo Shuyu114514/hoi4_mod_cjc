@@ -1,0 +1,370 @@
+JAP_sik_modify = {
+	enable = {
+		tag = JAP
+		has_government = communism
+		NOT = {
+			country_exists = CHI
+		}
+	}
+	abort = {
+		NOT = {
+			country_exists = SIK
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SIK"
+		value = 4800
+	}	
+}
+
+JAP_yun_modify = {
+	enable = {
+		tag = JAP
+		has_government = communism
+		NOT = {
+			country_exists = CHI
+		}
+	}
+	abort = {
+		NOT = {
+			country_exists = YUN
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "YUN"
+		value = 4800
+	}	
+}
+
+JAP_GXC_modify = {
+	enable = {
+		tag = JAP
+		has_government = communism
+		NOT = {
+			country_exists = CHI
+		}
+	}
+	abort = {
+		NOT = {
+			country_exists = GXC
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "GXC"
+		value = 4800
+	}	
+}
+
+JAP_PRC_modify = {
+	enable = {
+		tag = JAP
+		has_government = communism
+		NOT = {
+			country_exists = CHI
+		}
+	}
+	abort = {
+		NOT = {
+			country_exists = PRC
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "PRC"
+		value = 6000
+	}
+	
+	ai_strategy = {
+		type = protect
+		id = "PRC"
+		value = 6000
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "PRC"
+		value = 6000
+	}
+	
+	
+}
+
+Fra_prefer_comintern_modify = {
+	enable = {
+		tag = FRA
+		has_government = communism
+		SOV = { has_government = communism }
+	}
+	abort = {
+		NOT = {
+			SOV = {has_government = communism}
+		}
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SOV"
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "SOV"
+		value = 500
+	}
+	
+	
+}
+
+CHI_ignore_army = {
+	enable = {
+		or = {
+			original_tag = XSM
+			original_tag = SHX
+		}
+		
+	}
+	
+	ai_strategy = {
+		type = ignore_army_incompetence
+		value = 50
+	}
+	
+}
+
+SOV_cjc_dont_support_kmt = {
+	enable = {
+		tag = SOV
+		has_government = communism
+		or = {
+			country_exists = CHI
+			country_exists = XSM
+			country_exists = SHX
+			country_exists = GXC
+			country_exists = YUN
+		}
+	}
+	abort = {
+		not = {
+			country_exists = CHI
+			country_exists = XSM
+			country_exists = SHX
+			country_exists = GXC
+			country_exists = YUN
+		}
+	}
+	
+	ai_strategy = {
+		type = antagonize
+		id = "CHI"			
+		value = 100
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "XSM"			
+		value = 100
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "GXC"			
+		value = 100
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "SHX"			
+		value = 100
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "YUN"			
+		value = 100
+	}
+}
+
+PRC_cjc_defence_sov_border = {
+	enable = {
+		tag = PRC
+		has_government = communism
+		is_in_faction_with = SOV
+	}
+	abort = {
+		NOT = {
+			is_in_faction_with = SOV
+		}
+	}
+	
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "SOV"
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SOV"
+		value = 100
+	}
+	
+}
+
+JAP_cjc_defence_gua_border = {
+	enable = {
+		tag = JAP
+		has_government = communism
+		is_in_faction_with = GUA
+		has_country_flag = cjc_usa_will_attack_us_flag
+	}
+	abort = {
+		not = {
+			has_country_flag = cjc_usa_will_attack_us_flag
+		}
+	}
+	
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "GUA"
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "GUA"
+		value = 50
+	}
+	
+}
+
+JAP_cjc_defence_prc_border = {
+	enable = {
+		tag = JAP
+		has_government = communism
+		is_in_faction_with = PRC
+		has_war_with = CHI
+	}
+	abort = {
+		not = {
+			has_war_with = CHI
+		}
+	}
+	
+	ai_strategy = {
+		type = force_defend_ally_borders
+		id = "PRC"
+		value = 50
+	}
+	
+}
+
+SOV_cjc_ignore_jap_border = {
+	enable = {
+		tag = SOV
+		has_government = communism
+		is_in_faction_with = JAP
+		surrender_progress > 0.20
+	}
+	abort = {
+		surrender_progress < 0.19
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "JAP"
+		value = 100
+	}
+	
+}
+
+SOV_cjc_ignore_gua_border = {
+	enable = {
+		tag = SOV
+		has_government = communism
+		is_in_faction_with = GUA
+		surrender_progress > 0.20
+	}
+	abort = {
+		surrender_progress < 0.19
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "GUA"
+		value = 100
+	}
+	
+}
+
+SOV_cjc_ignore_prc_border = {
+	enable = {
+		tag = SOV
+		has_government = communism
+		is_in_faction_with = PRC
+		surrender_progress > 0.20
+	}
+	abort = {
+		surrender_progress < 0.19
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "PRC"
+		value = 100
+	}
+	
+}
+
+SOV_cjc_ignore_sia_border = {
+	enable = {
+		tag = SOV
+		has_government = communism
+		is_in_faction_with = SIA
+		surrender_progress > 0.20
+	}
+	abort = {
+		surrender_progress < 0.19
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "SIA"
+		value = 100
+	}
+	
+}
+
+GER_force_act_on_danzig_if_things_went_south = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		has_war_with = CZE
+		date < 1940.6.1
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "POL"
+		value = 2000
+	}
+}
+
+SOV_dont_waste_pp_on_relation = {
+	enable = {
+		has_political_power < 200
+		tag = SOV
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -2000
+	}
+}

@@ -1,0 +1,70 @@
+JAP_return_territory = {
+	allowed = {
+		original_tag = JAP
+	}
+	visible = {
+		has_government = communism
+	}
+}
+
+JAP_release_tokuda_decision_cat = {
+	allowed = {
+		original_tag = JAP
+	}
+	visible = {
+		has_completed_focus = JAP_the_unthinkable_option
+	}
+}
+
+JAP_mine_resources = {
+	allowed = {
+		original_tag = JAP
+	}
+	visible = {
+		has_government = communism
+	}
+}
+
+JAP_unit_old_colonies = {
+	allowed = {
+		original_tag = JAP
+	}
+	visible = {
+		has_government = communism
+	}
+}
+
+JAP_industrial_great_project = {
+	allowed = {
+		original_tag = JAP
+	}
+	visible = {
+		has_government = communism
+	}
+}
+
+JAP_asia_communist_union = {
+	allowed = {
+		original_tag = JAP
+	}
+	visible = {
+		has_government = communism
+		has_completed_focus = JAP_prc_together
+		PRC = {
+			has_completed_focus = PRC_eastasia_communistunion
+		}
+	}
+}
+
+
+ai_navy_improve_decisions = {
+	allowed = {
+		tag = JAP
+	}
+	visible = {
+		is_ai = no
+		not = {
+			has_country_flag = dont_show_ai_navy_improve_flag
+		}
+	}
+}

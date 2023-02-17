@@ -1,0 +1,2455 @@
+Ger_babarosa_attack = {
+
+
+	cjc_babarosa_attack = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = SOV
+			has_completed_focus = GER_ussr_war_goal
+			SOV = {
+				is_ai = no
+			}
+		}
+
+		visible = {
+			not = {
+				has_country_flag = finish_babarosa_plan
+			}
+			not = { has_government = communism }
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					and = {
+						is_ai = yes
+						not = {
+							has_global_flag = cjc_im_freshman_flag
+						}
+					}
+				}
+				add_manpower = 250000
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 5000 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 50000 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 5000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 5000 }
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 3300 }
+				}
+				else_if = {
+					limit = {
+						has_tech = improved_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 3300 }
+				}
+				else = {
+					add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 3300 }
+				}
+				SOV = {
+					add_timed_idea = {
+						idea = SOV_suffer_barbarossa
+						days = 60
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					SOV = { has_country_flag = sov_flag_difficulty_level_1 }
+				}
+				add_timed_idea = {
+					idea = GER_real_barbarossa
+					days = 210
+				}
+				add_manpower = 1000000
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					SOV = { has_country_flag = sov_flag_difficulty_level_2 }
+				}
+				add_timed_idea = {
+					idea = GER_real_barbarossa_2
+					days = 300
+				}
+				add_manpower = 1800000
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					SOV = {
+						or = {
+							has_country_flag = sov_flag_difficulty_level_1
+							has_country_flag = sov_flag_difficulty_level_2
+						}
+					}
+					not = { has_idea = GER_attack_player_buff_1 }
+					not = {
+						has_country_flag = ger_ai_super_panzer_division_1
+						has_country_flag = ger_ai_super_panzer_division_2
+						has_country_flag = ger_ai_super_panzer_division_3
+					}
+				}
+				add_ideas = GER_attack_player_buff_1
+			}
+			set_country_flag = finish_babarosa_plan
+		}	
+	}
+	
+	
+	cjc_babarosa_attack_ai = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = SOV
+			has_completed_focus = GER_ussr_war_goal
+			SOV = {
+				is_ai = yes
+			}
+		}
+
+		visible = {
+			not = {
+				has_country_flag = finish_babarosa_plan
+			}
+			not = { has_government = communism }
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 500
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					and = {
+						is_ai = yes
+						not = {
+							has_global_flag = cjc_im_freshman_flag
+						}
+					}
+				}
+				add_manpower = 210000
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 500 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 500 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 500 }
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 1000 }
+				}
+				else_if = {
+					limit = {
+						has_tech = improved_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 1000 }
+				}
+				else = {
+					add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 1000 }
+				}
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					is_in_faction_with = ENG
+				}
+				SOV = {
+					add_timed_idea = {
+						idea = SOV_suffer_barbarossa
+						days = 25
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					is_ai = yes
+				}
+				army_experience = 25
+				SOV = {
+					add_timed_idea = {
+						idea = SOV_suffer_barbarossa
+						days = 60
+					}
+				}
+			}
+			set_country_flag = finish_babarosa_plan
+		}	
+	}
+	
+	cjc_babarosa_reinforced_to_start = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			not = {
+				has_war_with = SOV
+			}
+		}
+
+		visible = {
+			not = { has_government = communism }
+			has_completed_focus = GER_ussr_war_goal
+			SOV = {
+				is_neighbor_of = GER
+				not = {
+					is_in_faction_with = GER
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 20
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		remove_effect = {
+			if = {
+				limit = {
+					and = {
+						is_ai = yes
+						not = {
+							has_war_with = SOV
+						}
+					}
+				}
+				GER = {
+					declare_war_on = {
+						type = annex_everything
+						target = SOV
+					}
+				}
+			}
+		}	
+	}
+	
+	cjc_get_cze = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = CZE
+		}
+
+		visible = {
+			not = { has_government = communism }
+			has_completed_focus = GER_demand_sudetenland
+		}
+
+		fire_only_once = yes
+
+		cost = 1
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 200 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 200 }
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 150 }
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 150 }
+			}
+			else = {
+				add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 150 }
+			}
+			add_timed_idea = {
+				idea = GER_break_sudetendland
+				days = 90
+			}
+			
+			if = {
+				limit = {
+					country_exists = CZE
+					HUN = {
+						has_government = fascism
+						is_ai = yes 
+						not = {
+							has_war_with = GER
+						}
+					}
+					
+				}
+				GER = { add_to_faction = HUN }
+				HUN = {
+					declare_war_on = {
+						type = annex_everything
+						target = CZE
+					}
+				
+				}
+			}
+		}	
+	}
+	
+	cjc_ger_buff_to_production_1936 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1936.2.1
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			add_ideas = cjc_common_idea_ai_production_buff_1
+			add_ideas = cjc_common_idea_ai_attrition_buff_1
+			set_technology = { cjc_ai_extra_production_tech_1 = 1 }
+		}
+	}
+	
+	cjc_ger_standard_production_buff_1942 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			or = {
+				date > 1942.5.1
+				and = {
+					date > 1942.1.1
+					has_war_with = PRC
+					has_war_with = SOV
+				}
+				and = {
+					date > 1942.1.1
+					has_war_with = JAP
+					has_war_with = SOV
+				}
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			add_manpower = 80000
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 150 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 300 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 300 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment amount = 100 }
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 100 }
+			if = {
+				limit = {
+					SOV = { surrender_progress < 0.26 }
+				}
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 150 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 300 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 300 }
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 100 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 100 }
+			}
+			if = {
+				limit = {
+					not = { has_tech = cjc_ai_ger_buff_production_tech_1942 }
+				}
+				set_technology = { cjc_ai_ger_buff_production_tech_1942 = 1 }
+			}
+		}
+	}
+	
+	cjc_ger_standard_production_buff_1943 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			or = {
+				date > 1943.5.1
+				and = {
+					date > 1943.1.1
+					surrender_progress > 0.10
+				}
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			add_manpower = 80000
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 300 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 4000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment amount = 100 }
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 100 }
+			if = {
+				limit = {
+					not = { has_tech = cjc_ai_ger_buff_production_tech_1943 }
+				}
+				set_technology = { cjc_ai_ger_buff_production_tech_1943 = 1 }
+			}
+		}
+	}
+	
+	cjc_ger_standard_production_buff_1944 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			or = {
+				date > 1944.5.1
+				and = {
+					date > 1944.1.1
+					surrender_progress > 0.10
+				}
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			add_manpower = 80000
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 300 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 4000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment amount = 100 }
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 100 }
+			if = {
+				limit = {
+					not = { has_tech = cjc_ai_ger_buff_production_tech_1944 }
+				}
+				set_technology = { cjc_ai_ger_buff_production_tech_1944 = 1 }
+			}
+		}
+	}
+	
+	cjc_ger_ai_division_production_0 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1936.6.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			ger_ai_build_army_standard_1 = yes
+			ger_ai_build_army_standard_1D = yes
+			army_experience = 10
+			hidden_effect = {
+				division_template = {
+					name = "Infantry Type I"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"SS Type 1\" division_template = \"Infantry Type I\" start_experience_factor = 0.3" 
+						owner = GER
+					}
+				}
+			}
+		}
+	}
+	
+	cjc_ger_ai_division_production_0B = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1938.8.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			ger_ai_build_army_standard_1B = yes
+			set_technology = { cjc_ai_extra_production_tech_2 = 1 }
+		}
+	}
+	
+	cjc_ger_ai_division_production_0_armor = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1938.1.1
+			has_tech = basic_medium_tank_chassis
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			ger_ai_build_army_standard_1E = yes
+		}	
+	}
+	
+	cjc_ger_ai_division_production_0C = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1939.8.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			ger_ai_build_army_standard_1C = yes
+		}
+	}
+	
+	cjc_ger_ai_division_production_1 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1940.1.1
+			has_tech = improved_medium_tank_chassis
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			ger_ai_build_army_standard_2 = yes
+		}	
+	}
+	
+	cjc_ger_ai_division_production_2 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1942.5.1
+			has_war = yes
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			ger_ai_build_army_standard_3 = yes
+		}
+	}
+	
+	cjc_ger_ai_division_production_3 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1944.1.1
+			has_war = yes
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			ger_ai_build_army_standard_4 = yes
+		}
+	}
+	
+	cjc_GER_ai_standard_armor_template = { 
+
+		icon = generic_independence
+
+		available = {
+			date > 1940.6.1
+			has_tech = improved_medium_tank_chassis
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 0
+		fire_only_once = yes
+		days_remove = 90
+		ai_will_do = {
+			factor = 200
+		}
+		modifier = {
+			
+		}
+		remove_effect = {
+			hidden_effect = {
+				division_template = {
+					name = "National Panzer Division"
+					regiments = {
+						medium_armor = { x = 0 y = 0 }
+						medium_armor = { x = 0 y = 1 }
+						medium_armor = { x = 0 y = 2 }
+						medium_armor = { x = 0 y = 3 }
+						medium_armor = { x = 0 y = 4 }
+						motorized = { x = 1 y = 0 }
+						motorized = { x = 1 y = 1 }
+						motorized = { x = 1 y = 2 }
+						motorized = { x = 1 y = 3 }
+						motorized = { x = 1 y = 4 }
+						mot_anti_tank_brigade = { x = 2 y = 0 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						mot_recon = { x = 0 y = 1 }
+						maintenance_company = { x = 0 y = 2 }
+						logistics_company = { x = 0 y = 3 }
+						anti_air = { x = 0 y = 4 }
+					}
+				}
+					
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"Deutsches Panzer Division\" division_template = \"National Panzer Division\" start_experience_factor = 0.2" 
+						owner = GER
+					}
+				}
+			}
+		}
+	}
+	
+	cjc_ger_panzer_module_starts_decision = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			any_country = {
+				is_ai = no
+				num_of_factories > 75
+				has_war_with = GER
+			}
+			date > 1938.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 2
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					has_country_flag = ger_ai_super_panzer_division_3
+				}
+				country_event = cjc_common.2603
+			}
+			else_if = {
+				limit = {
+					has_country_flag = ger_ai_super_panzer_division_2
+				}
+				country_event = cjc_common.2602
+			}
+			else_if = {
+				limit = {
+					has_country_flag = ger_ai_super_panzer_division_1
+				}
+				country_event = cjc_common.2601
+			}
+			
+		}
+	}
+	
+	cjc_ger_super_panzer_division_level_1 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war = yes
+			has_country_flag = ger_ai_super_panzer_division_1_start
+			surrender_progress < 0.80
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 120
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					not = { has_tech = cjc_ai_ger_buff_tank_production_tech_1 }
+				}
+				set_technology = { cjc_ai_ger_buff_tank_production_tech_1 = 1 }
+			}
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 1600 }
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 1600 }
+			}
+			else = {
+				add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 1600 }
+			}
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 1500 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 1500 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 9000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 1500 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment amount = 120 }
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 120 }
+			if = {
+				limit = {
+					date > 1942.8.1
+					num_of_factories > 120
+				}
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 100 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 100 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 400 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 800 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 6000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 800 }
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 200 }
+				}
+				else = {
+					add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 200 }
+				}
+			}
+			if = {
+				limit = {
+					date > 1943.8.1
+					num_of_factories > 240
+				}
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 110 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 110 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 500 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 900 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 7500 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 900 }
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 300 }
+				}
+				else = {
+					add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 300 }
+				}
+			}
+			if = {
+				limit = {
+					date > 1944.8.1
+					num_of_factories > 360
+				}
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 120 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 120 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 500 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 1000 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 9000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 1000 }
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 400 }
+				}
+				else = {
+					add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 400 }
+				}
+			}
+			add_manpower = 20000
+			hidden_effect = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.2" 
+						owner = GER
+					}
+				}
+			}
+		}	
+	}
+	
+	cjc_ger_super_panzer_division_level_2 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war = yes
+			has_country_flag = ger_ai_super_panzer_division_2_start
+			surrender_progress < 0.80
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 120
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					not = { has_tech = cjc_ai_ger_buff_tank_production_tech_2 }
+				}
+				set_technology = { cjc_ai_ger_buff_tank_production_tech_2 = 1 }
+			}
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 3200 }
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 3200 }
+			}
+			else = {
+				add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 3200 }
+			}
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 3000 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 2100 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 18000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 2100 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment amount = 320 }
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 320 }
+			if = {
+				limit = {
+					date > 1942.8.1
+					num_of_factories > 120
+				}
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 250 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 250 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 700 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 1800 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 18000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 1800 }
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 500 }
+				}
+				else = {
+					add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 500 }
+				}
+			}
+			if = {
+				limit = {
+					date > 1943.8.1
+					num_of_factories > 240
+				}
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 330 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 330 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 800 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 2000 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 20000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 2000 }
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 800 }
+				}
+				else = {
+					add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 800 }
+				}
+			}
+			if = {
+				limit = {
+					date > 1944.8.1
+					num_of_factories > 360
+				}
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 600 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 600 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 1400 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 2400 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 30000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 2800 }
+				if = {
+					limit = {
+						has_tech = advanced_medium_tank_chassis
+					}
+					add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 1100 }
+				}
+				else = {
+					add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 1100 }
+				}
+			}
+			add_manpower = 40000
+			hidden_effect = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+				}
+			}
+		}	
+	}
+	
+	cjc_ger_super_panzer_division_level_3 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war = yes
+			has_country_flag = ger_ai_super_panzer_division_3_start
+			surrender_progress < 0.80
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 120
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					not = { has_tech = cjc_ai_ger_buff_tank_production_tech_3 }
+				}
+				set_technology = { cjc_ai_ger_buff_tank_production_tech_3 = 1 }
+			}
+			add_equipment_to_stockpile = { type = heavy_tank_amphibious_chassis amount = 3400 }
+			add_equipment_to_stockpile = { type = amphibious_mechanized_equipment amount = 3400 }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 1600 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 5100 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 38000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 5000 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment amount = 900 }
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 900 }
+			if = {
+				limit = {
+					date > 1942.8.1
+					num_of_factories > 120
+				}
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 400 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 400 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 1500 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 3000 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 26000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 3000 }
+				add_equipment_to_stockpile = { type = heavy_tank_amphibious_chassis amount = 900 }
+				add_equipment_to_stockpile = { type = amphibious_mechanized_equipment amount = 900 }
+			}
+			if = {
+				limit = {
+					date > 1943.8.1
+					num_of_factories > 240
+				}
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 500 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 1500 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 3200 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 30000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 3200 }
+				add_equipment_to_stockpile = { type = heavy_tank_amphibious_chassis amount = 1200 }
+				add_equipment_to_stockpile = { type = amphibious_mechanized_equipment amount = 1200 }
+			}
+			if = {
+				limit = {
+					date > 1944.8.1
+					num_of_factories > 360
+				}
+				add_equipment_to_stockpile = { type = anti_tank_equipment amount = 800 }
+				add_equipment_to_stockpile = { type = anti_air_equipment amount = 800 }
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 1600 }
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 3500 }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 38000 }
+				add_equipment_to_stockpile = { type = support_equipment amount = 3600 }
+				add_equipment_to_stockpile = { type = heavy_tank_amphibious_chassis amount = 1600 }
+				add_equipment_to_stockpile = { type = amphibious_mechanized_equipment amount = 1600 }
+			}
+			add_manpower = 60000
+			hidden_effect = {
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 64 }
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+					create_unit = {
+						division = "name = \"Deutsches Panzer\" division_template = \"Deutsches_Panzer_Division_00\" start_experience_factor = 0.5" 
+						owner = GER
+					}
+				}
+			}
+		}	
+	}
+	
+	cjc_ger_extra__manpower_setup = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			is_ai = yes
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = cjc_ger_etra_manpower_rule
+						option = cjc_ger_infinite_manpower_rule
+					}
+				}
+				set_country_flag = ger_ai_ultimate_manpower_event_flag
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = cjc_ger_etra_manpower_rule
+						option = cjc_ger_1m_per_year_etra_manpower_rule
+					}
+				}
+				add_manpower = 1000000
+				set_country_flag = cjc_ger_more_continuous_manpower_flag
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = cjc_ger_etra_manpower_rule
+						option = cjc_ger_etra_6m_manpower_rule
+					}
+				}
+				add_manpower = 2000000
+				add_manpower = 2000000
+				add_manpower = 2000000
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = cjc_ger_etra_manpower_rule
+						option = DEFAULT
+					}
+				}
+				add_manpower = 2000000
+			}
+		}	
+	}
+	
+	cjc_ger_ultimate_manpower = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_country_flag = ger_ai_ultimate_manpower_event_flag
+			has_manpower < 12000000
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 5
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			add_manpower = 2000000
+		}	
+	}
+	
+	cjc_ger_continue_manpower_decision = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_country_flag = ger_ai_continue_manpower_event_flag
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			add_manpower = 1000000
+		}	
+	}
+	
+	cjc_ger_continue_manpower_decision_2 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+			date > 1937.1.1
+		}
+
+		visible = {
+			
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 30
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			add_manpower = 29000
+			if = {
+				limit = { has_country_flag = cjc_ger_more_continuous_manpower_flag }
+				add_manpower = 85000
+			}
+		}
+	}
+	
+	cjc_ger_buff_to_player_jap = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = JAP
+			JAP = {
+				is_ai = no
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 1
+		days_remove = -1
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			industrial_capacity_factory = 0.03
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			
+		}	
+	}
+	
+	cjc_ger_buff_to_player_prc = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = PRC
+			PRC = {
+				is_ai = no
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 1
+		days_remove = -1
+		targeted_modifier = {
+			tag = PRC
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			industrial_capacity_factory = 0.05
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			
+		}	
+	}
+	
+	cjc_ger_buff_to_player_sov = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = SOV
+			SOV = {
+				is_ai = no
+			}
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 1
+		days_remove = -1
+		targeted_modifier = {
+			tag = SOV
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			weekly_manpower = 3500
+			industrial_capacity_factory = 0.06
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			
+		}	
+	}
+	
+	cjc_ger_delete_tur_investment_debug = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_idea = TUR_investment_financing_spirit
+			date > 1940.1.1
+		}
+		visible = {
+			has_idea = TUR_investment_financing_spirit
+		}
+		fire_only_once = no
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			remove_ideas = TUR_investment_financing_spirit
+		}	
+	}
+	
+	cjc_ger_debug_build_army_motorized = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1937.1.1
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			ger_ai_build_army_motorized_1 = yes
+		}
+	}
+	
+	cjc_ger_debug_build_army_motorized_2 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1938.1.1
+			has_war = yes
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			ger_ai_build_army_motorized_2 = yes
+		}
+	}
+	
+	cjc_ger_anti_air_tech_1 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			date > 1941.1.1
+			has_tech = interwar_antiair
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = { not = { has_tech = antiair1 } }
+				set_technology = { antiair1 = 1 }
+			}
+		}
+	}
+	
+	cjc_ger_anti_air_tech_2 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			date > 1941.6.1
+			has_tech = antiair1
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = { not = { has_tech = antiair2 } }
+				set_technology = { antiair2 = 1 }
+			}
+		}	
+	}
+	
+	cjc_ger_anti_air_tech_3 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			date > 1942.1.1
+			has_tech = antiair2
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = { not = { has_tech = antiair3 } }
+				set_technology = { antiair3 = 1 }
+			}
+		}	
+	}
+	
+	cjc_ger_anti_air_tech_4 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			date > 1943.1.1
+			has_tech = antiair3
+		}
+		visible = {
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			if = {
+				limit = { not = { has_tech = antiair4 } }
+				set_technology = { antiair4 = 1 }
+			}
+		}	
+	}
+	
+	cjc_ger_support_tech_1 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1939.1.1
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			cjc_ai_support_tech_1 = yes
+		}	
+	}
+	
+	cjc_ger_support_tech_2 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1941.1.1
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			cjc_ai_support_tech_2 = yes
+		}	
+	}
+	
+	cjc_ger_support_tech_3 = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1942.10.1 #比其他人早一些
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			cjc_ai_support_tech_3 = yes
+		}	
+	}
+	
+	cjc_ger_support_tech_4_a = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			date > 1944.2.1 #比其他人早一些
+			not = {
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		visible = {
+			
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			cjc_ai_support_tech_4_a = yes
+		}
+	}
+	
+	cjc_ger_eng_ally_fix = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			ENG = {
+				has_completed_focus = ENG_the_kings_party
+			}
+		}
+
+		visible = {
+			not = { has_government = communism }
+			has_completed_focus = GER_danzig_or_war
+		}
+
+		fire_only_once = yes
+
+		cost = 1
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					country_exists = POL
+					ENG = {
+						has_government = neutrality
+						is_ai = yes 
+						not = {
+							has_war_with = GER
+						}
+					}
+					
+				}
+				GER = { add_to_faction = ENG }
+				ENG = {
+					add_equipment_to_stockpile = { type = artillery_equipment amount = 600 }
+					add_equipment_to_stockpile = { type = infantry_equipment amount = 4500 }
+					add_equipment_to_stockpile = { type = support_equipment amount = 600 }
+				}
+			}
+		}	
+	}
+
+
+}
+
+Ger_cjc_functions = {
+	cjc_ger_keep_massacre_policy = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = SOV
+		}
+		visible = {
+			has_government = fascism
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 1941.2.1
+			}
+			modifier = {
+				factor = 0
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		complete_effect = {
+			add_ideas = GER_massacre_policy
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_manpower = 200000
+			}
+		}
+	}
+	
+	cjc_ger_homeland_defender = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			surrender_progress > 0.1
+		}
+		visible = {
+			has_government = fascism
+			surrender_progress > 0.05
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		complete_effect = {
+			add_ideas = GER_homeland_defender
+		}	
+	}
+	
+	cjc_ger_wolfenstein_trigger_decision_ai = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			surrender_progress > 0.1
+		}
+		visible = {
+			has_government = fascism
+			has_global_flag = cjc_easter_egg_flag
+			not = { 
+				has_global_flag = cjc_wolfenstein_has_been_tiggered_flag
+			}
+			is_ai = yes
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				not = { has_global_flag = cjc_easter_egg_flag }
+			}
+		}
+		complete_effect = {
+			country_event = cjc_common.45
+			set_global_flag = cjc_wolfenstein_has_been_tiggered_flag
+		}
+	}
+	
+	cjc_ger_wolfenstein_trigger_decision = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			surrender_progress > 0.2
+		}
+		visible = {
+			has_government = fascism
+			has_global_flag = cjc_easter_egg_flag
+			not = {
+				has_global_flag = cjc_wolfenstein_has_been_tiggered_flag
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				not = { has_global_flag = cjc_easter_egg_flag }
+			}
+		}
+		complete_effect = {
+			country_event = cjc_common.45
+			set_global_flag = cjc_wolfenstein_has_been_tiggered_flag
+		}
+	}
+	
+	cjc_ger_resources_support_from_britain = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			ENG = {
+				surrender_progress < 0.35
+			}
+		}
+		visible = {
+			#has_government = fascism
+			is_in_faction_with = ENG
+			not = {
+				has_idea = GER_idea_resources_from_britain
+			}
+		}
+		fire_only_once = no
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		complete_effect = {
+			add_ideas = GER_idea_resources_from_britain
+			ENG = {
+				add_ideas = GER_idea_eng_resources_trade_with_ger
+			}
+			add_offsite_building = { type = industrial_complex level = 5 }
+			add_offsite_building = { type = arms_factory level = 5 }
+		}	
+	}
+	
+	cjc_ger_hiter_teen_corps = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			or = {
+				and = {
+					has_manpower < 1200000
+					date > 1941.1.1
+					has_war = yes
+				}
+				date > 1941.11.1
+			}
+		}
+		visible = {
+			has_government = fascism
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		complete_effect = {
+			add_ideas = GER_hitler_teen_corps
+		}	
+	}
+	
+	cjc_ger_expand_mg42_machinegun = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			
+		}
+		visible = {
+			date > 1942.10.1
+		}
+		fire_only_once = yes
+		cost = 20
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 500
+			modifier = {
+				factor = 0
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		complete_effect = {
+			add_ideas = GER_mg42_machinegun
+		}	
+	}
+	
+	cjc_ger_mili_access_for_usa = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			not = {
+				has_war_with = USA
+			}
+		}
+		visible = {
+			has_war_with = SOV
+			USA = {
+				has_war_with = SOV
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		complete_effect = {
+			USA = {
+				diplomatic_relation = {
+					country = GER
+					relation = non_aggression_pact
+					active = yes
+				}
+				diplomatic_relation = {
+					country = GER
+					relation = military_access
+					active = yes
+				}
+			}
+			diplomatic_relation = {
+				country = USA
+				relation = military_access
+				active = yes
+			}
+		}
+	}
+	
+	cjc_ger_let_fra_surrend = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = FRA
+			has_government = fascism
+			surrender_progress < 0.10
+			is_in_faction_with = ENG
+			not = {
+				has_war_with = ITA
+				has_war_with = SOV
+			}
+			FRA = {
+				surrender_progress > 0.70
+				is_faction_leader = yes
+				has_government = democratic
+			}
+		}
+		visible = {
+			has_war_with = FRA
+			is_in_faction_with = ENG
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			FRA = {
+				country_event = cjc_common.43
+			}
+		}
+	}
+	
+	cjc_ger_get_whole_poland = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			surrender_progress < 0.10
+			is_in_faction_with = ENG
+			has_government = fascism
+			not = {
+				has_war_with = SOV
+			}
+			or = {
+				owns_state = 10
+				owns_state = 98
+				owns_state = 87
+			}
+		}
+		visible = {
+			or = {
+				owns_state = 10
+				owns_state = 98
+				owns_state = 87
+			}
+			is_in_faction_with = ENG
+			has_government = fascism
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 1
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					is_core_of = POL
+					not = { is_controlled_by = SOV }
+					not = { is_controlled_by = LIT }
+				}
+				transfer_state_to = GER
+			}
+		}
+	}
+	
+	cjc_player_ger_babarosa_attack = {
+		
+		icon = generic_independence
+
+		allowed = {
+			
+		}
+		available = {
+			has_war_with = SOV
+		}
+
+		visible = {
+			not = { has_government = communism }
+			has_completed_focus = GER_ussr_war_goal
+			is_ai = no
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			add_manpower = 50000
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 500 }
+			if = {
+				limit = {
+					has_tech = advanced_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { type = medium_tank_chassis_3 amount = 500 }
+			}
+			else_if = {
+				limit = {
+					has_tech = improved_medium_tank_chassis
+				}
+				add_equipment_to_stockpile = { type = medium_tank_chassis_2 amount = 500 }
+			}
+			else = {
+				add_equipment_to_stockpile = { type = medium_tank_chassis_1 amount = 500 }
+			}
+			SOV = {
+				add_timed_idea = {
+					idea = SOV_suffer_barbarossa
+					days = 25
+				}
+			}
+		}
+	}
+
+}
+

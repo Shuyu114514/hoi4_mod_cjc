@@ -1,0 +1,21 @@
+A_JAP_cjc_conflicts_politics = {
+	allowed = {
+		original_tag = JAP
+	}
+	visible = {
+		tag = JAP
+	}
+}
+
+JAP_balance_of_power_category = {
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = JAP
+	}
+	
+	visible = {
+		has_completed_focus = JAP_the_unthinkable_option
+	}
+	
+}

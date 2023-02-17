@@ -1,0 +1,17 @@
+USA_cjc_functions = {
+	allowed = {
+		original_tag = USA
+	}
+	visible = {
+		original_tag = USA
+	}
+}
+
+usa_ai_common_functions = {
+	allowed = {
+		original_tag = USA
+	}
+	visible = {
+		is_ai = yes
+	}
+}

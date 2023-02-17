@@ -1,0 +1,431 @@
+gua_common_functions = {
+
+	gua_merge_wth_mex = {
+
+		icon = generic_independence
+
+		available = {
+			is_puppet = no
+			has_civil_war = no
+			country_exists = MEX
+			not = {
+				has_war_with = MEX
+			}
+			MEX = {
+				has_government = communism
+			}
+		}
+		visible = {
+			has_government = communism
+		}
+		cost = 0
+		fire_only_once = yes
+		days_remove = 1
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				factor = 0
+				any_country = {
+					is_ai = no
+					is_in_faction_with = MEX
+				}
+				not = {
+					any_country = {
+						is_ai = no
+						is_in_faction_with = GUA
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = MEX
+				MEX = {
+					is_puppet = no
+				}
+			}
+		}
+		
+		modifier = {
+			
+		}
+		complete_effect = {
+			MEX = {
+				country_event = { id = cjc_common.42 days = 1 }
+			}
+		}
+	}
+	
+}
+
+gua_ai_common_functions = {
+	
+	GUA_ai_usa_war_reinforce = {
+
+		icon = generic_independence
+
+		available = {
+			has_government = communism
+			has_war_with = USA
+			USA = {
+				is_ai = yes
+			}
+			JAP = {
+				is_ai = yes
+			}
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 0
+		fire_only_once = yes
+		days_remove = 180
+		ai_will_do = {
+			factor = 200
+		}
+		targeted_modifier = {
+			tag = USA
+			attack_bonus_against = 1.10
+			defense_bonus_against = 0.90
+			breakthrough_bonus_against = 0.90
+		}
+		targeted_modifier = {
+			tag = MEX
+			attack_bonus_against = 1.10
+			defense_bonus_against = 0.90
+			breakthrough_bonus_against = 0.90
+		}
+		targeted_modifier = {
+			tag = PAN
+			attack_bonus_against = 1.10
+			defense_bonus_against = 0.90
+			breakthrough_bonus_against = 0.90
+		}
+		modifier = {
+			army_org_factor = 0.50
+			army_attack_factor = 0.30
+			army_morale_factor = 0.35
+			no_supply_grace = 72
+			cas_damage_reduction = 0.5
+			enemy_army_bonus_air_superiority_factor = -0.30
+			land_reinforce_rate = 0.20
+			training_time_army_factor = -0.1
+		}
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_tech = tech_engineers } }
+				set_technology = {
+					tech_engineers = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = interwar_antitank } }
+				set_technology = {
+					interwar_antitank = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = interwar_antiair } }
+				set_technology = {
+					interwar_antiair = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = motorised_infantry } }
+				set_technology = {
+					motorised_infantry = 1
+				}
+			}
+			if = {
+				limit = {
+					not = { has_tech = tech_logistics_company }
+				}
+				set_technology = { tech_logistics_company = 1 }
+			}
+			if = {
+				limit = { NOT = { has_tech = tech_recon } }
+				set_technology = {
+					tech_recon = 1
+				}
+			}
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 1000 }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 9000 }
+			add_equipment_to_stockpile = { type = support_equipment amount = 900 }
+			add_equipment_to_stockpile = { type = anti_tank_equipment amount = 500 }
+			add_equipment_to_stockpile = { type = anti_air_equipment amount = 500 }
+			hidden_effect = {
+				division_template = {
+					name = "Final Defence Force"
+					is_locked = yes
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+						artillery_brigade = { x = 3 y = 2 }
+						artillery_brigade = { x = 3 y = 3 }
+						anti_air_brigade = { x = 4 y = 0 }
+						anti_tank_brigade = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 2 }
+						anti_tank = { x = 0 y = 3 }
+						maintenance_company = { x = 0 y = 4 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 312 }
+					create_unit = {
+						division = "name = \"Final Defence Force1\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force2\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force3\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force4\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force5\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force6\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force7\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force8\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force9\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force10\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force11\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force12\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force13\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force14\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force15\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force16\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force17\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force18\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force19\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force20\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+				}
+			}
+		}
+	}
+	
+	GUA_ai_usa_war_reinforce_2 = {
+
+		icon = generic_independence
+
+		available = {
+			has_government = communism
+			has_war_with = USA
+			USA = {
+				is_ai = yes
+			}
+			JAP = {
+				is_ai = no
+			}
+		}
+		visible = {
+			is_ai = yes
+		}
+		cost = 0
+		fire_only_once = yes
+		days_remove = 180
+		ai_will_do = {
+			factor = 200
+		}
+		targeted_modifier = {
+			tag = USA
+			attack_bonus_against = 0.50
+			defense_bonus_against = 0.80
+			breakthrough_bonus_against = 0.50
+		}
+		targeted_modifier = {
+			tag = MEX
+			attack_bonus_against = 0.50
+			defense_bonus_against = 0.80
+			breakthrough_bonus_against = 0.50
+		}
+		targeted_modifier = {
+			tag = PAN
+			attack_bonus_against = 0.50
+			defense_bonus_against = 0.80
+			breakthrough_bonus_against = 0.50
+		}
+		modifier = {
+			army_org_factor = 0.30
+			army_morale_factor = 0.30
+			no_supply_grace = 72
+			cas_damage_reduction = 0.5
+			enemy_army_bonus_air_superiority_factor = -0.30
+			land_reinforce_rate = 0.15
+			training_time_army_factor = -0.1
+		}
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_tech = tech_engineers } }
+				set_technology = {
+					tech_engineers = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = interwar_antitank } }
+				set_technology = {
+					interwar_antitank = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = interwar_antiair } }
+				set_technology = {
+					interwar_antiair = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = motorised_infantry } }
+				set_technology = {
+					motorised_infantry = 1
+				}
+			}
+			if = {
+				limit = {
+					not = { has_tech = tech_logistics_company }
+				}
+				set_technology = { tech_logistics_company = 1 }
+			}
+			if = {
+				limit = { NOT = { has_tech = tech_recon } }
+				set_technology = {
+					tech_recon = 1
+				}
+			}
+			hidden_effect = {
+				division_template = {
+					name = "Final Defence Force"
+					is_locked = yes
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 0 y = 4 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 1 y = 4 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						artillery_brigade = { x = 3 y = 0 }
+						artillery_brigade = { x = 3 y = 1 }
+						artillery_brigade = { x = 3 y = 2 }
+						artillery_brigade = { x = 3 y = 3 }
+						anti_air_brigade = { x = 4 y = 0 }
+						anti_tank_brigade = { x = 4 y = 1 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						logistics_company = { x = 0 y = 2 }
+						anti_tank = { x = 0 y = 3 }
+						maintenance_company = { x = 0 y = 4 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 312 }
+					create_unit = {
+						division = "name = \"Final Defence Force1\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force2\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force3\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force4\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force5\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+					create_unit = {
+						division = "name = \"Final Defence Force6\" division_template = \"Final Defence Force\" start_experience_factor = 0.6" 
+						owner = GUA
+					}
+				}
+			}
+		}
+	}
+
+}

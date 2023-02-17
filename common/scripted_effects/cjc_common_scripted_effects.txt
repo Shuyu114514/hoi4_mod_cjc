@@ -1,0 +1,112 @@
+cjc_ai_support_tech_1 = {
+	if = {
+		limit = {
+			not = { has_tech = tech_engineers }
+		}
+		set_technology = { tech_engineers = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_recon }
+		}
+		set_technology = { tech_recon = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_maintenance_company }
+		}
+		set_technology = { tech_maintenance_company = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_logistics_company }
+		}
+		set_technology = { tech_logistics_company = 1 }
+	}
+}
+
+cjc_ai_support_tech_2 = {
+	if = {
+		limit = {
+			not = { has_tech = tech_engineers2 }
+		}
+		set_technology = { tech_engineers2 = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_recon2 }
+		}
+		set_technology = { tech_recon2 = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_maintenance_company2 }
+		}
+		set_technology = { tech_maintenance_company2 = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_logistics_company2 }
+		}
+		set_technology = { tech_logistics_company2 = 1 }
+	}
+}
+
+cjc_ai_support_tech_3 = {
+	if = {
+		limit = {
+			not = { has_tech = tech_engineers3 }
+		}
+		set_technology = { tech_engineers3 = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_recon3 }
+		}
+		set_technology = { tech_recon3 = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_maintenance_company3 }
+		}
+		set_technology = { tech_maintenance_company3 = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_logistics_company3 }
+		}
+		set_technology = { tech_logistics_company3 = 1 }
+	}
+}
+
+cjc_ai_support_tech_4_a = {
+	if = {
+		limit = {
+			not = { has_tech = tech_engineers4 }
+		}
+		set_technology = { tech_engineers4 = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_maintenance_company4 }
+		}
+		set_technology = { tech_maintenance_company4 = 1 }
+	}
+	
+	if = {
+		limit = {
+			not = { has_tech = tech_logistics_company4 }
+		}
+		set_technology = { tech_logistics_company4 = 1 }
+	}
+}

@@ -1,0 +1,263 @@
+ideas = {
+
+	country = {
+		JAP_nationalize_the_zaibatsus_rounouha = { #财阀再分配-劳农派
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_zaibatsu_control
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				consumer_goods_factor = -0.025
+			}
+		}
+		
+		JAP_nationalize_the_zaibatsus_fukumotoha = { #激进的财阀国有化-福本派
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = jap_zaibatsu_control
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.10
+				production_speed_arms_factory_factor = 0.10
+				production_speed_dockyard_factor = 0.10
+				line_change_production_efficiency_factor = 0.1
+				trade_laws_cost_factor = -0.25
+				political_power_cost = 0.1
+			}
+		}
+		
+		JAP_red_brigades2_rounouha = { #日本红军-劳农派
+			allowed = { original_tag = JAP }
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = jap_idea_red_army #generic_communist_army
+			
+			modifier = {
+				conscription = 0.005
+				army_org_factor = 0.1
+				experience_gain_army = 0.1
+			}
+		}
+		
+		JAP_red_brigades2_fukumotoha = { #日本红军-福本派
+			allowed = { original_tag = JAP }
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = jap_idea_red_army #generic_communist_army
+			
+			modifier = {
+				conscription = 0.005
+				breakthrough_factor = 0.06
+				experience_gain_army = 0.1
+			}
+		}
+		
+		JAP_agriculture_rounouha = {
+
+			picture = generic_agrarian_reform
+
+			allowed = { original_tag = JAP }
+
+			removal_cost = -1
+
+			modifier = {
+				MONTHLY_POPULATION = 0.2
+				weekly_manpower = 1600
+			}
+		}
+		
+		JAP_agriculture_kouzaha = {
+
+			picture = generic_agrarian_reform
+
+			allowed = { original_tag = JAP }
+
+			removal_cost = -1
+
+			modifier = {
+				MONTHLY_POPULATION = 0.2
+				weekly_manpower = 1200
+			}
+		}
+		
+		JAP_agriculture_fukumotoha = {
+
+			picture = generic_agrarian_reform
+
+			allowed = { original_tag = JAP }
+
+			removal_cost = -1
+
+			modifier = {
+				MONTHLY_POPULATION = 0.2
+				weekly_manpower = 2000
+			}
+		}
+		
+		JAP_people_owned_mines_rounouha = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+			
+			modifier = {
+				local_resources_factor = 0.2
+				consumer_goods_factor = -0.02
+			}
+		}
+		
+		JAP_people_owned_mines_kouzaha = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+			
+			modifier = {
+				local_resources_factor = 0.2
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		
+		JAP_people_owned_mines_fukumotoha = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+			
+			modifier = {
+				local_resources_factor = 0.2
+				global_building_slots_factor = 0.2
+			}
+		}
+		
+		JAP_mines_unity_conflicts = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+			
+			modifier = {
+				local_resources_factor = -0.1
+			}
+		}
+		
+		JAP_fukumoto_in_charge = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_spy_intel
+			
+			modifier = {
+				political_power_cost = 0.10
+			}
+		}
+		
+		JAP_reactionary_stronger = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_spy_intel
+			
+			modifier = {
+				political_power_cost = 0.25
+				communism_drift = -0.1
+			}
+		}
+		
+		JAP_cjc_idea_homeland_defense = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = HUN_secret_rearmament
+			
+			modifier = {
+				resistance_target_on_our_occupied_states = 0.4
+				resistance_growth_on_our_occupied_states = 0.2
+				resistance_decay_on_our_occupied_states = -0.2
+				resistance_damage_to_garrison_on_our_occupied_states = 0.2
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.1
+				surrender_limit = 0.1
+			}
+		}
+	}
+}

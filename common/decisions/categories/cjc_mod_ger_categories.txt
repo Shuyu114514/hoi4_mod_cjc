@@ -1,0 +1,20 @@
+Ger_babarosa_attack = {
+	allowed = {
+		original_tag = GER
+	}
+	visible = {
+		NOT = {
+			has_government = communism
+		}
+		is_ai = yes
+	}
+}
+
+Ger_cjc_functions = {
+	allowed = {
+		original_tag = GER
+	}
+	visible = {
+		original_tag = GER
+	}
+}

@@ -1,0 +1,8 @@
+CHI_cjc_functions = {
+	allowed = {
+		original_tag = CHI
+	}
+	visible = {
+		original_tag = CHI
+	}
+}

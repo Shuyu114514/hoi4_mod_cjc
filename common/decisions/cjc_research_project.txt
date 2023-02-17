@@ -1,0 +1,395 @@
+cjc_research_project = {
+	cjc_research_project_armor = {
+		icon = generic_research
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			not = {
+				has_country_flag = doing_the_research_project
+			}
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 2
+			#research_speed_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = {
+				flag = doing_the_research_project
+				days = 90
+				value = 1
+			}
+			add_tech_bonus = {
+				name = cjc_armor_card
+				bonus = 1.0
+				uses = 1
+				category = armor
+				category = motorized_equipment
+			}
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	cjc_research_project_air = {
+		icon = generic_research
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			not = {
+				has_country_flag = doing_the_research_project
+			}
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 2
+			#research_speed_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = {
+				flag = doing_the_research_project
+				days = 90
+				value = 1
+			}
+			add_tech_bonus = {
+				name = cjc_jet_card
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+				category = tactical_bomber	
+				category = cat_strategic_bomber	
+				category = light_fighter
+				category = cat_heavy_fighter
+			}
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	cjc_research_project_industry = {
+		icon = generic_research
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			not = {
+				has_country_flag = doing_the_research_project
+			}
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 2
+			#research_speed_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = {
+				flag = doing_the_research_project
+				days = 90
+				value = 1
+			}
+			add_tech_bonus = {
+				name = cjc_industry_card
+				bonus = 1.0
+				uses = 1
+				category = industry
+				category = synth_resources	
+			}
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	cjc_research_project_infantry = {
+		icon = generic_research
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			not = {
+				has_country_flag = doing_the_research_project
+			}
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 2
+			#research_speed_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = {
+				flag = doing_the_research_project
+				days = 90
+				value = 1
+			}
+			add_tech_bonus = {
+				name = cjc_infantry_card
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	cjc_research_project_ship = {
+		icon = generic_research
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			not = {
+				has_country_flag = doing_the_research_project
+			}
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 2
+			#research_speed_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = {
+				flag = doing_the_research_project
+				days = 90
+				value = 1
+			}
+			add_tech_bonus = {
+				name = cjc_ship_card
+				bonus = 1.0
+				uses = 1
+				category = naval_equipment
+			}
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	cjc_research_project_electro = {
+		icon = generic_research
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			not = {
+				has_country_flag = doing_the_research_project
+			}
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 2
+			#research_speed_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = {
+				flag = doing_the_research_project
+				days = 90
+				value = 1
+			}
+			add_tech_bonus = {
+				name = cjc_electro_card
+				bonus = 1.0
+				uses = 1
+				category = electronics	
+				category = rocketry
+			}
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+	cjc_research_project_support = {
+		icon = generic_research
+
+		highlight_state_targets = {
+			
+		}
+
+		allowed = {
+			
+		}
+
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			not = {
+				has_country_flag = doing_the_research_project
+			}
+		}
+
+		visible = {
+		
+		}
+
+		fire_only_once = no
+
+		cost = 40
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 2
+			#research_speed_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+		complete_effect = {
+			set_country_flag = {
+				flag = doing_the_research_project
+				days = 90
+				value = 1
+			}
+			add_tech_bonus = {
+				name = cjc_support_card
+				bonus = 1.0
+				uses = 1
+				category = support_tech
+			}
+		}
+		
+		remove_effect = {
+			
+		}
+	}
+	
+}

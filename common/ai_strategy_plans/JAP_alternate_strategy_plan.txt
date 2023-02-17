@@ -1,0 +1,235 @@
+JAP_alternate_plan_communist = {
+	name = "Communist Japan Plan"
+	desc = "A red sun rises"
+
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		OR = {
+			has_country_flag = JAP_AI_RANDOM_COMMUNIST
+			has_game_rule = {
+				rule = JAP_ai_behavior
+				option = COMMUNIST
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		JAP_the_unthinkable_option
+		JAP_approach_the_young_officers
+		JAP_exchange_the_exiles
+		JAP_meet_maozedong
+		JAP_unite_other_parties
+		JAP_stand_with_korean_revolution
+		JAP_cast_the_die2
+		JAP_international_volunteers
+		JAP_man_railway_rebel_activity2
+		JAP_army_expansion_law
+		JAP_everything_is_done
+		JAP_reeducation_campaign2
+		JAP_five_years_plan
+		JAP_rebuild_after_war
+		JAP_nationalize_the_zaibatsus
+		JAP_the_fate_of_the_imperial_family
+		JAP_new_communist_offices
+		JAP_public_works
+		JAP_rebuild_the_civil_service2
+		JAP_people_owned_mines2
+		JAP_tokyo_peoples_university
+		JAP_resources_proj
+		JAP_resources_proj_2
+		JAP_army_reformed
+		JAP_prepare_the_unavoid_war
+		JAP_asian_communist_solidarity_2
+		JAP_tech_for_PRC
+		JAP_man_railway_rebel_activity
+		JAP_soviet_support
+		JAP_finish_the_fight
+		JAP_double_side_attaction
+		JAP_tokyo_aluminum_plant
+		JAP_new_naval_estimates
+		JAP_prc_together
+		JAP_east_asia_liberation
+		JAP_double_side_attaction_2
+		JAP_exchange_info_tech
+		JAP_soviet_support2
+		JAP_fighter_modernization
+		JAP_red_flag
+		JAP_rebuild_navy
+		JAP_peoples_airforce
+		JAP_common_railway2
+	}
+
+	
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
+JAP_alternate_plan_strike_north = {
+	name = "Neutrality Japan Plan"
+	desc = "Japan pushes north"
+
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		OR = {
+			has_country_flag = JAP_AI_RANDOM_NEUTRALITY
+			has_game_rule = {
+				rule = JAP_ai_behavior
+				option = NEUTRALITY
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		
+		JAP_the_unthinkable_option
+		JAP_approach_the_young_officers
+		JAP_exchange_the_exiles
+		JAP_meet_maozedong
+		JAP_unite_other_parties
+		JAP_stand_with_korean_revolution
+		JAP_cast_the_die2
+		JAP_international_volunteers
+		JAP_man_railway_rebel_activity2
+		JAP_army_expansion_law
+		JAP_everything_is_done
+		JAP_reeducation_campaign2
+		JAP_five_years_plan
+		JAP_rebuild_after_war
+		JAP_nationalize_the_zaibatsus
+		JAP_the_fate_of_the_imperial_family
+		JAP_new_communist_offices
+		JAP_public_works
+		JAP_rebuild_the_civil_service2
+		JAP_people_owned_mines2
+		JAP_tokyo_peoples_university
+		JAP_resources_proj
+		JAP_resources_proj_2
+		JAP_army_reformed
+		JAP_prepare_the_unavoid_war
+		JAP_asian_communist_solidarity_2
+		JAP_tech_for_PRC
+		JAP_man_railway_rebel_activity
+		JAP_soviet_support
+		JAP_finish_the_fight
+		JAP_double_side_attaction
+		JAP_tokyo_aluminum_plant
+		JAP_new_naval_estimates
+		JAP_prc_together
+		JAP_east_asia_liberation
+		JAP_double_side_attaction_2
+		JAP_exchange_info_tech
+		JAP_soviet_support2
+		JAP_fighter_modernization
+		JAP_red_flag
+		JAP_rebuild_navy
+		JAP_peoples_airforce
+		JAP_common_railway2
+	}
+
+	
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
+JAP_alternate_plan_democratic = {
+	name = "Democracy Japan Plan"
+	desc = "Japan goes democratic"
+
+	allowed = {
+		original_tag = JAP
+	}
+	enable = {
+		OR = {
+			has_country_flag = JAP_AI_RANDOM_DEMOCRATIC
+			has_game_rule = {
+				rule = JAP_ai_behavior
+				option = DEMOCRATIC
+			}
+		}
+	}
+	abort = {
+
+	}
+
+	ai_national_focuses = {
+		JAP_the_unthinkable_option
+		JAP_approach_the_young_officers
+		JAP_exchange_the_exiles
+		JAP_meet_maozedong
+		JAP_unite_other_parties
+		JAP_stand_with_korean_revolution
+		JAP_cast_the_die2
+		JAP_international_volunteers
+		JAP_man_railway_rebel_activity2
+		JAP_army_expansion_law
+		JAP_everything_is_done
+		JAP_reeducation_campaign2
+		JAP_five_years_plan
+		JAP_rebuild_after_war
+		JAP_nationalize_the_zaibatsus
+		JAP_the_fate_of_the_imperial_family
+		JAP_new_communist_offices
+		JAP_public_works
+		JAP_rebuild_the_civil_service2
+		JAP_people_owned_mines2
+		JAP_tokyo_peoples_university
+		JAP_resources_proj
+		JAP_resources_proj_2
+		JAP_army_reformed
+		JAP_prepare_the_unavoid_war
+		JAP_asian_communist_solidarity_2
+		JAP_tech_for_PRC
+		JAP_man_railway_rebel_activity
+		JAP_soviet_support
+		JAP_finish_the_fight
+		JAP_double_side_attaction
+		JAP_tokyo_aluminum_plant
+		JAP_new_naval_estimates
+		JAP_prc_together
+		JAP_east_asia_liberation
+		JAP_double_side_attaction_2
+		JAP_exchange_info_tech
+		JAP_soviet_support2
+		JAP_fighter_modernization
+		JAP_red_flag
+		JAP_rebuild_navy
+		JAP_peoples_airforce
+		JAP_common_railway2
+	}
+
+	
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}

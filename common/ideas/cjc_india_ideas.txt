@@ -1,0 +1,388 @@
+ideas = {
+	country = {
+		SOV_planned_economy = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			picture = generic_goods_red_bonus
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		SOV_build_artillery_factory = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			picture = generic_artillery_regiments
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+				artillery_equipment = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+		}
+		
+		PRC_peoples_war_theority = {
+
+			picture = generic_communist_army
+
+			allowed = { original_tag = PRC }
+			
+			available = { NOT = { has_government = fascism } }
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = 0.1
+				breakthrough_factor = 0.05
+				training_time_factor = -0.15
+			}
+		}
+		
+		Marxism_Leninism = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			picture = socialist_science_focus
+			
+			modifier = {
+				communism_drift = 0.1
+				political_power_factor = 0.2
+				stability_factor = 0.1
+				drift_defence_factor = 0.3
+				opinion_gain_monthly_same_ideology_factor = 1.0
+			}
+		}
+		
+		The_Spirit_of_Internationalism = {
+
+			picture = generic_communism_drift_bonus
+
+			allowed = { always = no }
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+                opinion_gain_monthly_same_ideology_factor = 1.0
+				communism_drift = 0.05
+				war_support_factor = 0.10
+			}
+		}
+		
+		RAJ_capitalism_government = {
+
+			picture = generic_disjointed_gov
+
+			allowed = { always = no }
+
+			removal_cost = -1
+
+			modifier = {
+			    democratic_drift = 0.1
+			    political_power_factor = -0.25
+				political_advisor_cost_factor = 0.25
+				trade_laws_cost_factor = 0.25
+				mobilization_laws_cost_factor = 0.25
+				economy_cost_factor = 0.25
+			}
+		}
+		
+		RAJ_land_revolution = {
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = trotskyite_plot_purged
+			
+			modifier = {
+				global_building_slots_factor = 0.2
+			}
+		}
+		
+		RAJ_Red_Army = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_communist_army
+			
+			modifier = {
+				conscription = 0.015
+				army_morale_Factor = 0.1
+				land_reinforce_rate = 0.02
+			}
+		}
+		
+		RAJ_Resource_Management_Committee = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_exploit_mines
+			
+			modifier = {
+				local_resources_factor = 0.20
+			}
+		}
+		
+		RAJ_agricultural_collectivization = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			picture = eng_for_the_good_of_the_revolution
+			
+			modifier = {
+			    MONTHLY_POPULATION = 0.2
+				conscription_factor = 0.15
+			}
+		}
+		
+		RAJ_workers_culture = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+		
+		RAJ_Compulsory_Education = {
+
+			picture = generic_research_bonus
+
+			allowed = { always = no }
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    research_speed_factor = 0.10
+			}
+		}
+		
+		RAJ_new_india = {
+
+			picture = generic_communism_drift_bonus
+
+			allowed = { original_tag = PRC }
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    production_factory_efficiency_gain_factor = 0.1
+			    industrial_capacity_factory = 0.1
+			    industrial_capacity_dockyard = 0.1
+			}
+		}
+		
+		RAJ_India_Maoism = {
+
+			picture = generic_communism_drift_bonus
+
+			allowed = { original_tag = PRC }
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    communism_drift = 0.05
+				communism_acceptance = 25
+				fascism_acceptance = -50
+				democratic_acceptance = -25
+				neutrality_acceptance = -25
+			}
+		}
+		
+		RAJ_communist_volunteers = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				send_volunteer_divisions_required = -1
+				send_volunteer_size = 5
+			}
+		}
+		
+		SOV_mutual_RAJ = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = chi_chinese_unity
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		PRC_mutual_RAJ = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			removal_cost = -1
+
+			picture = chi_chinese_unity
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		RAJ_five_year_plan = {
+
+			picture = generic_exploit_mines
+
+			allowed = { always = no }
+			
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    production_factory_efficiency_gain_factor = 0.1
+			    production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		RAJ_AI_no_faction = {
+
+			picture = jap_duplicate_research
+
+			allowed = { always = no }
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			modifier = {
+			    ai_get_ally_desire_factor = -500
+				join_faction_tension = 100
+			}
+		}
+		
+		RAJ_agrarian_society_better = {
+
+			picture = generic_agrarian_society
+
+			allowed = {
+				original_tag = RAJ
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription_factor = -0.36
+			}
+		}
+	}
+}

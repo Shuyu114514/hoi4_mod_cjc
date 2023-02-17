@@ -1,0 +1,1041 @@
+﻿#	shared_focus = {
+#		id = CHI_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+
+
+shared_focus = {
+	id = PRC_invite_foreign_investors 
+	icon = GFX_focus_generic_diplomatic_treaty
+	x = 35
+	y = 0
+	offset = {
+		x = -4
+		y = 0
+		trigger = {
+			has_game_rule = {
+				rule = obsolete_focus_branches_visibility
+				option = HIDE
+			}
+			has_completed_focus = PRC_strengthen_the_central_secretariat
+		}
+	}
+	
+	cost = 5
+
+	ai_will_do = {
+		factor = 4
+	}
+
+	available = {
+		NOT = {has_completed_focus = PRC_change_road }
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		add_political_power = 60
+		custom_effect_tooltip = PRC_invite_foreign_investors_tt
+	}
+}
+shared_focus = {
+	id = PRC_mission_to_germany
+	icon = GFX_focus_chi_mission_to_germany
+	prerequisite = { focus = PRC_invite_foreign_investors }
+	x = -5
+	y = 1
+	relative_position_id = PRC_invite_foreign_investors 
+	cost = 3
+
+	ai_will_do = {
+		factor = 4
+	}
+
+	available = {
+		GER = { has_government = ROOT }
+		not = {
+			has_War_with = GER
+		}
+	}
+
+	bypass = {
+
+	}
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		diplomatic_relation = {
+			country = GER
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_offsite_building = { type = arms_factory level = 2 }
+		PRC = {
+			add_ai_strategy = {
+				type = alliance
+				id = GER
+				value = 100
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = GER
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = GER
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = GER
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = GER
+				value = 100
+			}
+		}
+		GER = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = CHI_mission_to_germany
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = ROOT
+				value = 100
+			}
+		}
+	}
+}
+
+
+
+shared_focus = {
+	id = PRC_mission_to_the_soviet_union
+	icon = GFX_focus_chi_mission_to_the_soviet_union
+	prerequisite = { focus = PRC_invite_foreign_investors  }
+	x = -3
+	y = 1
+	relative_position_id = PRC_invite_foreign_investors
+
+	cost = 3
+
+	ai_will_do = {
+		factor = 4
+	}
+
+	available = {
+		SOV = { has_government = ROOT }
+		not = {
+			has_War_with = SOV
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		diplomatic_relation = {
+			country = SOV
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_offsite_building = { type = industrial_complex level = 1 }
+		add_offsite_building = { type = arms_factory level = 1 }
+		PRC = {
+			add_ai_strategy = {
+				type = befriend
+				id = SOV
+				value = 50
+			}
+			add_ai_strategy = {
+				type = protect
+				id = SOV
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = SOV
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = SOV
+				value = 100
+			}
+		}
+		SOV = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = CHI_mission_to_the_soviet_union
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = ROOT
+				value = 100
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = PRC_reach_out_to_france
+	icon = GFX_focus_chi_reach_out_to_france
+	prerequisite = { focus = PRC_invite_foreign_investors  }
+	x = -1
+	y = 1
+	relative_position_id = PRC_invite_foreign_investors
+
+	cost = 3
+
+	ai_will_do = {
+		factor = 4
+	}
+
+	available = {
+		FRA = { has_government = ROOT }
+		not = {
+			has_War_with = FRA
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		diplomatic_relation = {
+			country = FRA
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_offsite_building = { type = industrial_complex level = 1 }
+		add_offsite_building = { type = arms_factory level = 1 }
+		PRC = {
+			add_ai_strategy = {
+				type = alliance
+				id = FRA
+				value = 100
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = FRA
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = FRA
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = FRA
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = FRA
+				value = 100
+			}
+		}
+		FRA = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = CHI_reach_out_to_france
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = ROOT
+				value = 100
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = PRC_british_cooperation
+	icon = GFX_focus_chi_british_cooperation
+	prerequisite = { focus = PRC_invite_foreign_investors }
+	x = 1
+	y = 1
+	relative_position_id = PRC_invite_foreign_investors
+
+	cost = 3
+
+	ai_will_do = {
+		factor = 4
+	}
+
+	available = {
+		ENG = { has_government = ROOT }
+		not = {
+			has_War_with = ENG
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		diplomatic_relation = {
+			country = ENG
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_offsite_building = { type = industrial_complex level = 1 }
+		add_offsite_building = { type = arms_factory level = 1 }
+		PRC = {
+			add_ai_strategy = {
+				type = alliance
+				id = ENG
+				value = 100
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = ENG
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = ENG
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = ENG
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = ENG
+				value = 100
+			}
+		}
+		ENG = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = CHI_british_cooperation
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = ROOT
+				value = 100
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = PRC_mission_to_the_us
+	icon = GFX_focus_chi_mission_to_the_us
+	prerequisite = { focus = PRC_invite_foreign_investors  }
+	x = 3
+	y = 1
+	relative_position_id = PRC_invite_foreign_investors
+
+	cost = 3
+
+	ai_will_do = {
+		factor = 4
+	}
+
+	available = {
+		USA = { has_government = ROOT }
+		not = {
+			has_War_with = USA
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		diplomatic_relation = {
+			country = USA
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_offsite_building = { type = industrial_complex level = 2 }
+		PRC = {
+			add_ai_strategy = {
+				type = alliance
+				id = USA
+				value = 100
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = USA
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = USA
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = USA
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = USA
+				value = 100
+			}
+		}
+		USA = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = CHI_mission_to_the_us
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = ROOT
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = ROOT
+				value = 100
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = PRC_collaboration_with_the_japanese
+	icon = GFX_jap_com_road
+	prerequisite = { focus = PRC_invite_foreign_investors }
+	x = 5
+	y = 1
+	relative_position_id = PRC_invite_foreign_investors
+
+	cost = 3
+
+	ai_will_do = {
+		factor = 4
+	}
+
+	available = {
+		JAP = { has_government = ROOT }
+		not = {
+			has_War_with = JAP
+		}
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		JAP = { country_event = JAP_mod.4 }
+		custom_effect_tooltip = PRC_collaboration_with_the_japanese_tt
+		diplomatic_relation = {
+			country = JAP
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_offsite_building = { type = industrial_complex level = 1 }
+		add_offsite_building = { type = arms_factory level = 1 }
+		PRC = {
+			add_ai_strategy = {
+				type = alliance
+				id = JAP
+				value = 100
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = JAP
+				value = 100
+			}
+			add_ai_strategy = {
+				type = protect
+				id = JAP
+				value = 100
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = JAP
+				value = 100
+			}
+			add_ai_strategy = {
+				type = support
+				id = JAP
+				value = 100
+			}
+		}
+		JAP = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = CHI_collaboration_with_the_japanese
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = ROOT
+				value = 9000
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = ROOT
+				value = 9000
+			}
+			add_ai_strategy = {
+				type = protect
+				id = ROOT
+				value = 9000
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = ROOT
+				value = 9000
+			}
+			add_ai_strategy = {
+				type = support
+				id = ROOT
+				value = 9000
+			}
+		}
+	}
+}
+
+shared_focus = {
+	id = PRC_eastasia_communistunion
+	icon = GFX_jap_support_prc
+	prerequisite = { focus = PRC_collaboration_with_the_japanese }
+	prerequisite = { focus = PRC_information_agency }
+	x = 0
+	y = 2
+	relative_position_id = PRC_collaboration_with_the_japanese
+
+	cost = 6
+
+	ai_will_do = {
+		factor = 8
+	}
+
+	available = {
+		JAP = { has_government = ROOT }
+		is_in_faction_with = JAP
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		set_country_flag = PRC_totally_coop
+		custom_effect_tooltip = PRC_eastasia_communistunion_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					JAP = { has_completed_focus = JAP_prc_together }
+				}
+				news_event = { id = cjc_news.2 days = 1 random_days = 2 }
+			}
+			
+		}
+	}
+}
+
+shared_focus = {
+	id = PRC_input_tech_fromJAP
+	icon = GFX_goal_generic_scientific_exchange
+	prerequisite = { focus = PRC_eastasia_communistunion }
+	x = 0
+	y = 1
+	relative_position_id = PRC_eastasia_communistunion
+
+	cost = 6
+
+	ai_will_do = {
+		factor = 5
+	}
+
+	available = {
+		JAP = { has_government = ROOT }
+		JAP = { 
+			has_completed_focus = JAP_tech_for_PRC
+		}
+		num_of_factories > 119
+		is_in_faction_with = JAP
+	}
+
+	bypass = {
+
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		unlock_decision_category_tooltip = cjc_research_project
+		set_country_flag = cjc_national_research_project
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_research_slot = 1
+			}
+		}
+		
+	}
+}
+
+shared_focus = {
+	id = PRC_information_agency
+	icon = GFX_goal_generic_intelligence_exchange
+	prerequisite = { focus = PRC_mission_to_germany focus = PRC_mission_to_the_soviet_union focus = PRC_reach_out_to_france focus = PRC_british_cooperation focus = PRC_mission_to_the_us focus = PRC_collaboration_with_the_japanese }
+	x = 1
+	y = 1
+	relative_position_id = PRC_collaboration_with_the_japanese
+	cost = 5
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		add_ideas = PRC_information
+	}
+}
+
+shared_focus = {
+	id = PRC_local_tank_factory
+	icon = GFX_goal_generic_army_tanks
+	prerequisite = { focus = PRC_mission_to_germany focus = PRC_mission_to_the_soviet_union }
+	x = 0
+	y = 2
+	relative_position_id = PRC_invite_foreign_investors
+	cost = 6
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		custom_effect_tooltip = PRC_local_tank_factory_tt
+	}
+}
+shared_focus = {
+	id = PRC_sov_tank_factory
+	icon = GFX_goal_generic_production2
+	prerequisite = { focus = PRC_mission_to_the_soviet_union }
+	x = -2
+	y = 2
+	relative_position_id = PRC_invite_foreign_investors
+	cost = 6
+
+	ai_will_do = {
+		factor = 2
+	}
+
+	available = {
+		not = {
+			has_War_with = SOV
+		}
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		custom_effect_tooltip = PRC_sov_tank_factory_tt
+	}
+}
+shared_focus = {
+	id = PRC_air_fighter_factory
+	icon = GFX_goal_generic_build_airforce
+	prerequisite = { focus = PRC_collaboration_with_the_japanese focus = PRC_mission_to_the_soviet_union }
+	x = 2
+	y = 2
+	relative_position_id = PRC_invite_foreign_investors
+	cost = 6
+
+	ai_will_do = {
+		factor = 2
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		custom_effect_tooltip = PRC_air_fighter_factory_tt
+	}
+}
+shared_focus = {
+	id = PRC_heavy_fighter_factory
+	icon = GFX_goal_generic_air_fighter2
+	prerequisite = { focus = PRC_mission_to_germany focus = PRC_reach_out_to_france focus = PRC_british_cooperation }
+	x = 4
+	y = 2
+	relative_position_id = PRC_invite_foreign_investors
+	cost = 6
+
+	ai_will_do = {
+		factor = 1
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		custom_effect_tooltip = PRC_heavy_fighter_factory_tt
+	}
+}
+shared_focus = {
+	id = PRC_dalian_naval_factory
+	icon = GFX_goal_generic_amphibious_assault
+	prerequisite = { focus = PRC_collaboration_with_the_japanese focus = PRC_mission_to_the_us }
+	x = -4
+	y = 2
+	relative_position_id = PRC_invite_foreign_investors
+	cost = 6
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			has_completed_focus = PRC_proclaim_the_peoples_republic
+		}
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		custom_effect_tooltip = PRC_dalian_naval_factory_tt
+	}
+}
+
+shared_focus = {
+	id = PRC_training_arimy
+	icon = GFX_goal_generic_allies_build_infantry
+	prerequisite = { focus = PRC_sov_tank_factory focus = PRC_local_tank_factory }
+	x = 0
+	y = 2
+	relative_position_id = PRC_local_tank_factory
+	cost = 6
+
+	ai_will_do = {
+		factor = 3
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		army_experience = 50
+		country_event = { id = cjc_mod_PRC.6 }
+		#mark_focus_tree_layout_dirty = yes
+		#custom_effect_tooltip = PRC_training_arimy_show_subtree_tt
+	}
+}
+
+shared_focus = {
+	id = PRC_training_air
+	icon = GFX_goal_generic_build_airforce
+	prerequisite = { focus = PRC_heavy_fighter_factory focus = PRC_air_fighter_factory }
+	x = 2
+	y = 2
+	relative_position_id = PRC_local_tank_factory
+	cost = 6
+
+	ai_will_do = {
+		factor = 2
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		air_experience = 50
+		country_event = { id = cjc_mod_PRC.601 }
+		#mark_focus_tree_layout_dirty = yes
+		#custom_effect_tooltip = PRC_training_air_show_subtree_tt
+	}
+}
+
+shared_focus = {
+	id = PRC_training_navy
+	icon = GFX_goal_generic_construct_naval_dockyard
+	prerequisite = { focus = PRC_dalian_naval_factory }
+	x = -2
+	y = 2
+	relative_position_id = PRC_local_tank_factory
+	cost = 6
+
+	ai_will_do = {
+		factor = 2
+		modifier = {
+			factor = 2
+			has_completed_focus = PRC_proclaim_the_peoples_republic
+		}
+	}
+
+	available = {
+
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		navy_experience = 50
+		country_event = { id = cjc_mod_PRC.602 }
+		#mark_focus_tree_layout_dirty = yes
+		#custom_effect_tooltip = PRC_training_navy_show_subtree_tt
+	}
+}
+
+shared_focus = {
+	id = PRC_modern_army
+	icon = GFX_goal_generic_army_doctrines
+	prerequisite = { focus = PRC_training_arimy }
+	prerequisite = { focus = PRC_training_air }
+	prerequisite = { focus = PRC_training_navy }
+	x = 0
+	y = 1
+	relative_position_id = PRC_training_arimy
+	cost = 6
+
+	ai_will_do = {
+		factor = 4
+	}
+
+	available = {
+		has_completed_focus = PRC_proclaim_the_peoples_republic
+	}
+
+	bypass = {
+		
+	}
+
+	cancel_if_invalid = yes
+	continue_if_invalid = no
+	available_if_capitulated = no
+
+	completion_reward = {
+		add_ideas = PRC_idea_modern_army
+		prc_ai_build_army_armor_100 = yes
+	}
+}

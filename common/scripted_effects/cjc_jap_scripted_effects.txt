@@ -1,0 +1,718 @@
+
+JAP_revo_rounouha_plan_effect = {
+			if = {
+				limit = {
+					country_exists = CHI
+				}
+				CHI = { transfer_state = 609 }
+			}
+			MAN = { transfer_state = 745 }
+			set_capital = { state = 531 }
+			start_civil_war = {
+				ruling_party = communism
+				ideology = ROOT
+				size = 0.6
+				capital = 282
+				states = { 282 533 536 555 524 648 646 647 684 633 609 745 527 525 532 534 529 }
+				keep_unit_leaders = {
+					750 751 752 1999 1998 1997 1996 1995
+				}
+			}
+			
+			if = {
+				limit = {
+					MEN = { is_subject_of = ROOT }
+				}
+				set_autonomy = { target = MEN autonomy_state = autonomy_free }
+			}
+			if = {
+				limit = {
+					MAN = { is_subject_of = ROOT }
+				}
+				set_autonomy = { target = MAN autonomy_state = autonomy_free } 
+				MAN = {
+					set_autonomy = { target = MEN autonomy_state = autonomy_integrated_puppet }
+				}
+			}
+			if = {
+				limit = {
+					MAN = { has_idea = MAN_kwantung_veto }
+				}
+				MAN = { remove_ideas = MAN_kwantung_veto }
+			}
+			hidden_effect = {
+				division_template = { name = "Japanese People's Regiment" division_names_group = JAP_INF_01 is_locked = yes regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } } }
+				535 = {
+					create_unit = { 
+						division = "name = \"1. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"2. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"3. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				531 = {
+					create_unit = { 
+						division = "name = \"6. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"7. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"8. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"9. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"10. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				530 = {
+					create_unit = { 
+						division = "name = \"11. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"12. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"4. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"5. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				528 = {
+					create_unit = { 
+						division = "name = \"13. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"14. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"15. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = JAP
+						has_government = fascism
+					}
+					hidden_effect = {
+						division_template = { name = "Japanese Loyalist Regiment" division_names_group = JAP_INF_01 is_locked = yes regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } } }
+						532 = {
+							create_unit = {
+								division = "name = \"1. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"2. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = {
+								division = "name = \"3. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = {
+								division = "name = \"4. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+						}
+						282 = {
+							create_unit = { 
+								division = "name = \"6. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"7. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+						}
+						533 = {
+							create_unit = { 
+								division = "name = \"8. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+						}
+						529 = {
+							create_unit = { 
+								division = "name = \"5. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+						}
+						if = {
+							limit = {
+								JAP = {
+									has_country_flag = JAP_revo_more_enemey_troop
+									is_ai = no
+									has_government = communism
+								}
+							}
+							282 = {
+								create_unit = { 
+									division = "name = \"9. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"10. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"11. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"12. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"13. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"14. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"15. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+							}
+							529 = {
+								create_unit = { 
+									division = "name = \"16. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"17. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"18. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"19. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"20. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+							}
+						}
+						
+					}
+				}
+			}
+			add_stability = -0.1
+}
+
+JAP_revo_kouzaha_plan_effect = {
+			if = {
+				limit = {
+					country_exists = CHI
+				}
+				CHI = { transfer_state = 609 }
+			}
+			MAN = { transfer_state = 745 }
+			set_capital = { state = 532 }
+			start_civil_war = {
+				ruling_party = communism
+				ideology = ROOT
+				size = 0.6
+				capital = 282
+				states = { 282 533 536 555 529 528 526 524 645 648 646 647 684 633 609 745 527 525 }
+				keep_unit_leaders = {
+					750 751 752 1999 1998 1997 1996 1995
+				}
+			}
+			
+			if = {
+				limit = {
+					MEN = { is_subject_of = ROOT }
+				}
+				set_autonomy = { target = MEN autonomy_state = autonomy_free }
+			}
+			if = {
+				limit = {
+					MAN = { is_subject_of = ROOT }
+				}
+				set_autonomy = { target = MAN autonomy_state = autonomy_free } 
+				MAN = {
+					set_autonomy = { target = MEN autonomy_state = autonomy_integrated_puppet }
+				}
+			}
+			if = {
+				limit = {
+					MAN = { has_idea = MAN_kwantung_veto }
+				}
+				MAN = { remove_ideas = MAN_kwantung_veto }
+			}
+			hidden_effect = {
+				division_template = { name = "Japanese People's Regiment" division_names_group = JAP_INF_01 is_locked = yes regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } } }
+				532 = {
+					create_unit = { 
+						division = "name = \"1. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"2. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"3. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"4. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"5. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				531 = {
+					create_unit = { 
+						division = "name = \"6. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"7. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"8. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"9. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"10. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				534 = {
+					create_unit = { 
+						division = "name = \"11. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"12. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				535 = {
+					create_unit = { 
+						division = "name = \"13. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"14. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				537 = {
+					create_unit = { 
+						division = "name = \"15. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = JAP
+						has_government = fascism
+					}
+					hidden_effect = {
+						division_template = { name = "Japanese Loyalist Regiment" division_names_group = JAP_INF_01 is_locked = yes regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } } }
+						529 = {
+							create_unit = {
+								division = "name = \"1. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"2. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = {
+								division = "name = \"3. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = {
+								division = "name = \"4. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"5. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+						}
+						282 = {
+							create_unit = { 
+								division = "name = \"6. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"7. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"16. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"17. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"18. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+						}
+						533 = {
+							create_unit = { 
+								division = "name = \"8. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"24. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+						}
+						if = {
+							limit = {
+								JAP = {
+									has_country_flag = JAP_revo_more_enemey_troop
+									is_ai = no
+									has_government = communism
+								}
+							}
+							282 = {
+								create_unit = { 
+									division = "name = \"9. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"10. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"11. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"12. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"13. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"14. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"15. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+							}
+							529 = {
+								create_unit = { 
+									division = "name = \"21. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"22. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+							}
+							533 = {
+								create_unit = { 
+									division = "name = \"23. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"19. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"20. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+							}
+						}
+						
+					}
+				}
+			}
+			add_stability = -0.1
+}
+
+JAP_revo_fukumotoha_plan_effect = {
+			if = {
+				limit = {
+					country_exists = CHI
+				}
+				CHI = { transfer_state = 609 }
+			}
+			MAN = { transfer_state = 745 }
+			set_capital = { state = 532 }
+			start_civil_war = {
+				ruling_party = communism
+				ideology = ROOT
+				size = 0.6
+				capital = 282
+				states = { 282 536 529 528 526 524 648 646 647 684 633 609 745 527 525 530 535 }
+				keep_unit_leaders = {
+					750 751 752 1999 1998 1997 1996 1995
+				}
+			}
+			
+			if = {
+				limit = {
+					MEN = { is_subject_of = ROOT }
+				}
+				set_autonomy = { target = MEN autonomy_state = autonomy_free }
+			}
+			if = {
+				limit = {
+					MAN = { is_subject_of = ROOT }
+				}
+				set_autonomy = { target = MAN autonomy_state = autonomy_free } 
+				MAN = {
+					set_autonomy = { target = MEN autonomy_state = autonomy_integrated_puppet }
+				}
+			}
+			if = {
+				limit = {
+					MAN = { has_idea = MAN_kwantung_veto }
+				}
+				MAN = { remove_ideas = MAN_kwantung_veto }
+			}
+			hidden_effect = {
+				division_template = { name = "Japanese People's Regiment" division_names_group = JAP_INF_01 is_locked = yes regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } } }
+				532 = {
+					create_unit = { 
+						division = "name = \"1. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"2. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"3. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"4. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				531 = {
+					create_unit = { 
+						division = "name = \"6. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"7. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"8. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"9. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				534 = {
+					create_unit = { 
+						division = "name = \"11. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"12. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"13. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				533 = {
+					create_unit = { 
+						division = "name = \"15. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"10. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"5. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"14. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+			}
+			hidden_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = JAP
+						has_government = fascism
+					}
+					hidden_effect = {
+						division_template = { name = "Japanese Loyalist Regiment" division_names_group = JAP_INF_01 is_locked = yes regiments = { infantry = { x = 0 y = 0 } infantry = { x = 0 y = 1 } infantry = { x = 0 y = 2 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } } }
+						529 = {
+							create_unit = {
+								division = "name = \"1. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"2. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = {
+								division = "name = \"3. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = {
+								division = "name = \"4. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+						}
+						282 = {
+							create_unit = { 
+								division = "name = \"6. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"7. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"5. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"16. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"17. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+						}
+						530 = {
+							create_unit = { 
+								division = "name = \"8. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"24. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+							create_unit = { 
+								division = "name = \"25. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+								owner = PREV
+							}
+						}
+						if = {
+							limit = {
+								JAP = {
+									has_country_flag = JAP_revo_more_enemey_troop
+									is_ai = no
+									has_government = communism
+								}
+							}
+							282 = {
+								create_unit = { 
+									division = "name = \"9. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"10. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"11. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"12. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"13. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"14. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"15. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+							}
+							529 = {
+								create_unit = { 
+									division = "name = \"21. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"22. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+							}
+							535 = {
+								create_unit = { 
+									division = "name = \"23. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"19. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+								create_unit = { 
+									division = "name = \"20. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+									owner = PREV
+								}
+							}
+						}
+						
+					}
+				}
+			}
+			add_stability = -0.1
+}

@@ -1,0 +1,147 @@
+CHI_cjc_functions = {
+	CHI_decision_defend_commies_both = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = CHI
+		}
+		available = {
+			not = {
+				has_government = communism
+			}
+			or = {
+				has_war_with = JAP
+				has_war_with = PRC
+			}
+			or = {
+				JAP = { is_ai = no }
+				PRC = { is_ai = no }
+			}
+		}
+		visible = {
+			is_ai = yes
+			or = {
+				JAP = {
+					is_in_faction_with = PRC
+				}
+				PRC = {
+					is_in_faction_with = JAP
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = -1 #180
+		modifier = {
+			army_org_factor = 0.05
+		}
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		complete_effect = {
+			
+		}
+	}
+	
+	CHI_decision_defend_commies_to_prc = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = CHI
+		}
+		available = {
+			not = {
+				has_government = communism
+			}
+			has_war_with = PRC
+			PRC = { is_ai = no }
+		}
+		visible = {
+			is_ai = yes
+			or = {
+				JAP = {
+					is_in_faction_with = PRC
+				}
+				PRC = {
+					is_in_faction_with = JAP
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = -1
+		targeted_modifier = {
+			tag = PRC
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		complete_effect = {
+			
+		}
+	}
+	
+	CHI_decision_defend_commies_to_jap = {
+		
+		icon = generic_independence
+
+		allowed = {
+			original_tag = CHI
+		}
+		available = {
+			not = {
+				has_government = communism
+			}
+			has_war_with = JAP
+			JAP = { is_ai = no }
+		}
+		visible = {
+			is_ai = yes
+			or = {
+				JAP = {
+					is_in_faction_with = PRC
+				}
+				PRC = {
+					is_in_faction_with = JAP
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = -1
+		targeted_modifier = {
+			tag = JAP
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.05
+		}
+		modifier = {
+			
+		}
+		ai_will_do = {
+			factor = 200
+			modifier = {
+				factor = 0
+				has_global_flag = cjc_im_freshman_flag
+			}
+		}
+		complete_effect = {
+			
+		}
+	}
+
+}

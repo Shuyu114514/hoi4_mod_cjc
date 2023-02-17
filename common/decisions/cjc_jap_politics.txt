@@ -1,0 +1,459 @@
+A_JAP_cjc_conflicts_politics = {
+	JAP_eliminate_enemies_in_government = {
+
+		icon = generic_civil_support
+
+		allowed = {
+			original_tag = JAP
+		}
+		
+		visible = {
+			has_government = communism
+			is_ai = no
+		}
+		
+		available = {
+			has_country_flag = flag_attack_reactionary
+		}
+
+		days_mission_timeout = 730
+
+		activation = {
+			has_country_flag = flag_start_to_solve_reactionary
+		}
+
+		fire_only_once = yes
+		
+		cancel_if_not_visible = yes
+
+		is_good = no
+
+		timeout_effect = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
+			add_political_power = -120
+			add_stability = -0.1
+			add_war_support = -0.1
+			add_ideas = JAP_reactionary_stronger
+		}
+	}
+	
+	JAP_attack_reactionary = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_stability > 0.60
+			has_completed_focus = JAP_nationalize_the_zaibatsus
+			has_completed_focus = JAP_socialist_new_japan
+		}
+
+		visible = {
+			has_country_flag = flag_start_to_solve_reactionary
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+		
+		complete_effect = {
+			set_country_flag = flag_attack_reactionary
+			country_event = JAP_kourou.801
+			if = {
+				limit = { has_idea = JAP_reactionary_stronger }
+				remove_ideas = JAP_reactionary_stronger
+			}
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	JAP_arrest_reactionary = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+		
+		}
+
+		visible = {
+			has_country_flag = flag_attack_reactionary
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+		
+		complete_effect = {
+			country_event = JAP_kourou.802
+			if = {
+				limit = { has_idea = JAP_reactionary_stronger }
+				remove_ideas = JAP_reactionary_stronger
+			}
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	JAP_rounouha_politics_prefer = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_stability > 0.7
+			has_country_flag = JAP_rounouha_politics_flag
+			or = {
+				has_country_flag = JAP_rounouha_revo_flag
+				has_country_flag = JAP_rounouha_foreign_flag
+				has_country_flag = JAP_rounouha_industry_flag
+				has_country_flag = JAP_rounouha_soil_flag
+				has_country_flag = JAP_rounouha_army_flag
+			}
+		}
+
+		visible = {
+			has_government = communism
+			not = {
+				has_country_flag = down_fukumotoha_politics_selection_flag
+				has_country_flag = down_kouzaha_politics_selection_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		days_remove = -1
+
+		modifier = {
+			political_power_cost = 0.10
+			production_factory_max_efficiency_factor = 0.05
+			line_change_production_efficiency_factor = 0.05
+			production_speed_industrial_complex_factor = 0.05
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+		
+		complete_effect = {
+			add_stability = 0.05
+			set_country_flag = down_rounouha_politics_selection_flag
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	JAP_tokuda_real_leader = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_stability > 0.7
+			has_country_flag = JAP_kouzaha_politics_flag
+			or = {
+				has_country_flag = JAP_kouzaha_revo_flag
+				has_country_flag = JAP_kouzaha_foreign_flag
+				has_country_flag = JAP_kouzaha_industry_flag
+				has_country_flag = JAP_kouzaha_soil_flag
+				has_country_flag = JAP_kouzaha_army_flag
+			}
+		}
+
+		visible = {
+			has_government = communism
+			not = {
+				has_country_flag = down_rounouha_politics_selection_flag
+				has_country_flag = down_fukumotoha_politics_selection_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		days_remove = -1
+
+		modifier = {
+			political_power_gain = 0.20
+			stability_weekly = 0.001
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+		
+		complete_effect = {
+			add_political_power = 45
+			remove_country_leader_trait = jap_leader_of_concession
+			set_country_flag = down_kouzaha_politics_selection_flag
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	JAP_fukumotoha_politics_prefer = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			has_stability > 0.7
+			has_country_flag = JAP_fukumotoha_politics_flag
+			or = {
+				has_country_flag = JAP_fukumotoha_revo_flag
+				has_country_flag = JAP_fukumotoha_foreign_flag
+				has_country_flag = JAP_fukumotoha_industry_flag
+				has_country_flag = JAP_fukumotoha_soil_flag
+				has_country_flag = JAP_fukumotoha_army_flag
+			}
+		}
+
+		visible = {
+			has_government = communism
+			not = {
+				has_country_flag = down_rounouha_politics_selection_flag
+				has_country_flag = down_kouzaha_politics_selection_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+		days_remove = -1
+
+		modifier = {
+			production_speed_arms_factory_factor = 0.1
+			production_speed_dockyard_factor = 0.1
+			production_speed_naval_base_factor = 0.1
+			production_speed_synthetic_refinery_factor = 0.1
+			production_speed_fuel_silo_factor = 0.1
+			production_speed_radar_station_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 3
+		}
+		
+		complete_effect = {
+			add_war_support = 0.05
+			add_ideas = JAP_fukumoto_in_charge
+			remove_country_leader_trait = jap_leader_of_concession
+			set_country_flag = down_fukumotoha_politics_selection_flag
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	JAP_combined_commune_become_leader = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			if = {
+				limit = { is_ai = no }
+				has_stability > 0.8
+			}
+			has_completed_focus = JAP_red_flag
+			has_completed_focus = JAP_socialist_new_japan
+			has_completed_focus = JAP_rebuild_the_civil_service2
+		}
+
+		visible = {
+			has_government = communism
+			has_country_flag = down_rounouha_politics_selection_flag
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			add_country_leader_role = {
+				character = JAP_leader_combined_commune
+				country_leader = {
+				  ideology=anti_revisionism
+				  traits = { JAP_trait_combined_commune }
+				  expire="1965.1.1"
+				}
+				promote_leader = yes
+			}
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	JAP_supreme_soviet_become_leader = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			if = {
+				limit = { is_ai = no }
+				has_stability > 0.8
+			}
+			has_completed_focus = JAP_red_flag
+			has_completed_focus = JAP_socialist_new_japan
+			has_completed_focus = JAP_rebuild_the_civil_service2
+		}
+
+		visible = {
+			has_government = communism
+			or = {
+				has_country_flag = down_kouzaha_politics_selection_flag
+				has_country_flag = down_fukumotoha_politics_selection_flag
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+		
+		complete_effect = {
+			add_country_leader_role = {
+				character = JAP_leader_communist_committee
+				country_leader = {
+				  ideology=leninism
+				  traits = { JAP_trait_communist_committee }
+				  expire="1965.1.1"
+				}
+				promote_leader = yes
+			}
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+	JAP_final_leader_selection_ai = {
+		icon = generic_independence
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		available = {
+			date > 1942.10.1
+			has_completed_focus = JAP_red_flag
+			has_completed_focus = JAP_socialist_new_japan
+			has_completed_focus = JAP_rebuild_the_civil_service2
+		}
+
+		visible = {
+			has_government = communism
+			is_ai = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		days_remove = 1
+
+		modifier = {
+			
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			if = {
+				limit = { has_country_flag = JAP_rounouha_politics_flag }
+				add_country_leader_role = {
+					character = JAP_leader_combined_commune
+					country_leader = {
+					  ideology=anti_revisionism
+					  traits = { JAP_trait_combined_commune }
+					  expire="1965.1.1"
+					}
+					promote_leader = yes
+				}
+			}
+			if = {
+				limit = {
+					or = {
+						has_country_flag = JAP_fukumotoha_politics_flag
+						has_country_flag = JAP_kouzaha_politics_flag
+					}
+				}
+				add_country_leader_role = {
+					character = JAP_leader_communist_committee
+					country_leader = {
+					  ideology=leninism
+					  traits = { JAP_trait_communist_committee }
+					  expire="1965.1.1"
+					}
+					promote_leader = yes
+				}
+			}
+		}
+		remove_effect = {
+			
+		}
+	}
+	
+}
+

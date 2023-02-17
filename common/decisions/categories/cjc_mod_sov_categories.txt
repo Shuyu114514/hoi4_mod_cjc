@@ -1,0 +1,28 @@
+SOV_railway_plan = {
+	allowed = {
+		original_tag = SOV
+	}
+	visible = {
+		has_government = communism
+	}
+}
+
+SOV_strategy_plan = {
+	allowed = {
+		original_tag = SOV
+	}
+	visible = {
+		has_government = communism
+	}
+}
+
+SOV_emergency_manufacture = {
+	allowed = {
+	
+	}
+	visible = {
+		has_government = communism
+		has_country_flag = cjc_emergency_manufacture_for_sov
+		
+	}
+}
